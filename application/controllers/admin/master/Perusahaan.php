@@ -48,6 +48,7 @@ class Perusahaan extends CI_Controller
       $data = array(
         'nama_perush' => $this->input->post('nama_perush'),
         'kd_perush' => $this->input->post('kd_perush'),
+        'password_perush' => md5($this->input->post('password_perush')),
         'logo_perush' => $image['file_name'],
 
 
@@ -69,7 +70,8 @@ class Perusahaan extends CI_Controller
       $data = array(
         'nama_perush' => $this->input->post('nama_perush'),
         'kd_perush' => $this->input->post('kd_perush'),
-        'logo_perush' => 'foto_karyawan.png',
+        'password_perush' => md5($this->input->post('password_perush')),
+        'logo_perush' => 'logo_perush.png',
 
 
       );

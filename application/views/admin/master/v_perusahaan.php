@@ -79,6 +79,10 @@
                         <label for="">Nama Perusahaan</label>
                         <input name="nama_perush" type="text" class="form-control" required>
                     </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input name="password_perush" type="password" class="form-control" required>
+                    </div>
 
                     <div class="form-group">
                         <label for="">Foto karyawan</label>
@@ -123,7 +127,7 @@
                         <tr>
                             <th>Foto</th>
                             <td>
-                                <img src="<?php echo base_url('gambar/') . $a->nama_perush ?>" alt="">
+                                <img width="100" height="100" src="<?php echo base_url('gambar/') . $a->logo_perush ?>" alt="">
                             </td>
                         </tr>
 
@@ -161,7 +165,7 @@
                             Apakah Anda Yakin akan menghapus data ini ?
                             <!-- <label for="">Nama</label>
                   <input name="nama_karyawan" type="text" class="form-control" value="<?php echo $a->nama_karyawan ?>" required> -->
-                            <input name="kd_karyawan" type="hidden" class="form-control" value="<?php echo $a->kd_perush ?>" required>
+                            <input name="kd_perush" type="hidden" class="form-control" value="<?php echo $a->kd_perush ?>" required>
                         </div>
 
 

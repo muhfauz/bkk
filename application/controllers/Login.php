@@ -35,7 +35,7 @@ class Login extends CI_Controller
 			$cek = $data->num_rows();
 
 			if ($cek > 0) {
-				$session = array('kd_admin' => $d->kd_admin, 'nama' => $d->nama_admin, 'nohp_admin' => $d->nohp_admin, 'gambar_admin' => $d->gambar_admin, 'status' => 'login', 'posisi' => $d->status_admin, 'password_admin' => $d->password_admin);
+				$session = array('kd_admin' => $d->kd_admin, 'nama' => $d->nama_admin, 'nohp_admin' => $d->nohp_admin, 'gambar_admin' => $d->gambar_admin, 'status' => 'login', 'posisi' => 'admin', 'password_admin' => $d->password_admin);
 				$this->session->set_userdata($session);
 				if (!empty($this->input->post("remember"))) {
 					setcookie("loginId", $username, time() + (10 * 365 * 24 * 60 * 60));
@@ -46,16 +46,47 @@ class Login extends CI_Controller
 				}
 				redirect(base_url('welcome'));
 			} else {
+				$where = array('kd_pelamar' => $username, 'password_pelamar' => md5($password));
+				/*$dt = $this->Mglobal->tampilkandatasingle1('tbl_user', $where);
+				$hasil = $this->Mglobal->tampilkandatasingle1('tbl_user', $where)->row();
+				*/
+				$dt = $this->db->query("select * from tbl_pelamar where kd_pelamar='$username' and password_pelamar='$password2'");
+				$hasil = $this->db->query("select * from tbl_pelamar where kd_pelamar='$username' and password_pelamar='$password2'")->row();
+				// $hasil = $this->db->query("select * from tbl_user P, tbl_propinsi PR where P.id_propinsi=PR.id_propinsi and P.kd_user='$username' and P.password_user='$password2'")->row();
+				$proses = $dt->num_rows();
 
-				//$data['judul']=$this->Mglobal->tampilkandata('tbl_judul');
+				if ($proses > 0) {
+					$session = array('kd_pelamar' => $hasil->kd_pelamar, 'nama_pelamar' => $hasil->nama_pelamar, 'status' => 'login', 'status_pelamar' => $hasil->status_pelamar, 'posisi' => 'pelamar', 'password_pelamar' => $hasil->password_pelamar);
+					$this->session->set_userdata($session);
+					redirect(base_url('welcome'));
+				} else {
+					$where = array('kd_perush' => $username, 'password_perush' => md5($password));
+					/*$dt = $this->Mglobal->tampilkandatasingle1('tbl_user', $where);
+				$hasil = $this->Mglobal->tampilkandatasingle1('tbl_user', $where)->row();
+				*/
+					$dt = $this->db->query("select * from tbl_perusahaan where kd_perush='$username' and password_perush='$password2'");
+					$hasil = $this->db->query("select * from tbl_perusahaan where kd_perush='$username' and password_perush='$password2'")->row();
+					// $hasil = $this->db->query("select * from tbl_user P, tbl_propinsi PR where P.id_propinsi=PR.id_propinsi and P.kd_user='$username' and P.password_user='$password2'")->row();
+					$proses = $dt->num_rows();
+					if ($proses > 0) {
+						$session = array('kd_perush' => $hasil->kd_perush, 'nama_perush' => $hasil->nama_perush, 'status' => 'login', 'status_hrd' => $hasil->status_hrd, 'posisi' => 'hrd', 'password_perush' => $hasil->password_perush);
+						$this->session->set_userdata($session);
+						redirect(base_url('welcome'));
+					} else {
 
-				$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+
+
+						//$data['judul']=$this->Mglobal->tampilkandata('tbl_judul');
+
+						$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
               		 <strong >Login Gagal!</strong><br> Username atau Password Salah!!.  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               			   <span aria-hidden="true">&times;</span>
                				</button>
              				</div>');
-				//$this->load->view('vlogin',$data);
-				redirect(base_url('login'));
+						//$this->load->view('vlogin',$data);
+						redirect(base_url('depan/login'));
+					}
+				}
 			}
 		} else {
 			//$data['judul']=$this->Mglobal->tampilkandata('tbl_judul');
