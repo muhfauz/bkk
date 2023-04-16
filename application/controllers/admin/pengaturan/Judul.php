@@ -18,7 +18,7 @@ class Judul extends CI_Controller
     $data['x1'] = 'Pengaturan Judul';
     $data['x2'] = 'Pengaturan';
     $data['x3'] = 'Pengaturan judul';
-    $data['nama_perush'] = $this->db->query("select nama_perush from tbl_perusahaan")->row()->nama_perush;
+    $data['nama_bkk'] = $this->db->query("select nama_bkk from tbl_bkk")->row()->nama_bkk;
     // $data['x4']='Data Admin Sahabat Optik';
 
     $data['judul'] = $this->Mglobal->tampilkandata('tbl_judul');

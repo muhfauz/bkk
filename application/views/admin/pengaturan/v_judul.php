@@ -16,7 +16,7 @@
 
     <div class="info-box">
       <h4 class="text-primary"><i class="fa fa-history"></i> <?php echo $x1; ?></h4>
-      <p><?php echo $nama_perush; ?></p>
+      <p><?php echo $nama_bkk; ?></p>
       <div class="table-responsive">
         <?php echo $this->session->userdata('pesan'); ?>
         <!-- <a href="" class="btn btn-primary mb-2" data-toggle="modal" data-target="#tambahdata" > <i class="fa fa-plus-square mr-2" ></i> Tambah Data</a> -->

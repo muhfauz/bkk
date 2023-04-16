@@ -19,7 +19,7 @@ class Admin extends CI_Controller
     $data['x2'] = 'Master';
     $data['x3'] = 'Admin';
     // $data['x4']='Data Admin Sahabat Optik';
-    $data['nama_perush'] = $this->db->query("select nama_perush from tbl_perusahaan")->row()->nama_perush;
+    $data['nama_bkk'] = $this->db->query("select nama_bkk from tbl_bkk")->row()->nama_bkk;
     $data['admin'] = $this->Mglobal->tampilkandata('tbl_admin');
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
