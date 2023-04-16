@@ -6,14 +6,16 @@
     <div class="user-panel">
       <?php
       $kd_admin = $this->session->userdata('kd_admin');
+      $kd_pelamar = $this->session->userdata('kd_pelamar');
+      $kd_perush = $this->session->userdata('kd_perush');
 
       ?>
       <?php if ($this->session->userdata('posisi') == 'admin') { ?>
         <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="img-circle" alt="User Image"> </div>
-      <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
-        <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="img-circle" alt="User Image"> </div>
+      <?php } elseif ($this->session->userdata('posisi') == 'pelamar') { ?>
+        <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_pelamar where kd_pelamar='$kd_pelamar'")->row()->gambar_pelamar ?>" class="img-circle" alt="User Image"> </div>
       <?php } else { ?>
-        <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="img-circle" alt="User Image"> </div>
+        <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_perusahaan where kd_perush='$kd_perush'")->row()->logo_perush ?>" class="img-circle" alt="User Image"> </div>
       <?php } ?>
 
       <div class="info">
@@ -22,16 +24,16 @@
             <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?>
           </p>
           <p>ADMINISTRATOR</p>
-        <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
+        <?php } elseif ($this->session->userdata('posisi') == 'pelamar') { ?>
           <p>
-            <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?>
+            <?php echo $this->db->query("select * from tbl_pelamar where kd_pelamar='$kd_pelamar'")->row()->nama_pelamar ?>
           </p>
-          <p>ADMIN SERVICE</p>
+          <p>PELAMAR</p>
         <?php } else { ?>
           <p>
-            <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?>
+            <?php echo $this->db->query("select * from tbl_perusahaan where kd_perush='$kd_perush'")->row()->nama_perush ?>
           </p>
-          <p>ADMIN SALES</p>
+          <p>ADMIN PERUSAHAAN</p>
         <?php } ?>
 
         <a href="<?php echo base_url('login/logout') ?>"><i class="fa fa-power-off"></i></a>
