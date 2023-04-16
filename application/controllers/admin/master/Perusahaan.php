@@ -93,32 +93,20 @@ class Perusahaan extends CI_Controller
   // $this->load->view('karyawan/temp/v_footer');
   // }
   // }
-  function hapuskaryawan()
+  function hapusperusahaan()
   {
-    $where = array('kd_karyawan' => $this->input->post('kd_karyawan'));
-    $this->Mglobal->hapusdata($where, 'tbl_karyawan');
+    $where = array('kd_perush' => $this->input->post('kd_perush'));
+    $this->Mglobal->hapusdata($where, 'tbl_perusahaan');
     $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Hapus Data Sukses!</strong> Data berhasil dihapus dari database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-    redirect(base_url('admin/master/karyawan/'));
+    redirect(base_url('admin/master/perusahaan/'));
   }
-  function editkaryawan($id)
-  {
-    $data['x1'] = 'Master';
-    $data['x2'] = 'karyawan';
-    $data['x3'] = 'Edit karyawan Inventaris';
-    $data['x4'] = 'Mengedit Data karyawan Inventaris Sahabat Optik';
-    $where = array('kd_karyawan' => $id);
-    $data['karyawan'] = $this->Mglobal->tampilkandatasingle('tbl_karyawan', $where);
-    $this->load->view('adm/header');
-    $this->load->view('adm/sidebar');
-    $this->load->view('adm/master/karyawan/veditkaryawan', $data);
-    $this->load->view('adm/footer');
-  }
-  function aksieditkaryawan()
+
+  function aksieditperusahaan()
   {
 
     //Form Validasi jika kosong
@@ -130,61 +118,38 @@ class Perusahaan extends CI_Controller
     $config['upload_path'] = './gambar/';
     $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp';
     $config['max_size'] = '2048';
-    $config['file_name'] = 'gambar_karyawan_' . time();
+    $config['file_name'] = 'logo_perush' . time();
     $this->load->library('upload', $config);
-    if ($this->upload->do_upload('foto_karyawan')) {
+    if ($this->upload->do_upload('logo_perush')) {
       $image = $this->upload->data();
-      $where = array('kd_karyawan' => $this->input->post('kd_karyawan'));
+      $where = array('kd_perush' => $this->input->post('kd_perush'));
       $data = array(
-        'nama_karyawan' => $this->input->post('nama_karyawan'),
-        'kd_karyawan' => $this->input->post('kd_karyawan'),
-        'tempatlahir_karyawan' => $this->input->post('tempatlahir_karyawan'),
-        'tgllahir_karyawan' => $this->input->post('tgllahir_karyawan'),
-        'alamat_karyawan' => $this->input->post('alamat_karyawan'),
-        'nohp_karyawan' => $this->input->post('nohp_karyawan'),
-        'kd_jabatan' => $this->input->post('kd_jabatan'),
-        'kd_bagian' => $this->input->post('kd_bagian'),
-        'jk_karyawan' => $this->input->post('jk_karyawan'),
-        'tglmasuk_karyawan' => $this->input->post('tglmasuk_karyawan'),
-        'gambar_karyawan' => $image['file_name'],
-        'bpjs_kes' => $this->input->post('bpjs_kes'),
-        'bpjs_tk' => $this->input->post('bpjs_tk'),
-        'bpjs_pen' => $this->input->post('bpjs_pen'),
+        'nama_perush' => $this->input->post('nama_perush'),
+        // 'kd_perush' => $this->input->post('kd_perush'),
+        'logo_perush' => $image['file_name'],
       );
-      $this->Mglobal->editdata('tbl_karyawan', $where, $data);
+      $this->Mglobal->editdata('tbl_perusahaan', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-      redirect(base_url('admin/master/karyawan/'));
+      redirect(base_url('admin/master/perusahaan/'));
     } else {
-      $where = array('kd_karyawan' => $this->input->post('kd_karyawan'));
+      $where = array('kd_perush' => $this->input->post('kd_perush'));
       $data = array(
-        'nama_karyawan' => $this->input->post('nama_karyawan'),
-        'kd_karyawan' => $this->input->post('kd_karyawan'),
-        'tempatlahir_karyawan' => $this->input->post('tempatlahir_karyawan'),
-        'tgllahir_karyawan' => $this->input->post('tgllahir_karyawan'),
-        'alamat_karyawan' => $this->input->post('alamat_karyawan'),
-        'nohp_karyawan' => $this->input->post('nohp_karyawan'),
-        'kd_jabatan' => $this->input->post('kd_jabatan'),
-        'kd_bagian' => $this->input->post('kd_bagian'),
-        'jk_karyawan' => $this->input->post('jk_karyawan'),
-        'tglmasuk_karyawan' => $this->input->post('tglmasuk_karyawan'),
-        'bpjs_kes' => $this->input->post('bpjs_kes'),
-        'bpjs_tk' => $this->input->post('bpjs_tk'),
-        'bpjs_pen' => $this->input->post('bpjs_pen'),
+        'nama_perush' => $this->input->post('nama_perush'),
 
       );
-      $this->Mglobal->editdata('tbl_karyawan', $where, $data);
+      $this->Mglobal->editdata('tbl_perusahaan', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-      redirect(base_url('admin/master/karyawan/'));
+      redirect(base_url('admin/master/perusahaan/'));
     }
   }
 }

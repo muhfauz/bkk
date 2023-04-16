@@ -25,6 +25,7 @@
                             <th class="text-center text-white align-middle" rowspan="2">Kode Perusahaan</th>
                             <th class="text-center text-white align-middle" rowspan="2">Nama Perusahaan</th>
                             <th class="text-center text-white align-middle" rowspan="2">Deskripsi Perusahaan</th>
+                            <th class="text-center text-white align-middle" rowspan="2"></th>
 
 
                         </tr>
@@ -122,7 +123,7 @@
                         <tr>
                             <th>Foto</th>
                             <td>
-                                <img src="<?php echo base_url('gambar/') . $a->gambar_karyawan ?>" alt="">
+                                <img src="<?php echo base_url('gambar/') . $a->nama_perush ?>" alt="">
                             </td>
                         </tr>
 
@@ -192,86 +193,20 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url('admin/master/karyawan/aksieditkaryawan') ?>" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo base_url('admin/master/perusahaan/aksieditperusahaan') ?>" method="post" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="">Nama karyawan</label>
-                            <input name="nama_karyawan" type="text" class="form-control" value="<?php echo $a->nama_karyawan ?>" required>
-                            <input name="kd_karyawan" type="hidden" class="form-control" value="<?php echo $a->kd_karyawan ?>" required>
+                            <label for="">Nama Perusahaan</label>
+                            <input name="nama_perush" type="text" class="form-control" value="<?php echo $a->nama_perush ?>" required>
+                            <input name="kd_perush" type="hidden" class="form-control" value="<?php echo $a->kd_perush ?>" required>
                         </div>
-                        <div class="form-group">
-                            <label for="">Tempat Lahir</label>
-                            <input name="tempatlahir_karyawan" type="text" class="form-control" value="<?php echo $a->tempatlahir_karyawan ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Tanggal Lahir</label>
-                            <input name="tgllahir_karyawan" type="date" class="form-control" value="<?php echo $a->tgllahir_karyawan ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Jenis Kelamin</label>
-                            <select class="form-control" name="jk_karyawan" id="" required>
-                                <?php if ($a->jk_karyawan == 'Pria') { ?>
-                                    <option value="Pria" selected> Pria</option>
-                                <?php } else { ?>
-                                    <option value="Wanita" selected> Wanita</option>
-                                <?php } ?>
 
-                                <option value="">Pilih Jenis Kelamin</option>
-                                <option value="Pria">Pria</option>
-                                <option value="Wanita">Wanita</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Alamat karyawan</label>
-                            <input name="alamat_karyawan" type="text" class="form-control" value="<?php echo $a->alamat_karyawan ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">No HP karyawan</label>
-                            <input name="nohp_karyawan" type="text" class="form-control" value="<?php echo $a->nohp_karyawan ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Jabatan</label>
-
-                            <select class="form-control" name="kd_jabatan" id="">
-                                <option value="<?php echo $a->kd_jabatan ?>"><?php echo $a->nama_jabatan ?></option>
-                                <?php foreach ($jabatan as $c) : ?>
-                                    <option value="<?php echo $c->kd_jabatan ?>"><?php echo $c->nama_jabatan ?></option>
-                                <?php endforeach; ?>
-
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Bagian</label>
-                            <select class="form-control" name="kd_bagian" id="" required>
-                                <option value="<?php echo $a->kd_bagian ?>"><?php echo $a->nama_bagian ?></option>
-                                <option value="">Pilih Bagian</option>
-                                <?php foreach ($bagian as $b) : ?>
-                                    <option value="<?php echo $b->kd_bagian ?>"><?php echo $b->nama_bagian ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Tanggal Masuk</label>
-                            <input name="tglmasuk_karyawan" type="date" class="form-control" value="<?php echo $a->tglmasuk_karyawan ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">BPJS Kesehatan</label>
-                            <input name="bpjs_kes" type="number" class="form-control" value="<?php echo $a->bpjs_kes ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">BPJS Ketenagakerjaan</label>
-                            <input name="bpjs_tk" type="number" class="form-control" value="<?php echo $a->bpjs_tk ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Pensiun</label>
-                            <input name="bpjs_pen" type="number" class="form-control" value="<?php echo $a->bpjs_pen ?>" required>
-                        </div>
                         <div class="form-group">
 
-                            <label for="">Foto</label>
+                            <label for="">Logo</label>
                             <br>
-                            <img width="100" height="100" src="<?php echo base_url('gambar/') . $a->gambar_karyawan ?>" alt="">
+                            <img width="100" height="100" src="<?php echo base_url('gambar/') . $a->logo_perush ?>" alt="">
                             <br>
-                            <input name="gambar_karyawan" type="file" class="form-control" value="">
+                            <input name="logo_perush" type="file" class="form-control" value="">
                         </div>
 
 
