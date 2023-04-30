@@ -75,22 +75,57 @@
                         <label for="">Kode Perusahaan</label>
                         <input name="kd_perush" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_perush", "tbl_perusahaan", "PERUSH") ?>">
                     </div>
+
                     <div class="form-group">
                         <label for="">Nama Perusahaan</label>
                         <input name="nama_perush" type="text" class="form-control" required>
                     </div>
+
+                    <div class="form-group">
+                        <label for="">Deskripsi Perusahaan</label>
+                        <input name="desk_perush" type="text" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Jenis Badan Usaha Perusahaan</label>
+                        <input name="jenisbu_perush" type="text" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">NIB Perusahaan</label>
+                        <input name="nib_perush" type="text" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Sektor Perusahaan</label>
+                        <input name="sektor_perush" type="text" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Alamat Lengkap Perusahaan</label>
+                        <input name="alamatlengkap_perush" type="text" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">No Telephon Perusahaan</label>
+                        <input name="notel_perush" type="text" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Nama Penanggungjawab Perusahaan</label>
+                        <input name="namapj_perush" type="text" class="form-control" required>
+                    </div>
+
                     <div class="form-group">
                         <label for="">Password</label>
                         <input name="password_perush" type="password" class="form-control" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="">Foto karyawan</label>
+                        <label for="">Logo </label>
                         <input name="logo_perush" type="file" class="form-control" multiple="multiple">
                         <span class="text-red font-italic text-sm-left">Gambar harus berukuran 370 x 240px untuk tampilan terbaik</span>
                     </div>
-
-
 
             </div>
             <div class="modal-footer">
@@ -122,6 +157,46 @@
                         <tr>
                             <th>Nama Perusahaan</th>
                             <td><?php echo $a->nama_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>Deskripsi Perusahaan</th>
+                            <td><?php echo $a->desk_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>Jenis Badan Usaha Perusahaan</th>
+                            <td><?php echo $a->jenisbu_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>NIB Perusahaan</th>
+                            <td><?php echo $a->nib_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>Sektor Perusahaan</th>
+                            <td><?php echo $a->sektor_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>Alamat Lengkap Perusahaan</th>
+                            <td><?php echo $a->alamatlengkap_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>No Telephone Perusahaan</th>
+                            <td><?php echo $a->notel_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>Nama Penanggungjawab Perusahaan</th>
+                            <td><?php echo $a->namapj_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>Password Perusahaan</th>
+                            <td><?php echo $a->password_perush ?></td>
                         </tr>
 
                         <tr>
@@ -201,7 +276,46 @@
                         <div class="form-group">
                             <label for="">Nama Perusahaan</label>
                             <input name="nama_perush" type="text" class="form-control" value="<?php echo $a->nama_perush ?>" required>
-                            <input name="kd_perush" type="hidden" class="form-control" value="<?php echo $a->kd_perush ?>" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Deskripsi Perusahaan</label>
+                            <input name="desk_perush" type="text" class="form-control" value="<?php echo $a->desk_perush ?>" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Jenis Badan Usaha Perusahaan</label>
+                            <input name="jenisbu_perush" type="text" class="form-control" value="<?php echo $a->jenisbu_perush ?>" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">NIB Perusahaan</label>
+                            <input name="nib_perush" type="text" class="form-control" value="<?php echo $a->nib_perush ?>" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Sektor Perusahaan</label>
+                            <input name="sektor_perush" type="text" class="form-control" value="<?php echo $a->sektor_perush ?>" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Alamat Lengkap Perusahaan</label>
+                            <input name="alamatlengkap_perush" type="text" class="form-control" value="<?php echo $a->alamatlengkap_perush ?>" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Nomor Telephone Perusahaan</label>
+                            <input name="notel_perush" type="text" class="form-control" value="<?php echo $a->notel_perush ?>" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Nama Penanggungjawab Perusahaan</label>
+                            <input name="namapj_perush" type="text" class="form-control" value="<?php echo $a->namapj_perush ?>" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Password Perusahaan</label>
+                            <input name="password_perush" type="text" class="form-control" value="<?php echo $a->password_perush ?>" required>
                         </div>
 
                         <div class="form-group">

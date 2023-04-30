@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Perusahaan extends CI_Controller
+class Pelamar extends CI_Controller
 {
 
   public function __construct()
@@ -15,21 +15,21 @@ class Perusahaan extends CI_Controller
 
   function index()
   {
-    $data['x1'] = 'Data Perusahaan';
+    $data['x1'] = 'Data pelamar';
     $data['x2'] = 'Master';
-    $data['x3'] = 'Perusahaan';
-    $data['x4'] = 'Data Perusahaan ' . '| ' . $this->db->query('select nama_bkk from tbl_bkk')->row()->nama_bkk;
-    $data['perusahaan'] = $this->db->query("select * from tbl_perusahaan")->result();
+    $data['x3'] = 'pelamar';
+    $data['x4'] = 'Data pelamar ' . '| ' . $this->db->query('select nama_bkk from tbl_bkk')->row()->nama_bkk;
+    $data['pelamar'] = $this->db->query("select * from tbl_pelamar")->result();
     // $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
     // $data['bagian'] = $this->Mglobal->tampilkandata('tbl_bagian');
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
     $this->load->view('admin/temp/v_sidebar');
-    $this->load->view('admin/master/v_perusahaan');
+    $this->load->view('admin/master/v_pelamar');
     $this->load->view('admin/temp/v_footer');
   }
 
-  function aksitambahperusahaan()
+  function aksitambahpelamar()
   {
 
     //Form Validasi jika kosong
@@ -40,21 +40,14 @@ class Perusahaan extends CI_Controller
     // {
     $config['upload_path'] = './gambar/';
     $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp';
-    $config['max_size'] = '204800000000000000009999999999999999999999999999999';
+    $config['max_size'] = '2048';
     $config['file_name'] = 'logo_perush' . time();
     $this->load->library('upload', $config);
     if ($this->upload->do_upload('logo_perush')) {
       $image = $this->upload->data();
       $data = array(
-         'nama_perush' => $this->input->post('nama_perush'),
+        'nama_perush' => $this->input->post('nama_perush'),
         'kd_perush' => $this->input->post('kd_perush'),
-        'desk_perush' => $this->input->post('desk_perush'),
-        'jenisbu_perush' => $this->input->post('jenisbu_perush'),
-        'nib_perush' => $this->input->post('nib_perush'),
-        'sektor_perush' => $this->input->post('sektor_perush'),
-        'alamatlengkap_perush' => $this->input->post('alamatlengkap_perush'),
-        'notel_perush' => $this->input->post('notel_perush'),
-        'namapj_perush' => $this->input->post('namapj_perush'),
         'password_perush' => md5($this->input->post('password_perush')),
         'logo_perush' => $image['file_name'],
 
@@ -65,38 +58,31 @@ class Perusahaan extends CI_Controller
         // 'ket_karyawan' => $this->input->post('ket_karyawan'),
         // 'foto_karyawan' => $image['file_name'],
       );
-      $this->Mglobal->tambahdata($data, 'tbl_perusahaan');
+      $this->Mglobal->tambahdata($data, 'tbl_perush');
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Tambah Data Sukses!</strong> Data berhasil disimpan ke database.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>');
-      redirect(base_url('admin/master/perusahaan/'));
+      redirect(base_url('admin/master/pelamar/'));
     } else {
       $data = array(
         'nama_perush' => $this->input->post('nama_perush'),
         'kd_perush' => $this->input->post('kd_perush'),
-        'desk_perush' => $this->input->post('desk_perush'),
-        'jenisbu_perush' => $this->input->post('jenisbu_perush'),
-        'nib_perush' => $this->input->post('nib_perush'),
-        'sektor_perush' => $this->input->post('sektor_perush'),
-        'alamatlengkap_perush' => $this->input->post('alamatlengkap_perush'),
-        'notel_perush' => $this->input->post('notel_perush'),
-        'namapj_perush' => $this->input->post('namapj_perush'),
         'password_perush' => md5($this->input->post('password_perush')),
-        // 'logo_perush' => $image['file_name'],
+        'logo_perush' => 'logo_perush.png',
 
 
       );
-      $this->Mglobal->tambahdata($data, 'tbl_perusahaan');
+      $this->Mglobal->tambahdata($data, 'tbl_pelamar');
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Tambah Data Sukses!</strong> Data berhasil disimpan ke database.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>');
-      redirect(base_url('admin/master/perusahaan/'));
+      redirect(base_url('admin/master/pelamar/'));
     }
   }
 
@@ -109,20 +95,20 @@ class Perusahaan extends CI_Controller
   // $this->load->view('karyawan/temp/v_footer');
   // }
   // }
-  function hapusperusahaan()
+  function hapuspelamar()
   {
     $where = array('kd_perush' => $this->input->post('kd_perush'));
-    $this->Mglobal->hapusdata($where, 'tbl_perusahaan');
+    $this->Mglobal->hapusdata($where, 'tbl_pelamar');
     $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Hapus Data Sukses!</strong> Data berhasil dihapus dari database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-    redirect(base_url('admin/master/perusahaan/'));
+    redirect(base_url('admin/master/pelamar/'));
   }
 
-  function aksieditperusahaan()
+  function aksieditpelamar()
   {
 
     //Form Validasi jika kosong
@@ -141,47 +127,31 @@ class Perusahaan extends CI_Controller
       $where = array('kd_perush' => $this->input->post('kd_perush'));
       $data = array(
         'nama_perush' => $this->input->post('nama_perush'),
-        'kd_perush' => $this->input->post('kd_perush'),
-        'desk_perush' => $this->input->post('desk_perush'),
-        'jenisbu_perush' => $this->input->post('jenisbu_perush'),
-        'nib_perush' => $this->input->post('nib_perush'),
-        'sektor_perush' => $this->input->post('sektor_perush'),
-        'alamatlengkap_perush' => $this->input->post('alamatlengkap_perush'),
-        'notel_perush' => $this->input->post('notel_perush'),
-        'namapj_perush' => $this->input->post('namapj_perush'),
-        'password_perush' => md5($this->input->post('password_perush')),
+        // 'kd_perush' => $this->input->post('kd_perush'),
+        'logo_perush' => $image['file_name'],
       );
-      $this->Mglobal->editdata('tbl_perusahaan', $where, $data);
+      $this->Mglobal->editdata('tbl_pelamar', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-      redirect(base_url('admin/master/perusahaan/'));
+      redirect(base_url('admin/master/pelamar/'));
     } else {
       $where = array('kd_perush' => $this->input->post('kd_perush'));
       $data = array(
         'nama_perush' => $this->input->post('nama_perush'),
-        'kd_perush' => $this->input->post('kd_perush'),
-        'desk_perush' => $this->input->post('desk_perush'),
-        'jenisbu_perush' => $this->input->post('jenisbu_perush'),
-        'nib_perush' => $this->input->post('nib_perush'),
-        'sektor_perush' => $this->input->post('sektor_perush'),
-        'alamatlengkap_perush' => $this->input->post('alamatlengkap_perush'),
-        'notel_perush' => $this->input->post('notel_perush'),
-        'namapj_perush' => $this->input->post('namapj_perush'),
-        'password_perush' => md5($this->input->post('password_perush')),
 
       );
-      $this->Mglobal->editdata('tbl_perusahaan', $where, $data);
+      $this->Mglobal->editdata('tbl_pelamar', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-      redirect(base_url('admin/master/perusahaan/'));
+      redirect(base_url('admin/master/pelamar/'));
     }
   }
 }
