@@ -16,7 +16,7 @@
         <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_pelamar where kd_pelamar='$kd_pelamar'")->row()->gambar_pelamar ?>" class="img-circle" alt="User Image"> </div>
       <?php } else { ?>
         <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_perusahaan where kd_perush='$kd_perush'")->row()->logo_perush ?>" class="img-circle" alt="User Image"> </div>
-        <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_perusahaan where kd_perush='$kd_perush'")->row()->logo_perush ?>" class="img-circle" alt="User Image"> </div>
+
       <?php } ?>
 
       <div class="info">
