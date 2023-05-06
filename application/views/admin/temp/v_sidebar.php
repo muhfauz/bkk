@@ -35,6 +35,10 @@
             <?php echo $this->db->query("select * from tbl_perusahaan where kd_perush='$kd_perush'")->row()->nama_perush ?>
           </p>
           <p>ADMIN PERUSAHAAN</p>
+          <p>
+            <small> <?php echo $this->session->userdata('acc_admin') ?> </small>
+          </p>
+
         <?php } ?>
 
         <a href="<?php echo base_url('login/logout') ?>"><i class="fa fa-power-off"></i></a>
@@ -75,21 +79,25 @@
         </li>
 
       <?php } elseif ($this->session->userdata('posisi') == 'perusahaan') { ?>
-        <li class="treeview"> <a href="#"><i class="fa fa-car mr-2" aria-hidden="true"></i><span>Input Service</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/service') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>Input Service</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/service') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>History Service</a></li>
+        <?php if ($this->session->userdata('acc_admin') == 'acc') { ?>
+          <li class="treeview"> <a href="#"><i class="fa fa-car mr-2" aria-hidden="true"></i><span>Lowongan Kerja</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+            <ul class="treeview-menu">
+              <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/service') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>Loowngan Kerja</a></li>
+              <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/service') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>History Service</a></li>
 
-          </ul>
-        </li>
+            </ul>
+          </li>
 
-        <li class="treeview"> <a href="#"><i class="fa fa-cogs mr-2" aria-hidden="true"></i><span>Pengaturan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/datadiri') ?>"><i class="fa fa-user mr-2" aria-hidden="true"></i>Data Perusahaan</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/gantipassperush') ?>"><i class="fa fa-key mr-2" aria-hidden="true"></i>Ganti Password</a></li>
+          <li class="treeview"> <a href="#"><i class="fa fa-cogs mr-2" aria-hidden="true"></i><span>Pengaturan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+            <ul class="treeview-menu">
+              <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/datadiri') ?>"><i class="fa fa-user mr-2" aria-hidden="true"></i>Data Perusahaan</a></li>
+              <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/gantipassperush') ?>"><i class="fa fa-key mr-2" aria-hidden="true"></i>Ganti Password</a></li>
 
-          </ul>
-        </li>
+            </ul>
+          </li>
+
+        <?php }  ?>
+
 
       <?php } else { ?>
 

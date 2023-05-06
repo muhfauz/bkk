@@ -35,14 +35,16 @@
       <ul class="nav navbar-nav">
         <?php
         $kd_admin = $this->session->userdata('kd_admin');
+        $kd_perush = $this->session->userdata('kd_perush');
+        $kd_pelamar = $this->session->userdata('kd_pelamar');
 
         ?>
         <?php if ($this->session->userdata('posisi') == 'admin') { ?>
           <li class="dropdown user user-menu p-ph-res"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="user-image" alt="User Image"> <span class="hidden-xs"><?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?></span> </a>
-          <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
-          <li class="dropdown user user-menu p-ph-res"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="user-image" alt="User Image"> <span class="hidden-xs"><?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?></span> </a>
+          <?php } elseif ($this->session->userdata('posisi') == 'perusahaan') { ?>
+          <li class="dropdown user user-menu p-ph-res"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_perusahaan where kd_perush='$kd_perush'")->row()->logo_perush ?>" class="user-image" alt="User Image"> <span class="hidden-xs"><?php echo $this->db->query("select * from tbl_perusahaan where kd_perush='$kd_perush'")->row()->nama_perush ?></span> </a>
           <?php } else { ?>
-          <li class="dropdown user user-menu p-ph-res"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="user-image" alt="User Image"> <span class="hidden-xs"><?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?></span> </a>
+          <li class="dropdown user user-menu p-ph-res"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo base_url() ?>gambar/pelamar/<?php echo $this->db->query("select * from tbl_pelamar where kd_pelamar='$kd_admin'")->row()->gambar_admin ?>" class="user-image" alt="User Image"> <span class="hidden-xs"><?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_pelamar'")->row()->nama_pelamar ?></span> </a>
           <?php } ?>
 
 
@@ -51,10 +53,10 @@
               <?php if ($this->session->userdata('posisi') == 'admin') { ?>
 
                 <div class="pull-left user-img"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="img-responsive" alt="User"></div>
-              <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
-                <div class="pull-left user-img"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="img-responsive" alt="User"></div>
+              <?php } elseif ($this->session->userdata('posisi') == 'perusahaan') { ?>
+                <div class="pull-left user-img"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_perusahaan where kd_perush='$kd_perush'")->row()->logo_perush ?>" class="img-responsive" alt="User"></div>
               <?php } else { ?>
-                <div class="pull-left user-img"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="img-responsive" alt="User"></div>
+                <div class="pull-left user-img"><img src="<?php echo base_url() ?>gambar/pelamar/<?php echo $this->db->query("select * from tbl_pelamar where kd_pelamar='$kd_pelamar'")->row()->foto_pelamar ?>" class="img-responsive" alt="User"></div>
               <?php } ?>
 
               <?php if ($this->session->userdata('posisi') == 'admin') { ?>
@@ -62,13 +64,14 @@
                   <small> ADMINISTRATOR </small>
                 </p>
 
-              <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
-                <p class="text-left"><?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?>
-                  <small> ADMIN SERVICE </small>
+              <?php } elseif ($this->session->userdata('posisi') == 'perusahaan') { ?>
+                <p class="text-left"><?php echo $this->db->query("select * from tbl_perusahaan where kd_perush='$kd_perush'")->row()->nama_perush ?>
+                  <small> ADMIN PERUSAHAAN </small>
+                  <small> <?php echo $this->session->userdata('acc_admin') ?> </small>
                 </p>
               <?php } else { ?>
-                <p class="text-left"><?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?>
-                  <small> ADMIN SALES </small>
+                <p class="text-left"><?php echo $this->db->query("select * from tbl_pelamar where kd_pelamar='$kd_pelamar'")->row()->nama_pelamar ?>
+                  <small> PELAMAR </small>
                 </p>
 
               <?php } ?>
