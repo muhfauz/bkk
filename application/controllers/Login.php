@@ -69,7 +69,7 @@ class Login extends CI_Controller
 					// $hasil = $this->db->query("select * from tbl_user P, tbl_propinsi PR where P.id_propinsi=PR.id_propinsi and P.kd_user='$username' and P.password_user='$password2'")->row();
 					$proses = $dt->num_rows();
 					if ($proses > 0) {
-						$session = array('kd_perush' => $hasil->kd_perush, 'nama_perush' => $hasil->nama_perush, 'status' => 'login', 'status_hrd' => $hasil->status_hrd, 'posisi' => 'perusahaan', 'password_perush' => $hasil->password_perush);
+						$session = array('kd_perush' => $hasil->kd_perush, 'nama_perush' => $hasil->nama_perush, 'status' => 'login', 'acc_admin' => $hasil->acc_admin, 'posisi' => 'perusahaan', 'password_perush' => $hasil->password_perush);
 						$this->session->set_userdata($session);
 						redirect(base_url('welcome'));
 					} else {
@@ -84,7 +84,7 @@ class Login extends CI_Controller
                				</button>
              				</div>');
 						//$this->load->view('vlogin',$data);
-						redirect(base_url('depan/login'));
+						redirect(base_url('login'));
 					}
 				}
 			}

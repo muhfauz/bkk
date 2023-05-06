@@ -48,6 +48,7 @@ class Pelamar extends CI_Controller
       $data = array(
         'nama_pelamar' => $this->input->post('nama_pelamar'),
         'kd_pelamar' => $this->input->post('kd_pelamar'),
+        'password_pelamar' => md5($this->input->post('password_pelamar')),
         'alamatlengkap_pelamar' => $this->input->post('alamatlengkap_pelamar'),
         'foto_pelamar' => $image['file_name'],
 
@@ -70,6 +71,7 @@ class Pelamar extends CI_Controller
       $data = array(
         'nama_pelamar' => $this->input->post('nama_pelamar'),
         'kd_pelamar' => $this->input->post('kd_pelamar'),
+        'password_pelamar' => md5($this->input->post('password_pelamar')),
         'alamatlengkap_pelamar' => $this->input->post('alamatlengkap_pelamar'),
         'foto_pelamar' => 'foto_pelamar.png',        // 'logo_perush' => 'logo_perush.png',
 

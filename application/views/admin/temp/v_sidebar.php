@@ -13,7 +13,7 @@
       <?php if ($this->session->userdata('posisi') == 'admin') { ?>
         <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->gambar_admin ?>" class="img-circle" alt="User Image"> </div>
       <?php } elseif ($this->session->userdata('posisi') == 'pelamar') { ?>
-        <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_pelamar where kd_pelamar='$kd_pelamar'")->row()->gambar_pelamar ?>" class="img-circle" alt="User Image"> </div>
+        <div class="image text-center"><img src="<?php echo base_url() ?>gambar/pelamar/<?php echo $this->db->query("select * from tbl_pelamar where kd_pelamar='$kd_pelamar'")->row()->foto_pelamar ?>" class="img-circle" alt="User Image"> </div>
       <?php } else { ?>
         <div class="image text-center"><img src="<?php echo base_url() ?>gambar/<?php echo $this->db->query("select * from tbl_perusahaan where kd_perush='$kd_perush'")->row()->logo_perush ?>" class="img-circle" alt="User Image"> </div>
 
@@ -74,7 +74,7 @@
           </ul>
         </li>
 
-      <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
+      <?php } elseif ($this->session->userdata('posisi') == 'perusahaan') { ?>
         <li class="treeview"> <a href="#"><i class="fa fa-car mr-2" aria-hidden="true"></i><span>Input Service</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/service') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>Input Service</a></li>
@@ -85,8 +85,8 @@
 
         <li class="treeview"> <a href="#"><i class="fa fa-cogs mr-2" aria-hidden="true"></i><span>Pengaturan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
-            <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/datadiri') ?>"><i class="fa fa-user mr-2" aria-hidden="true"></i>Data Diri</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/gantipassadmin') ?>"><i class="fa fa-key mr-2" aria-hidden="true"></i>Ganti Password</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/datadiri') ?>"><i class="fa fa-user mr-2" aria-hidden="true"></i>Data Perusahaan</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/gantipassperush') ?>"><i class="fa fa-key mr-2" aria-hidden="true"></i>Ganti Password</a></li>
 
           </ul>
         </li>
