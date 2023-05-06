@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2023 at 05:35 AM
+-- Generation Time: May 06, 2023 at 07:21 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -282,7 +282,7 @@ CREATE TABLE `tbl_lowongan` (
 --
 
 CREATE TABLE `tbl_pelamar` (
-  `kd_pelamar` int(15) NOT NULL,
+  `kd_pelamar` varchar(20) NOT NULL,
   `nama_pelamar` varchar(40) NOT NULL,
   `noktp_pelamar` varchar(20) NOT NULL,
   `tempatlahir_pelamar` varchar(40) NOT NULL,
@@ -297,8 +297,16 @@ CREATE TABLE `tbl_pelamar` (
   `statusperkawinan_pelamar` varchar(20) NOT NULL,
   `alamatlengkap_pelamar` text NOT NULL,
   `nohp_pelamar` varchar(20) NOT NULL,
-  `password_pelamar` varchar(50) NOT NULL
+  `password_pelamar` varchar(50) NOT NULL,
+  `foto_pelamar` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_pelamar`
+--
+
+INSERT INTO `tbl_pelamar` (`kd_pelamar`, `nama_pelamar`, `noktp_pelamar`, `tempatlahir_pelamar`, `tanggallahir_pelamar`, `agama_pelamar`, `jk_pelamar`, `tinggibadan_pelamar`, `beratbadan_pelamar`, `disabilitas_pelamar`, `jenisdisabilitas_pelamar`, `keterangandisabilitas_pelamar`, `statusperkawinan_pelamar`, `alamatlengkap_pelamar`, `nohp_pelamar`, `password_pelamar`, `foto_pelamar`) VALUES
+('PELAMAR001', 'Sutrisno', '', '', '0000-00-00', '', '', '', '', '', '', '', '', 'ererer', '', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png');
 
 -- --------------------------------------------------------
 
@@ -365,7 +373,7 @@ CREATE TABLE `tbl_perusahaan` (
   `namapj_perush` varchar(50) NOT NULL,
   `password_perush` varchar(35) NOT NULL,
   `logo_perush` varchar(50) NOT NULL,
-  `acc_admin` varchar(50) NOT NULL
+  `acc_admin` enum('belum','acc','banned') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -373,7 +381,9 @@ CREATE TABLE `tbl_perusahaan` (
 --
 
 INSERT INTO `tbl_perusahaan` (`kd_perush`, `nama_perush`, `desk_perush`, `jenisbu_perush`, `nib_perush`, `sektor_perush`, `alamatlengkap_perush`, `notel_perush`, `namapj_perush`, `password_perush`, `logo_perush`, `acc_admin`) VALUES
-('PERUSH001', 'dfdfdfdfdf', '', '', '', '', '', '', '', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush.png', '');
+('PERUSH001', 'dfdfdfdfdf', 'erere', 'erere', 'ererer', 'erere', 'ererer', '34343', 'edrfererr', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush.png', 'banned'),
+('PERUSH002', 'aaa', 'aaa', 'aaa', 'aaa', 'aa', 'aaa', 'aa', 'aa', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1683328914.jpg', 'acc'),
+('PERUSH003', 'erer', 'erer', 'erer', 'erer', 'erer', 'erer', '34343', '3434', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1683333693.png', 'acc');
 
 --
 -- Indexes for dumped tables
@@ -484,12 +494,6 @@ ALTER TABLE `tbl_logo`
 --
 ALTER TABLE `tbl_lowongan`
   MODIFY `kd_lowongan` int(50) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_pelamar`
---
-ALTER TABLE `tbl_pelamar`
-  MODIFY `kd_pelamar` int(15) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
