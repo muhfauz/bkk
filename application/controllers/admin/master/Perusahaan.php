@@ -46,9 +46,10 @@ class Perusahaan extends CI_Controller
     if ($this->upload->do_upload('logo_perush')) {
       $image = $this->upload->data();
       $data = array(
-         'nama_perush' => $this->input->post('nama_perush'),
+        'nama_perush' => $this->input->post('nama_perush'),
         'kd_perush' => $this->input->post('kd_perush'),
         'desk_perush' => $this->input->post('desk_perush'),
+        'acc_admin' => $this->input->post('acc_admin'),
         'jenisbu_perush' => $this->input->post('jenisbu_perush'),
         'nib_perush' => $this->input->post('nib_perush'),
         'sektor_perush' => $this->input->post('sektor_perush'),
@@ -85,7 +86,7 @@ class Perusahaan extends CI_Controller
         'notel_perush' => $this->input->post('notel_perush'),
         'namapj_perush' => $this->input->post('namapj_perush'),
         'password_perush' => md5($this->input->post('password_perush')),
-        // 'logo_perush' => $image['file_name'],
+        'logo_perush' => 'logo_perush.png'
 
 
       );
@@ -141,15 +142,17 @@ class Perusahaan extends CI_Controller
       $where = array('kd_perush' => $this->input->post('kd_perush'));
       $data = array(
         'nama_perush' => $this->input->post('nama_perush'),
-        'kd_perush' => $this->input->post('kd_perush'),
+        // 'kd_perush' => $this->input->post('kd_perush'),
         'desk_perush' => $this->input->post('desk_perush'),
         'jenisbu_perush' => $this->input->post('jenisbu_perush'),
+        'acc_admin' => $this->input->post('acc_admin'),
         'nib_perush' => $this->input->post('nib_perush'),
         'sektor_perush' => $this->input->post('sektor_perush'),
         'alamatlengkap_perush' => $this->input->post('alamatlengkap_perush'),
         'notel_perush' => $this->input->post('notel_perush'),
         'namapj_perush' => $this->input->post('namapj_perush'),
-        'password_perush' => md5($this->input->post('password_perush')),
+        'logo_perush' => $image['file_name'],
+        // 'password_perush' => md5($this->input->post('password_perush')),
       );
       $this->Mglobal->editdata('tbl_perusahaan', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -163,15 +166,16 @@ class Perusahaan extends CI_Controller
       $where = array('kd_perush' => $this->input->post('kd_perush'));
       $data = array(
         'nama_perush' => $this->input->post('nama_perush'),
-        'kd_perush' => $this->input->post('kd_perush'),
+        // 'kd_perush' => $this->input->post('kd_perush'),
         'desk_perush' => $this->input->post('desk_perush'),
         'jenisbu_perush' => $this->input->post('jenisbu_perush'),
+        'acc_admin' => $this->input->post('acc_admin'),
         'nib_perush' => $this->input->post('nib_perush'),
         'sektor_perush' => $this->input->post('sektor_perush'),
         'alamatlengkap_perush' => $this->input->post('alamatlengkap_perush'),
         'notel_perush' => $this->input->post('notel_perush'),
         'namapj_perush' => $this->input->post('namapj_perush'),
-        'password_perush' => md5($this->input->post('password_perush')),
+        // 'password_perush' => md5($this->input->post('password_perush')),
 
       );
       $this->Mglobal->editdata('tbl_perusahaan', $where, $data);

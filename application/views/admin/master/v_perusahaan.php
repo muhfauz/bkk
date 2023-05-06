@@ -25,8 +25,8 @@
                             <th class="text-center text-white align-middle" rowspan="2">Kode Perusahaan</th>
                             <th class="text-center text-white align-middle" rowspan="2">Nama Perusahaan</th>
                             <th class="text-center text-white align-middle" rowspan="2">Deskripsi Perusahaan</th>
+                            <th class="text-center text-white align-middle" rowspan="2">Status</th>
                             <th class="text-center text-white align-middle" rowspan="2"></th>
-
 
                         </tr>
 
@@ -40,6 +40,17 @@
                                 <td><?php echo $a->kd_perush ?></td>
                                 <td><?php echo $a->nama_perush ?></td>
                                 <td><?php echo $a->desk_perush ?></td>
+                                <td><?php if ($a->acc_admin == 'belum') { ?>
+                                        <span class="badge badge-primary">Belum</span>
+
+                                    <?php } elseif ($a->acc_admin == 'acc') { ?>
+
+                                        <span class="badge badge-success">ACC</span>
+                                    <?php } else { ?>
+                                        <span class="badge badge-danger">Banned</span>
+                                    <?php } ?>
+
+                                </td>
                                 <td class="float-right">
                                     <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_perush ?>"> <i class="fa fa-info mr-2"></i> Detail</a>
                                     <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_perush ?>"> <i class="fa fa-edit mr-2"></i> Edit</a>
@@ -114,6 +125,21 @@
                     <div class="form-group">
                         <label for="">Nama Penanggungjawab Perusahaan</label>
                         <input name="namapj_perush" type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Status</label>
+                        <div class="form-group">
+                            <select class="form-control" name="acc_admin" id="" required>
+                                <option value="">-Pilih Status-</option>
+                                <option value="belum">Belum Acc</option>
+                                <option value="acc">ACC</option>
+                                <option value="banned">Banned</option>
+
+
+                            </select>
+                        </div>
+
+
                     </div>
 
                     <div class="form-group">
@@ -194,10 +220,19 @@
                             <td><?php echo $a->namapj_perush ?></td>
                         </tr>
 
-                        <!-- <tr>
-                            <th>Password Perusahaan</th>
-                            <td><?php echo $a->password_perush ?></td>
-                        </tr> -->
+                        <tr>
+                            <th>Status Perusahaan</th>
+                            <td><?php if ($a->acc_admin == 'belum') { ?>
+                                    <span class="badge badge-primary">Belum</span>
+
+                                <?php } elseif ($a->acc_admin == 'acc') { ?>
+
+                                    <span class="badge badge-success">ACC</span>
+                                <?php } else { ?>
+                                    <span class="badge badge-danger">Banned</span>
+                                <?php } ?>
+                            </td>
+                        </tr>
 
                         <tr>
                             <th>Logo Perusahaan </th>
@@ -276,6 +311,7 @@
                         <div class="form-group">
                             <label for="">Nama Perusahaan</label>
                             <input name="nama_perush" type="text" class="form-control" value="<?php echo $a->nama_perush ?>" required>
+                            <input name="kd_perush" type="hidden" class="form-control" value="<?php echo $a->kd_perush ?>" required>
                         </div>
 
                         <div class="form-group">
@@ -312,11 +348,37 @@
                             <label for="">Nama Penanggungjawab Perusahaan</label>
                             <input name="namapj_perush" type="text" class="form-control" value="<?php echo $a->namapj_perush ?>" required>
                         </div>
-
                         <div class="form-group">
+                            <label for="">Status</label>
+                            <div class="form-group">
+                                <select class="form-control" name="acc_admin" id="" required>
+                                    <option value="<?php echo $a->acc_admin ?>">
+                                        <?php if ($a->acc_admin == 'belum') { ?>
+                                            Belum
+
+                                        <?php } elseif ($a->acc_admin == 'acc') { ?>
+
+                                            ACC
+                                        <?php } else { ?>
+                                            Banned
+                                        <?php } ?>
+                                    </option>
+                                    <option value="">-Pilih Status-</option>
+                                    <option value="belum">Belum Acc</option>
+                                    <option value="acc">ACC</option>
+                                    <option value="banned">Banned</option>
+
+
+                                </select>
+                            </div>
+
+
+                        </div>
+
+                        <!-- <div class="form-group">
                             <label for="">Password Perusahaan</label>
                             <input name="password_perush" type="text" class="form-control" value="<?php echo $a->password_perush ?>" required>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
 
