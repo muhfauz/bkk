@@ -143,7 +143,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-aqua">
-                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Detail Data karyawan</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Detail Data Perusahaan</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -194,13 +194,13 @@
                             <td><?php echo $a->namapj_perush ?></td>
                         </tr>
 
-                        <tr>
+                        <!-- <tr>
                             <th>Password Perusahaan</th>
                             <td><?php echo $a->password_perush ?></td>
-                        </tr>
+                        </tr> -->
 
                         <tr>
-                            <th>Foto</th>
+                            <th>Logo Perusahaan </th>
                             <td>
                                 <img width="100" height="100" src="<?php echo base_url('gambar/') . $a->logo_perush ?>" alt="">
                             </td>
