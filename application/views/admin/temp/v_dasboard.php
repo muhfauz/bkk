@@ -4,15 +4,17 @@
   <div class="content-header sty-one">
     <?php
     $kd_admin = $this->session->userdata('kd_admin');
+    $kd_perush = $this->session->userdata('kd_perush');
+    $kd_pelamar = $this->session->userdata('kd_pelamar');
 
     ?>
     <?php if ($this->session->userdata('posisi') == 'admin') { ?>
 
       <h4 class="fa fa-home" aria-hidden="true"> Selamat Datang, <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?> [ADMINISTRATOR]</h4>
-    <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
-      <h4 class="fa fa-home" aria-hidden="true"> Selamat Datang, <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?> [ADMIN SERVICE]</h4>
+    <?php } elseif ($this->session->userdata('posisi') == 'perusahaan') { ?>
+      <h4 class="fa fa-home" aria-hidden="true"> Selamat Datang, <?php echo $this->db->query("select * from tbl_perusahaan where kd_perush='$kd_perush'")->row()->nama_perush ?> [ADMIN PERUSAHAAN]</h4>
     <?php } else { ?>
-      <h4 class="fa fa-home" aria-hidden="true"> Selamat Datang, <?php echo $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->row()->nama_admin ?> [ADMIN SALES]</h4>
+      <h4 class="fa fa-home" aria-hidden="true"> Selamat Datang, <?php echo $this->db->query("select * from tbl_pelamar where kd_pelamar='$kd_pelamar'")->row()->nama_pelamar ?> [PELAMAR]</h4>
     <?php } ?>
 
 

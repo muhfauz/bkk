@@ -80,10 +80,10 @@
 
       <?php } elseif ($this->session->userdata('posisi') == 'perusahaan') { ?>
         <?php if ($this->session->userdata('acc_admin') == 'acc') { ?>
-          <li class="treeview"> <a href="#"><i class="fa fa-car mr-2" aria-hidden="true"></i><span>Lowongan Kerja</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+          <li class="treeview"> <a href="#"><i class="fa fa-laptop mr-2" aria-hidden="true"></i><span>Lowongan Kerja</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
             <ul class="treeview-menu">
               <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/service') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>Loowngan Kerja</a></li>
-              <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/service') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>History Service</a></li>
+              <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/service') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>History Lowongan Kerja</a></li>
 
             </ul>
           </li>
