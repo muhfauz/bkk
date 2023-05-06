@@ -40,9 +40,9 @@
 
         <!-- /.col -->
         <div class="col-lg-4 col-xs-6">
-          <a href="<?php echo base_url('admin/master/karyawan') ?>">
+          <a href="<?php echo base_url('admin/master/perusahaan') ?>">
             <div class="info-box"> <span class="info-box-icon bg-yellow"><i class="fa fa-building"></i></span>
-              <div class="info-box-content"> <span class="info-box-number">Perusahaan</span> <span class="info-box-text">karyawan </span></div>
+              <div class="info-box-content"> <span class="info-box-number">Perusahaan</span> <span class="info-box-text"><?php echo $this->db->query("select * from tbl_perusahaan")->num_rows() ?> perusahaan </span></div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
