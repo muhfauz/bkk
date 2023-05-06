@@ -94,7 +94,8 @@
 
                     <div class="form-group">
                         <label for="">Deskripsi Perusahaan</label>
-                        <input name="desk_perush" type="text" class="form-control" required>
+
+                        <textarea name="desk_perush" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
 
                     <div class="form-group">
@@ -316,7 +317,8 @@
 
                         <div class="form-group">
                             <label for="">Deskripsi Perusahaan</label>
-                            <input name="desk_perush" type="text" class="form-control" value="<?php echo $a->desk_perush ?>" required>
+                            <!-- <input name="desk_perush" type="text" class="form-control" value="<?php echo $a->desk_perush ?>" required> -->
+                            <textarea name="desk_perush" class="form-control" id="exampleFormControlTextarea1" rows="3" required><?php echo $a->desk_perush ?></textarea>
                         </div>
 
                         <div class="form-group">

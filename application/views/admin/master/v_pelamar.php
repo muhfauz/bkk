@@ -24,7 +24,7 @@
                             <th class="text-center text-white align-middle" rowspan="2" width="10px">No</th>
                             <th class="text-center text-white align-middle" rowspan="2">Kode pelamar</th>
                             <th class="text-center text-white align-middle" rowspan="2">Nama pelamar</th>
-                            <th class="text-center text-white align-middle" rowspan="2">Deskripsi pelamar</th>
+                            <th class="text-center text-white align-middle" rowspan="2">Alamat</th>
                             <th class="text-center text-white align-middle" rowspan="2"></th>
 
 
@@ -39,7 +39,7 @@
                                 <td class="text-center font-weight-bold"><?php echo $no++; ?></td>
                                 <td><?php echo $a->kd_pelamar ?></td>
                                 <td><?php echo $a->nama_pelamar ?></td>
-                                <td><?php echo $a->desk_pelamar ?></td>
+                                <td><?php echo $a->alamatlengkap_pelamar ?></td>
                                 <td class="float-right">
                                     <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_pelamar ?>"> <i class="fa fa-info mr-2"></i> Detail</a>
                                     <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_pelamar ?>"> <i class="fa fa-edit mr-2"></i> Edit</a>
@@ -106,13 +106,18 @@
                         <input name="noktp_pelamar" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
+                        <label for="">Alamat</label>
+                        <textarea name="alamatlengkap_pelamar" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+
+                    </div>
+                    <div class="form-group">
                         <label for="">Password</label>
                         <input name="password_pelamar" type="password" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">Foto pelamar</label>
-                        <input name="logo_pelamar" type="file" class="form-control" multiple="multiple">
+                        <input name="foto_pelamar" type="file" class="form-control" multiple="multiple">
                         <span class="text-red font-italic text-sm-left">Gambar harus berukuran 370 x 240px untuk tampilan terbaik</span>
                     </div>
 
@@ -134,7 +139,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-aqua">
-                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Detail Data karyawan</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Detail Data Pelamar</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -153,7 +158,7 @@
                         <tr>
                             <th>Foto</th>
                             <td>
-                                <img width="100" height="100" src="<?php echo base_url('gambar/') . $a->logo_pelamar ?>" alt="">
+                                <img width="100" height="100" src="<?php echo base_url('gambar/pelamar/') . $a->foto_pelamar ?>" alt="">
                             </td>
                         </tr>
 
@@ -234,9 +239,9 @@
 
                             <label for="">Logo</label>
                             <br>
-                            <img width="100" height="100" src="<?php echo base_url('gambar/') . $a->logo_pelamar ?>" alt="">
+                            <img width="100" height="100" src="<?php echo base_url('gambar/pelamar/') . $a->foto_pelamar ?>" alt="">
                             <br>
-                            <input name="logo_pelamar" type="file" class="form-control" value="">
+                            <input name="foto_pelamar" type="file" class="form-control" value="">
                         </div>
 
 

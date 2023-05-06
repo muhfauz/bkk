@@ -38,18 +38,18 @@ class Pelamar extends CI_Controller
     // $this->form_validation->set_rules('password_karyawan', 'Password karyawan', 'required');
     // if($this->form_validation->run()!=false)
     // {
-    $config['upload_path'] = './gambar/';
+    $config['upload_path'] = './gambar/pelamar/';
     $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp';
     $config['max_size'] = '2048';
-    $config['file_name'] = 'logo_perush' . time();
+    $config['file_name'] = 'foto_pelamar' . time();
     $this->load->library('upload', $config);
-    if ($this->upload->do_upload('logo_perush')) {
+    if ($this->upload->do_upload('foto_pelamar')) {
       $image = $this->upload->data();
       $data = array(
-        'nama_perush' => $this->input->post('nama_perush'),
-        'kd_perush' => $this->input->post('kd_perush'),
-        'password_perush' => md5($this->input->post('password_perush')),
-        'logo_perush' => $image['file_name'],
+        'nama_pelamar' => $this->input->post('nama_pelamar'),
+        'kd_pelamar' => $this->input->post('kd_pelamar'),
+        'alamatlengkap_pelamar' => $this->input->post('alamatlengkap_pelamar'),
+        'foto_pelamar' => $image['file_name'],
 
 
 
@@ -68,10 +68,10 @@ class Pelamar extends CI_Controller
       redirect(base_url('admin/master/pelamar/'));
     } else {
       $data = array(
-        'nama_perush' => $this->input->post('nama_perush'),
-        'kd_perush' => $this->input->post('kd_perush'),
-        'password_perush' => md5($this->input->post('password_perush')),
-        'logo_perush' => 'logo_perush.png',
+        'nama_pelamar' => $this->input->post('nama_pelamar'),
+        'kd_pelamar' => $this->input->post('kd_pelamar'),
+        'alamatlengkap_pelamar' => $this->input->post('alamatlengkap_pelamar'),
+        'foto_pelamar' => 'foto_pelamar.png',        // 'logo_perush' => 'logo_perush.png',
 
 
       );
@@ -97,7 +97,7 @@ class Pelamar extends CI_Controller
   // }
   function hapuspelamar()
   {
-    $where = array('kd_perush' => $this->input->post('kd_perush'));
+    $where = array('kd_pelamar' => $this->input->post('kd_pelamar'));
     $this->Mglobal->hapusdata($where, 'tbl_pelamar');
     $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Hapus Data Sukses!</strong> Data berhasil dihapus dari database.
