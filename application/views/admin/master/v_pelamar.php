@@ -97,7 +97,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Berat Badan</label>
-                        <input name="beratbadan_pelamar" type="text" class="form-control" required>
+                        <input name="beratbadan_pelamar" type="number" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="">Status Perkawinan</label>
@@ -113,15 +113,20 @@
                     </div>
                     <div class="form-group">
                         <label for="">Alamat Lenglap</label>
-                        <input name="alamatlengkap_pelamar" type="text" class="form-control" required>
+                        <textarea name="alamatlengkap_pelamar" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="">No HP</label>
-                        <input name="nohp_pelamar" type="text" class="form-control" required>
+                        <input name="nohp_pelamar" type="number" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="">Jenis Kelamin</label>
-                        <input name="jk_pelamar" type="text" class="form-control" required>
+                        <select name="jk_pelamar" class="form-control" id="" required>
+                            <option value="">-Pilih Jenis Kelamin-</option>
+                            <option value="Pria">Pria</option>
+                            <option value="Wanita">Wanita</option>
+                        </select>
+
                     </div>
                     <div class="form-group">
                         <label for="">Agama</label>
