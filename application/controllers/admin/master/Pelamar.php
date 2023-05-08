@@ -46,10 +46,17 @@ class Pelamar extends CI_Controller
     if ($this->upload->do_upload('foto_pelamar')) {
       $image = $this->upload->data();
       $data = array(
-        'nama_pelamar' => $this->input->post('nama_pelamar'),
         'kd_pelamar' => $this->input->post('kd_pelamar'),
-        'password_pelamar' => md5($this->input->post('password_pelamar')),
+        'nama_pelamar' => $this->input->post('nama_pelamar'),
+        'noktp_pelamar' => $this->input->post('noktp_pelamar'),
+        'tempatlahir_pelamar' => $this->input->post('tempatlahir_pelamar'),
+        'tanggallahir_pelamar' => $this->input->post('tanggallahir_pelamar'),
+        'agama_pelamar' => $this->input->post('agama_pelamar'),
+        'jk_pelamar' => $this->input->post('jk_pelamar'),
+        'tinggibadan_pelamar' => $this->input->post('tinggibadan_pelamar'),
+        'statusperkawinan_pelamar' => $this->input->post('statusperkawinan_pelamar'),
         'alamatlengkap_pelamar' => $this->input->post('alamatlengkap_pelamar'),
+        'password_pelamar' => md5($this->input->post('password_pelamar')),
         'foto_pelamar' => $image['file_name'],
 
 
@@ -59,7 +66,7 @@ class Pelamar extends CI_Controller
         // 'ket_karyawan' => $this->input->post('ket_karyawan'),
         // 'foto_karyawan' => $image['file_name'],
       );
-      $this->Mglobal->tambahdata($data, 'tbl_perush');
+      $this->Mglobal->tambahdata($data, 'tbl_pelamar');
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Tambah Data Sukses!</strong> Data berhasil disimpan ke database.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -69,10 +76,17 @@ class Pelamar extends CI_Controller
       redirect(base_url('admin/master/pelamar/'));
     } else {
       $data = array(
-        'nama_pelamar' => $this->input->post('nama_pelamar'),
         'kd_pelamar' => $this->input->post('kd_pelamar'),
-        'password_pelamar' => md5($this->input->post('password_pelamar')),
+        'nama_pelamar' => $this->input->post('nama_pelamar'),
+        'noktp_pelamar' => $this->input->post('noktp_pelamar'),
+        'tempatlahir_pelamar' => $this->input->post('tempatlahir_pelamar'),
+        'tanggallahir_pelamar' => $this->input->post('tanggallahir_pelamar'),
+        'agama_pelamar' => $this->input->post('agama_pelamar'),
+        'jk_pelamar' => $this->input->post('jk_pelamar'),
+        'tinggibadan_pelamar' => $this->input->post('tinggibadan_pelamar'),
+        'statusperkawinan_pelamar' => $this->input->post('statusperkawinan_pelamar'),
         'alamatlengkap_pelamar' => $this->input->post('alamatlengkap_pelamar'),
+        'password_pelamar' => md5($this->input->post('password_pelamar')),
         'foto_pelamar' => 'foto_pelamar.png',        // 'logo_perush' => 'logo_perush.png',
 
 

@@ -76,8 +76,12 @@
                         <input name="kd_pelamar" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_pelamar", "tbl_pelamar", "PELAMAR") ?>">
                     </div>
                     <div class="form-group">
-                        <label for="">Nama pelamar</label>
+                        <label for="">Nama Lengkap </label>
                         <input name="nama_pelamar" type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">NO KTP </label>
+                        <input name="noktp_pelamar" type="number" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="">Tempat Lahir</label>
@@ -88,7 +92,39 @@
                         <input name="tanggallahir_pelamar" type="date" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="">Agama Pelamar</label>
+                        <label for="">Tinggi Badan </label>
+                        <input name="tinggibadan_pelamar" type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Berat Badan</label>
+                        <input name="beratbadan_pelamar" type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Status Perkawinan</label>
+                        <div class="form-group">
+                            <select class="form-control" name="statusperkawinan_pelamar" id="" required>
+                                <option value="">-Pilih Status-</option>
+                                <option value="lajang">Lajang</option>
+                                <option value="kawin">Kawin</option>
+                                <option value="janda">Janda/Duda</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Alamat Lenglap</label>
+                        <input name="alamatlengkap_pelamar" type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">No HP</label>
+                        <input name="nohp_pelamar" type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Jenis Kelamin</label>
+                        <input name="jk_pelamar" type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Agama</label>
                         <div class="form-group">
                             <select class="form-control" name="agama_pelamar" id="" required>
                                 <option value="">-Pilih Agama-</option>
@@ -97,19 +133,12 @@
                                 <option value="Kristen">Protestan</option>
                                 <option value="Kristen">Hindu</option>
                                 <option value="Kristen">Budha</option>
-
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="">No KTP</label>
-                        <input name="noktp_pelamar" type="text" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Alamat</label>
-                        <textarea name="alamatlengkap_pelamar" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
 
-                    </div>
+
+
                     <div class="form-group">
                         <label for="">Password</label>
                         <input name="password_pelamar" type="password" class="form-control" required>
@@ -154,7 +183,46 @@
                             <th>Nama pelamar</th>
                             <td><?php echo $a->nama_pelamar ?></td>
                         </tr>
-
+                        <tr>
+                            <th>No KTP pelamar</th>
+                            <td><?php echo $a->noktp_pelamar ?></td>
+                        </tr>
+                        <tr>
+                            <th>Tempat Lahir pelamar</th>
+                            <td><?php echo $a->tempatlahir_pelamar ?></td>
+                        </tr>
+                        <tr>
+                            <th>Tanggal Lahir pelamar</th>
+                            <td><?php echo $a->tanggallahir_pelamar ?></td>
+                        </tr>
+                        <tr>
+                            <th>Agama Pelamar</th>
+                            <td><?php echo $a->agama_pelamar ?></td>
+                        </tr>
+                        <tr>
+                            <th>Jenis Kelamin pelamar</th>
+                            <td><?php echo $a->jk_pelamar ?></td>
+                        </tr>
+                        <tr>
+                            <th>Tinggi Badan pelamar</th>
+                            <td><?php echo $a->tinggibadan_pelamar ?></td>
+                        </tr>
+                        <tr>
+                            <th>Berat Badan pelamar</th>
+                            <td><?php echo $a->beratbadan_pelamar ?></td>
+                        </tr>
+                        <tr>
+                            <th>Status Perkawinan pelamar</th>
+                            <td><?php echo $a->statusperkawinan_pelamar ?></td>
+                        </tr>
+                        <tr>
+                            <th>Alamat Lengkap pelamar</th>
+                            <td><?php echo $a->alamatlengkap_pelamar ?></td>
+                        </tr>
+                        <tr>
+                            <th>No HP pelamar</th>
+                            <td><?php echo $a->nohp_pelamar ?></td>
+                        </tr>
                         <tr>
                             <th>Foto</th>
                             <td>
