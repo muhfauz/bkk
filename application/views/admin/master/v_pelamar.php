@@ -307,10 +307,86 @@
                             <input name="nama_pelamar" type="text" class="form-control" value="<?php echo $a->nama_pelamar ?>" required>
                             <input name="kd_pelamar" type="hidden" class="form-control" value="<?php echo $a->kd_pelamar ?>" required>
                         </div>
+                        <div class="form-group">
+                            <label for="">NO KTP </label>
+                            <input name="noktp_pelamar" type="number" class="form-control" value="<?php echo $a->noktp_pelamar ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tempat Lahir</label>
+                            <input name="tempatlahir_pelamar" type="text" class="form-control" value="<?php echo $a->tempatlahir_pelamar ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tanggal Lahir</label>
+                            <input name="tanggallahir_pelamar" type="date" class="form-control" value="<?php echo $a->tanggallahir_pelamar ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tinggi Badan </label>
+                            <input name="tinggibadan_pelamar" type="text" class="form-control" value="<?php echo $a->tinggibadan_pelamar ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Berat Badan</label>
+                            <input name="beratbadan_pelamar" type="number" class="form-control" value="<?php echo $a->beratbadan_pelamar ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Status Perkawinan</label>
+                            <div class="form-group">
+                                <select class="form-control" name="statusperkawinan_pelamar" id="" required>
+                                    <?php if ($a->statusperkawinan_pelamar == 'lajang') { ?>
+                                        <option value="lajang">Lajang</option>
+                                    <?php } elseif ($a->statusperkawinan_pelamar == 'kawin') { ?>
+                                        <option value="kawin">Kawin</option>
+                                    <?php } else { ?>
+                                        <option value="janda">Janda/Duda</option>
+                                    <?php }  ?>
+
+                                    <option value="">-Pilih Status-</option>
+                                    <option value="lajang">Lajang</option>
+                                    <option value="kawin">Kawin</option>
+                                    <option value="janda">Janda/Duda</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Alamat Lenglap</label>
+                            <textarea name="alamatlengkap_pelamar" class="form-control" id="exampleFormControlTextarea1" rows="3" required><?php echo $a->beratbadan_pelamar ?>></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">No HP</label>
+                            <input name="nohp_pelamar" type="number" class="form-control" value="<?php echo $a->nohp_pelamar ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Jenis Kelamin</label>
+                            <select name="jk_pelamar" class="form-control" id="" required>
+                                <?php if ($a->jk_pelamar == 'Pria') { ?>
+                                    <option value="Pria">Pria</option>
+                                <?php } else { ?>
+                                    <option value="Wanita">Wanita</option>
+                                <?php }  ?>
+                                <option value="">-Pilih Jenis Kelamin-</option>
+                                <option value="Pria">Pria</option>
+                                <option value="Wanita">Wanita</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="">Agama</label>
+                            <div class="form-group">
+                                <select class="form-control" name="agama_pelamar" id="" required>
+                                    <option value="<?php echo $a->agama_pelamar ?>"><?php echo $a->agama_pelamar ?></option>
+                                    <option value="">-Pilih Agama-</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Kristen">Kristen</option>
+                                    <option value="Protestan">Protestan</option>
+                                    <option value="Hindu">Hindu</option>
+                                    <option value="Budha">Budha</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div class="form-group">
 
-                            <label for="">Logo</label>
+                            <label for="">Foto</label>
                             <br>
                             <img width="100" height="100" src="<?php echo base_url('gambar/pelamar/') . $a->foto_pelamar ?>" alt="">
                             <br>
