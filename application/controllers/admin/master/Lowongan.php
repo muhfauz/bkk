@@ -114,20 +114,20 @@ class Lowongan extends CI_Controller
   // $this->load->view('karyawan/temp/v_footer');
   // }
   // }
-  function hapusperusahaan()
+  function hapuslowongan()
   {
     $where = array('kd_lowongan' => $this->input->post('kd_lowongan'));
-    $this->Mglobal->hapusdata($where, 'tbl_perusahaan');
+    $this->Mglobal->hapusdata($where, 'tbl_lowongan');
     $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Hapus Data Sukses!</strong> Data berhasil dihapus dari database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-    redirect(base_url('admin/master/perusahaan/'));
+    redirect(base_url('admin/master/lowongan/'));
   }
 
-  function aksieditperusahaan()
+  function aksieditlowongan()
   {
 
     //Form Validasi jika kosong
@@ -136,26 +136,28 @@ class Lowongan extends CI_Controller
     //   $this->form_validation->set_rules('password_karyawan', 'Password karyawan', 'required');
     //  if($this->form_validation->run()!=false)
     //  {
-    $config['upload_path'] = './gambar/';
+    $config['upload_path'] = './gambar/lowongan/';
     $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp';
     $config['max_size'] = '2048';
-    $config['file_name'] = 'lowongan_lowongan' . time();
+    $config['file_name'] = 'gambar_lowongan' . time();
     $this->load->library('upload', $config);
-    if ($this->upload->do_upload('lowongan_lowongan')) {
+    if ($this->upload->do_upload('gambar_lowongan')) {
       $image = $this->upload->data();
       $where = array('kd_lowongan' => $this->input->post('kd_lowongan'));
       $data = array(
         'nama_lowongan' => $this->input->post('nama_lowongan'),
-        // 'kd_lowongan' => $this->input->post('kd_lowongan'),
+        'kd_lowongan' => $this->input->post('kd_lowongan'),
         'desk_lowongan' => $this->input->post('desk_lowongan'),
-        'jenisbu_lowongan' => $this->input->post('jenisbu_lowongan'),
         'acc_admin' => $this->input->post('acc_admin'),
-        'nib_lowongan' => $this->input->post('nib_lowongan'),
-        'sektor_lowongan' => $this->input->post('sektor_lowongan'),
-        'alamatlengkap_lowongan' => $this->input->post('alamatlengkap_lowongan'),
-        'notel_lowongan' => $this->input->post('notel_lowongan'),
-        'namapj_lowongan' => $this->input->post('namapj_lowongan'),
-        'lowongan_lowongan' => $image['file_name'],
+        'kd_perush' => $kd_perush,
+        // 'jenisbu_lowongan' => $this->input->post('jenisbu_lowongan'),
+        // 'nib_lowongan' => $this->input->post('nib_lowongan'),
+        // 'sektor_lowongan' => $this->input->post('sektor_lowongan'),
+        // 'alamatlengkap_lowongan' => $this->input->post('alamatlengkap_lowongan'),
+        // 'notel_lowongan' => $this->input->post('notel_lowongan'),
+        // 'namapj_lowongan' => $this->input->post('namapj_lowongan'),
+        // 'password_lowongan' => md5($this->input->post('password_lowongan')),
+        'gambar_lowongan' => $image['file_name'],
         // 'password_lowongan' => md5($this->input->post('password_lowongan')),
       );
       $this->Mglobal->editdata('tbl_perusahaan', $where, $data);
@@ -170,16 +172,11 @@ class Lowongan extends CI_Controller
       $where = array('kd_lowongan' => $this->input->post('kd_lowongan'));
       $data = array(
         'nama_lowongan' => $this->input->post('nama_lowongan'),
-        // 'kd_lowongan' => $this->input->post('kd_lowongan'),
+        'kd_lowongan' => $this->input->post('kd_lowongan'),
         'desk_lowongan' => $this->input->post('desk_lowongan'),
-        'jenisbu_lowongan' => $this->input->post('jenisbu_lowongan'),
         'acc_admin' => $this->input->post('acc_admin'),
-        'nib_lowongan' => $this->input->post('nib_lowongan'),
-        'sektor_lowongan' => $this->input->post('sektor_lowongan'),
-        'alamatlengkap_lowongan' => $this->input->post('alamatlengkap_lowongan'),
-        'notel_lowongan' => $this->input->post('notel_lowongan'),
-        'namapj_lowongan' => $this->input->post('namapj_lowongan'),
-        // 'password_lowongan' => md5($this->input->post('password_lowongan')),
+        'kd_perush' => $kd_perush,
+
 
       );
       $this->Mglobal->editdata('tbl_perusahaan', $where, $data);
@@ -189,7 +186,7 @@ class Lowongan extends CI_Controller
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-      redirect(base_url('admin/master/perusahaan/'));
+      redirect(base_url('admin/master/lowongan/'));
     }
   }
 }
