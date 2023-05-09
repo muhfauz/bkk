@@ -191,54 +191,14 @@
                             <td><?php echo $a->desk_lowongan ?></td>
                         </tr>
 
-                        <tr>
-                            <th>Jenis Badan Usaha lowongan</th>
-                            <td><?php echo $a->jenisbu_lowongan ?></td>
-                        </tr>
+
+
+
 
                         <tr>
-                            <th>NIB lowongan</th>
-                            <td><?php echo $a->nib_lowongan ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Sektor lowongan</th>
-                            <td><?php echo $a->sektor_lowongan ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Alamat Lengkap lowongan</th>
-                            <td><?php echo $a->alamatlengkap_lowongan ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>No Telephone lowongan</th>
-                            <td><?php echo $a->notel_lowongan ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Nama Penanggungjawab lowongan</th>
-                            <td><?php echo $a->namapj_lowongan ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Status lowongan</th>
-                            <td><?php if ($a->acc_admin == 'belum') { ?>
-                                    <span class="badge badge-primary">Belum</span>
-
-                                <?php } elseif ($a->acc_admin == 'acc') { ?>
-
-                                    <span class="badge badge-success">ACC</span>
-                                <?php } else { ?>
-                                    <span class="badge badge-danger">Banned</span>
-                                <?php } ?>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <th>Logo lowongan </th>
+                            <th>Gambar lowongan </th>
                             <td>
-                                <img width="100" height="100" src="<?php echo base_url('gambar/') . $a->logo_lowongan ?>" alt="">
+                                <img width="100" height="100" src="<?php echo base_url('gambar/lowongan/') . $a->gambar_lowongan ?>" alt="">
                             </td>
                         </tr>
 
@@ -321,61 +281,16 @@
                             <textarea name="desk_lowongan" class="form-control" id="exampleFormControlTextarea1" rows="3" required><?php echo $a->desk_lowongan ?></textarea>
                         </div>
 
-                        <div class="form-group">
-                            <label for="">Jenis Badan Usaha lowongan</label>
-                            <input name="jenisbu_lowongan" type="text" class="form-control" value="<?php echo $a->jenisbu_lowongan ?>" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">NIB lowongan</label>
-                            <input name="nib_lowongan" type="text" class="form-control" value="<?php echo $a->nib_lowongan ?>" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Sektor lowongan</label>
-                            <input name="sektor_lowongan" type="text" class="form-control" value="<?php echo $a->sektor_lowongan ?>" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Alamat Lengkap lowongan</label>
-                            <input name="alamatlengkap_lowongan" type="text" class="form-control" value="<?php echo $a->alamatlengkap_lowongan ?>" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Nomor Telephone lowongan</label>
-                            <input name="notel_lowongan" type="text" class="form-control" value="<?php echo $a->notel_lowongan ?>" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Nama Penanggungjawab lowongan</label>
-                            <input name="namapj_lowongan" type="text" class="form-control" value="<?php echo $a->namapj_lowongan ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Status</label>
-                            <div class="form-group">
-                                <select class="form-control" name="acc_admin" id="" required>
-                                    <option value="<?php echo $a->acc_admin ?>">
-                                        <?php if ($a->acc_admin == 'belum') { ?>
-                                            Belum
-
-                                        <?php } elseif ($a->acc_admin == 'acc') { ?>
-
-                                            ACC
-                                        <?php } else { ?>
-                                            Banned
-                                        <?php } ?>
-                                    </option>
-                                    <option value="">-Pilih Status-</option>
-                                    <option value="belum">Belum Acc</option>
-                                    <option value="acc">ACC</option>
-                                    <option value="banned">Banned</option>
 
 
-                                </select>
-                            </div>
 
 
-                        </div>
+
+
+
+
+
+
 
                         <!-- <div class="form-group">
                             <label for="">Password lowongan</label>
@@ -386,9 +301,9 @@
 
                             <label for="">Logo</label>
                             <br>
-                            <img width="100" height="100" src="<?php echo base_url('gambar/') . $a->logo_lowongan ?>" alt="">
+                            <img width="100" height="100" src="<?php echo base_url('gambar/lowongan/') . $a->gambar_lowongan ?>" alt="">
                             <br>
-                            <input name="logo_lowongan" type="file" class="form-control" value="">
+                            <input name="gambar_lowongan" type="file" class="form-control" value="">
                         </div>
 
 

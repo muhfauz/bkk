@@ -90,7 +90,7 @@ class Lowongan extends CI_Controller
         // 'notel_lowongan' => $this->input->post('notel_lowongan'),
         // 'namapj_lowongan' => $this->input->post('namapj_lowongan'),
         // 'password_lowongan' => md5($this->input->post('password_lowongan')),
-        'gambar_lowongan' => 'lowongan_lowongan.png'
+        'gambar_lowongan' => 'lowongan_kerja.png'
 
 
       );
