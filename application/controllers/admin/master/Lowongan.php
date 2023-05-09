@@ -136,6 +136,7 @@ class Lowongan extends CI_Controller
     //   $this->form_validation->set_rules('password_karyawan', 'Password karyawan', 'required');
     //  if($this->form_validation->run()!=false)
     //  {
+    $kd_perush = $this->session->userdata('kd_perush');
     $config['upload_path'] = './gambar/lowongan/';
     $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp';
     $config['max_size'] = '2048';
@@ -160,7 +161,7 @@ class Lowongan extends CI_Controller
         'gambar_lowongan' => $image['file_name'],
         // 'password_lowongan' => md5($this->input->post('password_lowongan')),
       );
-      $this->Mglobal->editdata('tbl_perusahaan', $where, $data);
+      $this->Mglobal->editdata('tbl_lowongan', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -179,7 +180,7 @@ class Lowongan extends CI_Controller
 
 
       );
-      $this->Mglobal->editdata('tbl_perusahaan', $where, $data);
+      $this->Mglobal->editdata('tbl_lowongan', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">

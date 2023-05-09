@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2023 at 07:21 AM
+-- Generation Time: May 09, 2023 at 10:49 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -257,23 +257,30 @@ INSERT INTO `tbl_logo` (`kd_logo`, `nama_logo`) VALUES
 --
 
 CREATE TABLE `tbl_lowongan` (
-  `kd_lowongan` int(50) NOT NULL,
+  `kd_lowongan` varchar(50) NOT NULL,
   `nama_lowongan` varchar(100) NOT NULL,
-  `disediakan_untuk` varchar(100) NOT NULL,
   `sektor_lowongan` varchar(100) NOT NULL,
   `tgl_mulai` date NOT NULL,
   `tgl_selesai` date NOT NULL,
   `kelompok_jabatan` varchar(100) NOT NULL,
-  `judul_lowongan` varchar(200) NOT NULL,
   `lokasi_penempatan` varchar(100) NOT NULL,
   `jumlah_pria` varchar(20) NOT NULL,
   `jumlah_wanita` varchar(20) NOT NULL,
-  `deskripsi` varchar(200) NOT NULL,
+  `desk_lowongan` varchar(200) NOT NULL,
   `pendidikan` varchar(100) NOT NULL,
   `jurusan` varchar(100) NOT NULL,
-  `status_perkawinan` varchar(100) NOT NULL,
-  `acc_admin` varchar(100) NOT NULL
+  `status_lowongan` varchar(100) NOT NULL,
+  `acc_admin` varchar(100) NOT NULL,
+  `kd_perush` varchar(12) NOT NULL,
+  `gambar_lowongan` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_lowongan`
+--
+
+INSERT INTO `tbl_lowongan` (`kd_lowongan`, `nama_lowongan`, `sektor_lowongan`, `tgl_mulai`, `tgl_selesai`, `kelompok_jabatan`, `lokasi_penempatan`, `jumlah_pria`, `jumlah_wanita`, `desk_lowongan`, `pendidikan`, `jurusan`, `status_lowongan`, `acc_admin`, `kd_perush`, `gambar_lowongan`) VALUES
+('LOWONGAN003', 'ereree', '', '0000-00-00', '0000-00-00', '', '', '', '', 'erere', '', '', '', '', 'PERUSH002', 'lowongan_kerja.png');
 
 -- --------------------------------------------------------
 
@@ -288,13 +295,13 @@ CREATE TABLE `tbl_pelamar` (
   `tempatlahir_pelamar` varchar(40) NOT NULL,
   `tanggallahir_pelamar` date NOT NULL,
   `agama_pelamar` varchar(20) NOT NULL,
-  `jk_pelamar` varchar(20) NOT NULL,
+  `jk_pelamar` enum('Pria','Wanita') NOT NULL,
   `tinggibadan_pelamar` varchar(20) NOT NULL,
   `beratbadan_pelamar` varchar(20) NOT NULL,
   `disabilitas_pelamar` varchar(20) NOT NULL,
   `jenisdisabilitas_pelamar` varchar(20) NOT NULL,
   `keterangandisabilitas_pelamar` varchar(50) NOT NULL,
-  `statusperkawinan_pelamar` varchar(20) NOT NULL,
+  `statusperkawinan_pelamar` enum('kawin','lajang','janda') NOT NULL,
   `alamatlengkap_pelamar` text NOT NULL,
   `nohp_pelamar` varchar(20) NOT NULL,
   `password_pelamar` varchar(50) NOT NULL,
@@ -306,7 +313,8 @@ CREATE TABLE `tbl_pelamar` (
 --
 
 INSERT INTO `tbl_pelamar` (`kd_pelamar`, `nama_pelamar`, `noktp_pelamar`, `tempatlahir_pelamar`, `tanggallahir_pelamar`, `agama_pelamar`, `jk_pelamar`, `tinggibadan_pelamar`, `beratbadan_pelamar`, `disabilitas_pelamar`, `jenisdisabilitas_pelamar`, `keterangandisabilitas_pelamar`, `statusperkawinan_pelamar`, `alamatlengkap_pelamar`, `nohp_pelamar`, `password_pelamar`, `foto_pelamar`) VALUES
-('PELAMAR001', 'Sutrisno', '', '', '0000-00-00', '', '', '', '', '', '', '', '', 'ererer', '', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png');
+('PELAMAR003', 'erererer', '545545545454', 'Banyumas', '2023-05-08', 'Kristen', 'Pria', '10', '10', '', '', '', 'kawin', '10>', '343434', 'd41d8cd98f00b204e9800998ecf8427e', 'foto_pelamar.png'),
+('PELAMAR004', 'ererer', '4343', 'erererere', '2023-05-26', 'Kristen', 'Pria', '2222', '2222', '', '', '', 'lajang', 'erererer', '3434343', 'c58af20903f165a77e465fd111333f6a', 'foto_pelamar.png');
 
 -- --------------------------------------------------------
 
@@ -488,12 +496,6 @@ ALTER TABLE `tbl_judul`
 --
 ALTER TABLE `tbl_logo`
   MODIFY `kd_logo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `tbl_lowongan`
---
-ALTER TABLE `tbl_lowongan`
-  MODIFY `kd_lowongan` int(50) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

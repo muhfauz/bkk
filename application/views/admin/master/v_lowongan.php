@@ -280,22 +280,6 @@
                             <textarea name="desk_lowongan" class="form-control" id="exampleFormControlTextarea1" rows="3" required><?php echo $a->desk_lowongan ?></textarea>
                         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-                        <!-- <div class="form-group">
-                            <label for="">Password lowongan</label>
-                            <input name="password_lowongan" type="text" class="form-control" value="<?php echo $a->password_lowongan ?>" required>
-                        </div> -->
-
                         <div class="form-group">
 
                             <label for="">Logo</label>
