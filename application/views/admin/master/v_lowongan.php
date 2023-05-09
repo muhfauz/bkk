@@ -37,9 +37,9 @@
                         foreach ($lowongan as $a) :  ?>
                             <tr>
                                 <td class="text-center font-weight-bold"><?php echo $no++; ?></td>
-                                <td><?php echo $a->kd_perush ?></td>
-                                <td><?php echo $a->nama_perush ?></td>
-                                <td><?php echo $a->desk_perush ?></td>
+                                <td><?php echo $a->kd_lowongan ?></td>
+                                <td><?php echo $a->nama_lowongan ?></td>
+                                <td><?php echo $a->desk_lowongan ?></td>
                                 <td><?php if ($a->acc_admin == 'belum') { ?>
                                         <span class="badge badge-primary">Belum</span>
 
@@ -52,10 +52,10 @@
 
                                 </td>
                                 <td class="float-right">
-                                    <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_perush ?>"> <i class="fa fa-info mr-2"></i> Detail</a>
-                                    <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_perush ?>"> <i class="fa fa-edit mr-2"></i> Edit</a>
+                                    <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_lowongan ?>"> <i class="fa fa-info mr-2"></i> Detail</a>
+                                    <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Edit</a>
                                     <?php if ($this->session->userdata('posisi') == 'admin') { ?>
-                                        <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_perush ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a>
+                                        <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a>
                                     <?php } ?>
 
                                 </td>
@@ -84,48 +84,48 @@
                 <form action="<?php echo base_url('admin/master/lowongan/aksitambahlowongan') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="">Kode lowongan</label>
-                        <input name="kd_perush" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_perush", "tbl_lowongan", "PERUSH") ?>">
+                        <input name="kd_lowongan" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_lowongan", "tbl_lowongan", "LOWONGAN") ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="">Nama lowongan</label>
-                        <input name="nama_perush" type="text" class="form-control" required>
+                        <input name="nama_lowongan" type="text" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">Deskripsi lowongan</label>
 
-                        <textarea name="desk_perush" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                        <textarea name="desk_lowongan" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="">Jenis Badan Usaha lowongan</label>
-                        <input name="jenisbu_perush" type="text" class="form-control" required>
+                        <input name="jenisbu_lowongan" type="text" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">NIB lowongan</label>
-                        <input name="nib_perush" type="text" class="form-control" required>
+                        <input name="nib_lowongan" type="text" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">Sektor lowongan</label>
-                        <input name="sektor_perush" type="text" class="form-control" required>
+                        <input name="sektor_lowongan" type="text" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">Alamat Lengkap lowongan</label>
-                        <input name="alamatlengkap_perush" type="text" class="form-control" required>
+                        <input name="alamatlengkap_lowongan" type="text" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">No Telephon lowongan</label>
-                        <input name="notel_perush" type="text" class="form-control" required>
+                        <input name="notel_lowongan" type="text" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">Nama Penanggungjawab lowongan</label>
-                        <input name="namapj_perush" type="text" class="form-control" required>
+                        <input name="namapj_lowongan" type="text" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="">Status</label>
@@ -145,12 +145,12 @@
 
                     <div class="form-group">
                         <label for="">Password</label>
-                        <input name="password_perush" type="password" class="form-control" required>
+                        <input name="password_lowongan" type="password" class="form-control" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="">Logo </label>
-                        <input name="logo_perush" type="file" class="form-control" multiple="multiple">
+                        <label for="">Gambar Lowongan </label>
+                        <input name="gambar_lowongan" type="file" class="form-control" multiple="multiple">
                         <span class="text-red font-italic text-sm-left">Gambar harus berukuran 370 x 240px untuk tampilan terbaik</span>
                     </div>
 
@@ -166,7 +166,7 @@
 
 <!-- modal detail -->
 <?php foreach ($lowongan as $a) : ?>
-    <div class="modal fade" id="datadetail<?php echo $a->kd_perush ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="datadetail<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-aqua">
@@ -179,46 +179,46 @@
                     <table class="table table-borderless">
                         <tr>
                             <th>Kode lowongan</th>
-                            <td><?php echo $a->kd_perush ?></td>
+                            <td><?php echo $a->kd_lowongan ?></td>
                         </tr>
                         <tr>
                             <th>Nama lowongan</th>
-                            <td><?php echo $a->nama_perush ?></td>
+                            <td><?php echo $a->nama_lowongan ?></td>
                         </tr>
 
                         <tr>
                             <th>Deskripsi lowongan</th>
-                            <td><?php echo $a->desk_perush ?></td>
+                            <td><?php echo $a->desk_lowongan ?></td>
                         </tr>
 
                         <tr>
                             <th>Jenis Badan Usaha lowongan</th>
-                            <td><?php echo $a->jenisbu_perush ?></td>
+                            <td><?php echo $a->jenisbu_lowongan ?></td>
                         </tr>
 
                         <tr>
                             <th>NIB lowongan</th>
-                            <td><?php echo $a->nib_perush ?></td>
+                            <td><?php echo $a->nib_lowongan ?></td>
                         </tr>
 
                         <tr>
                             <th>Sektor lowongan</th>
-                            <td><?php echo $a->sektor_perush ?></td>
+                            <td><?php echo $a->sektor_lowongan ?></td>
                         </tr>
 
                         <tr>
                             <th>Alamat Lengkap lowongan</th>
-                            <td><?php echo $a->alamatlengkap_perush ?></td>
+                            <td><?php echo $a->alamatlengkap_lowongan ?></td>
                         </tr>
 
                         <tr>
                             <th>No Telephone lowongan</th>
-                            <td><?php echo $a->notel_perush ?></td>
+                            <td><?php echo $a->notel_lowongan ?></td>
                         </tr>
 
                         <tr>
                             <th>Nama Penanggungjawab lowongan</th>
-                            <td><?php echo $a->namapj_perush ?></td>
+                            <td><?php echo $a->namapj_lowongan ?></td>
                         </tr>
 
                         <tr>
@@ -238,7 +238,7 @@
                         <tr>
                             <th>Logo lowongan </th>
                             <td>
-                                <img width="100" height="100" src="<?php echo base_url('gambar/') . $a->logo_perush ?>" alt="">
+                                <img width="100" height="100" src="<?php echo base_url('gambar/') . $a->logo_lowongan ?>" alt="">
                             </td>
                         </tr>
 
@@ -261,7 +261,7 @@
 <?php foreach ($lowongan as $a) : ?>
 
 
-    <div class="modal fade" id="hapusdata<?php echo $a->kd_perush ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="hapusdata<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-danger text-white">
@@ -276,7 +276,7 @@
                             Apakah Anda Yakin akan menghapus data ini ?
                             <!-- <label for="">Nama</label>
                   <input name="nama_karyawan" type="text" class="form-control" value="<?php echo $a->nama_karyawan ?>" required> -->
-                            <input name="kd_perush" type="hidden" class="form-control" value="<?php echo $a->kd_perush ?>" required>
+                            <input name="kd_lowongan" type="hidden" class="form-control" value="<?php echo $a->kd_lowongan ?>" required>
                         </div>
 
 
@@ -298,7 +298,7 @@
 <?php foreach ($lowongan as $a) : ?>
 
 
-    <div class="modal fade" id="editdata<?php echo $a->kd_perush ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editdata<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-aqua">
@@ -311,44 +311,44 @@
                     <form action="<?php echo base_url('admin/master/lowongan/aksieditlowongan') ?>" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="">Nama lowongan</label>
-                            <input name="nama_perush" type="text" class="form-control" value="<?php echo $a->nama_perush ?>" required>
-                            <input name="kd_perush" type="hidden" class="form-control" value="<?php echo $a->kd_perush ?>" required>
+                            <input name="nama_lowongan" type="text" class="form-control" value="<?php echo $a->nama_lowongan ?>" required>
+                            <input name="kd_lowongan" type="hidden" class="form-control" value="<?php echo $a->kd_lowongan ?>" required>
                         </div>
 
                         <div class="form-group">
                             <label for="">Deskripsi lowongan</label>
-                            <!-- <input name="desk_perush" type="text" class="form-control" value="<?php echo $a->desk_perush ?>" required> -->
-                            <textarea name="desk_perush" class="form-control" id="exampleFormControlTextarea1" rows="3" required><?php echo $a->desk_perush ?></textarea>
+                            <!-- <input name="desk_lowongan" type="text" class="form-control" value="<?php echo $a->desk_lowongan ?>" required> -->
+                            <textarea name="desk_lowongan" class="form-control" id="exampleFormControlTextarea1" rows="3" required><?php echo $a->desk_lowongan ?></textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="">Jenis Badan Usaha lowongan</label>
-                            <input name="jenisbu_perush" type="text" class="form-control" value="<?php echo $a->jenisbu_perush ?>" required>
+                            <input name="jenisbu_lowongan" type="text" class="form-control" value="<?php echo $a->jenisbu_lowongan ?>" required>
                         </div>
 
                         <div class="form-group">
                             <label for="">NIB lowongan</label>
-                            <input name="nib_perush" type="text" class="form-control" value="<?php echo $a->nib_perush ?>" required>
+                            <input name="nib_lowongan" type="text" class="form-control" value="<?php echo $a->nib_lowongan ?>" required>
                         </div>
 
                         <div class="form-group">
                             <label for="">Sektor lowongan</label>
-                            <input name="sektor_perush" type="text" class="form-control" value="<?php echo $a->sektor_perush ?>" required>
+                            <input name="sektor_lowongan" type="text" class="form-control" value="<?php echo $a->sektor_lowongan ?>" required>
                         </div>
 
                         <div class="form-group">
                             <label for="">Alamat Lengkap lowongan</label>
-                            <input name="alamatlengkap_perush" type="text" class="form-control" value="<?php echo $a->alamatlengkap_perush ?>" required>
+                            <input name="alamatlengkap_lowongan" type="text" class="form-control" value="<?php echo $a->alamatlengkap_lowongan ?>" required>
                         </div>
 
                         <div class="form-group">
                             <label for="">Nomor Telephone lowongan</label>
-                            <input name="notel_perush" type="text" class="form-control" value="<?php echo $a->notel_perush ?>" required>
+                            <input name="notel_lowongan" type="text" class="form-control" value="<?php echo $a->notel_lowongan ?>" required>
                         </div>
 
                         <div class="form-group">
                             <label for="">Nama Penanggungjawab lowongan</label>
-                            <input name="namapj_perush" type="text" class="form-control" value="<?php echo $a->namapj_perush ?>" required>
+                            <input name="namapj_lowongan" type="text" class="form-control" value="<?php echo $a->namapj_lowongan ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="">Status</label>
@@ -379,16 +379,16 @@
 
                         <!-- <div class="form-group">
                             <label for="">Password lowongan</label>
-                            <input name="password_perush" type="text" class="form-control" value="<?php echo $a->password_perush ?>" required>
+                            <input name="password_lowongan" type="text" class="form-control" value="<?php echo $a->password_lowongan ?>" required>
                         </div> -->
 
                         <div class="form-group">
 
                             <label for="">Logo</label>
                             <br>
-                            <img width="100" height="100" src="<?php echo base_url('gambar/') . $a->logo_perush ?>" alt="">
+                            <img width="100" height="100" src="<?php echo base_url('gambar/') . $a->logo_lowongan ?>" alt="">
                             <br>
-                            <input name="logo_perush" type="file" class="form-control" value="">
+                            <input name="logo_lowongan" type="file" class="form-control" value="">
                         </div>
 
 
