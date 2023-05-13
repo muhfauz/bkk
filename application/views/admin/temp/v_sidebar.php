@@ -59,6 +59,31 @@
           </ul>
         </li>
 
+        <li class="treeview"> <a href="#"> <i class="fa fa-database mr-2"></i> <span>Pelamar</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+          <ul class="treeview-menu">
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/admin') ?>"> <i class="fa fa-user-o mr-1"></i>Data Admin</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/perusahaan') ?>"> <i class="fa fa-building mr-1"></i>Data Perusahaan</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/pelamar') ?>"> <i class="fa fa-user mr-1"></i>Data Pelamar</a></li>
+
+          </ul>
+        </li>
+        <li class="treeview"> <a href="#"> <i class="fa fa-database mr-2"></i> <span>Perusahaan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+          <ul class="treeview-menu">
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/admin') ?>"> <i class="fa fa-user-o mr-1"></i>Belum ACC</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/perusahaan') ?>"> <i class="fa fa-building mr-1"></i> Perusahaan</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/pelamar') ?>"> <i class="fa fa-user mr-1"></i>Banned</a></li>
+
+          </ul>
+        </li>
+        <li class="treeview"> <a href="#"> <i class="fa fa-database mr-2"></i> <span>Lowongan</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+          <ul class="treeview-menu">
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/admin') ?>"> <i class="fa fa-user-o mr-1"></i>Belum ACC</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/perusahaan') ?>"> <i class="fa fa-building mr-1"></i>Lowongan ACC</a></li>
+
+
+          </ul>
+        </li>
+
 
 
 
