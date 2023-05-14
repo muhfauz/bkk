@@ -152,7 +152,7 @@
                     <div class="form-group">
                         <label for="">Pendidikan</label>
                         <div class="form-group">
-                            <select class="form-control" name="kd_jabatan" id="" required>
+                            <select class="form-control" name="kd_pendidikan" id="" required>
                                 <option value="">-Pilih Pendidikan-</option>
                                 <?php foreach ($pendidikan as $p) : ?>
                                     <option value="<?php echo $p->kd_pendidikan ?>"><?php echo $p->nama_pendidikan ?></option>
@@ -206,7 +206,7 @@
 
                         <tr>
                             <th>Sektor Lowongan</th>
-                            <td><?php echo $a->sektor_lowongan ?></td>
+                            <td><?php echo $a->nama_sektor ?></td>
                         </tr>
 
                         <tr>
@@ -222,7 +222,7 @@
 
                         <tr>
                             <th>Kelompok Jabatan</th>
-                            <td><?php echo $a->kelompok_jabatan ?></td>
+                            <td><?php echo $a->nama_jabatan ?></td>
                         </tr>
 
                         <tr>
@@ -247,7 +247,7 @@
 
                         <tr>
                             <th>Pendidikan</th>
-                            <td><?php echo $a->pendidikan ?></td>
+                            <td><?php echo $a->nama_pendidikan ?></td>
                         </tr>
 
                         <tr>
@@ -256,10 +256,7 @@
                         </tr>
 
 
-                        <tr>
-                            <th>Status Lowongan</th>
-                            <td><?php echo $a->status_lowongan ?></td>
-                        </tr>
+
 
                         <tr>
                             <th>ACC admin</th>
