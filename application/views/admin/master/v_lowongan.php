@@ -329,8 +329,6 @@
 
 <!-- Modal -->
 <?php foreach ($lowongan as $a) : ?>
-
-
     <div class="modal fade" id="editdata<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -350,7 +348,15 @@
 
                         <div class="form-group">
                             <label for="">Sektor Lowongan</label>
-                            <input name="sektor_lowongan" type="text" class="form-control" value="<?php echo $a->sektor_lowongan ?>" required>
+                            <div class="form-group">
+                                <select class="form-control" name="kd_sektor" id="" required>
+                                    <option value="<?php echo $a->kd_sektor ?>"><?php echo $a->nama_sektor ?></option>
+                                    <option value="">-Pilih Sektor-</option>
+                                    <?php foreach ($sektor as $s) : ?>
+                                        <option value="<?php echo $s->kd_sektor ?>"><?php echo $s->nama_sektor ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -365,7 +371,15 @@
 
                         <div class="form-group">
                             <label for="">Kelompok Jabatan</label>
-                            <input name="kelompok_jabatan" type="text" class="form-control" value="<?php echo $a->kelompok_jabatan ?>" required>
+                            <div class="form-group">
+                                <select class="form-control" name="kd_jabatan" id="" required>
+                                    <option value="<?php echo $a->kd_jabatan ?>"><?php echo $a->nama_jabatan ?></option>
+                                    <option value="">-Pilih Kelompok Jabatan-</option>
+                                    <?php foreach ($jabatan as $j) : ?>
+                                        <option value="<?php echo $j->kd_jabatan ?>"><?php echo $j->nama_jabatan ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -392,7 +406,15 @@
 
                         <div class="form-group">
                             <label for="">Pendidikan</label>
-                            <input name="pendidikan" type="text" class="form-control" value="<?php echo $a->pendidikan ?>" required>
+                            <div class="form-group">
+                                <select class="form-control" name="kd_pendidikan" id="" required>
+                                    <option value="<?php echo $a->kd_pendidikan ?>"><?php echo $a->nama_pendidikan ?></option>
+                                    <option value="">-Pilih Pendidikan-</option>
+                                    <?php foreach ($pendidikan as $p) : ?>
+                                        <option value="<?php echo $p->kd_pendidikan ?>"><?php echo $p->nama_pendidikan ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="form-group">
