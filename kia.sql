@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2023 at 10:49 AM
+-- Generation Time: May 14, 2023 at 08:18 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -133,30 +133,28 @@ INSERT INTO `tbl_bulan` (`kd_bulan`, `nama_bulan`) VALUES
 
 CREATE TABLE `tbl_jabatan` (
   `kd_jabatan` varchar(10) NOT NULL,
-  `nama_jabatan` varchar(30) NOT NULL,
-  `gaji_pokok` int(50) NOT NULL,
-  `uang_makan` int(50) NOT NULL
+  `nama_jabatan` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_jabatan`
 --
 
-INSERT INTO `tbl_jabatan` (`kd_jabatan`, `nama_jabatan`, `gaji_pokok`, `uang_makan`) VALUES
-('JAB001', 'Kepala Cabang', 4750000, 30000),
-('JAB002', 'Kepala Bengkel', 3000000, 25000),
-('JAB003', 'CCO', 2300000, 10000),
-('JAB004', 'Supervisor', 1750000, 15000),
-('JAB005', 'Service Advisor', 2300000, 10000),
-('JAB006', 'Admin Sales', 2200000, 10000),
-('JAB007', 'Admin Service', 2000000, 10000),
-('JAB008', 'Part Staff', 2000000, 10000),
-('JAB009', 'Sales Counter', 0, 25000),
-('JAB010', 'Sales Consultan', 0, 25000),
-('JAB011', 'Mekanik', 2000000, 10000),
-('JAB012', 'Driver', 2000000, 10000),
-('JAB013', 'Satpam', 2000000, 15000),
-('JAB014', 'Office Boy', 1750000, 10000);
+INSERT INTO `tbl_jabatan` (`kd_jabatan`, `nama_jabatan`) VALUES
+('JAB001', 'Kepala Cabang'),
+('JAB002', 'Kepala Bengkel'),
+('JAB003', 'CCO'),
+('JAB004', 'Supervisor'),
+('JAB005', 'Service Advisor'),
+('JAB006', 'Admin Sales'),
+('JAB007', 'Admin Service'),
+('JAB008', 'Part Staff'),
+('JAB009', 'Sales Counter'),
+('JAB010', 'Sales Consultan'),
+('JAB011', 'Mekanik'),
+('JAB012', 'Driver'),
+('JAB013', 'Satpam'),
+('JAB014', 'Office Boy');
 
 -- --------------------------------------------------------
 
@@ -259,18 +257,18 @@ INSERT INTO `tbl_logo` (`kd_logo`, `nama_logo`) VALUES
 CREATE TABLE `tbl_lowongan` (
   `kd_lowongan` varchar(50) NOT NULL,
   `nama_lowongan` varchar(100) NOT NULL,
-  `sektor_lowongan` varchar(100) NOT NULL,
+  `kd_sektor` varchar(15) NOT NULL,
   `tgl_mulai` date NOT NULL,
   `tgl_selesai` date NOT NULL,
-  `kelompok_jabatan` varchar(100) NOT NULL,
+  `kd_jabatan` varchar(100) NOT NULL,
   `lokasi_penempatan` varchar(100) NOT NULL,
   `jumlah_pria` varchar(20) NOT NULL,
   `jumlah_wanita` varchar(20) NOT NULL,
   `desk_lowongan` varchar(200) NOT NULL,
-  `pendidikan` varchar(100) NOT NULL,
+  `kd_pendidikan` varchar(100) NOT NULL,
   `jurusan` varchar(100) NOT NULL,
   `status_lowongan` varchar(100) NOT NULL,
-  `acc_admin` varchar(100) NOT NULL,
+  `acc_admin` enum('belum','acc') NOT NULL,
   `kd_perush` varchar(12) NOT NULL,
   `gambar_lowongan` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -279,8 +277,11 @@ CREATE TABLE `tbl_lowongan` (
 -- Dumping data for table `tbl_lowongan`
 --
 
-INSERT INTO `tbl_lowongan` (`kd_lowongan`, `nama_lowongan`, `sektor_lowongan`, `tgl_mulai`, `tgl_selesai`, `kelompok_jabatan`, `lokasi_penempatan`, `jumlah_pria`, `jumlah_wanita`, `desk_lowongan`, `pendidikan`, `jurusan`, `status_lowongan`, `acc_admin`, `kd_perush`, `gambar_lowongan`) VALUES
-('LOWONGAN003', 'ereree', '', '0000-00-00', '0000-00-00', '', '', '', '', 'erere', '', '', '', '', 'PERUSH002', 'lowongan_kerja.png');
+INSERT INTO `tbl_lowongan` (`kd_lowongan`, `nama_lowongan`, `kd_sektor`, `tgl_mulai`, `tgl_selesai`, `kd_jabatan`, `lokasi_penempatan`, `jumlah_pria`, `jumlah_wanita`, `desk_lowongan`, `kd_pendidikan`, `jurusan`, `status_lowongan`, `acc_admin`, `kd_perush`, `gambar_lowongan`) VALUES
+('LOWONGAN004', 'erer', 'erer', '2023-05-14', '2023-05-19', '222', '', '2', '2', 'dfdf', 'defdf', 'erere', '', 'belum', '', 'lowongan_kerja.png'),
+('LOWONGAN005', 'erere', 'erer', '2023-05-14', '2023-05-19', 'erere', '', '3', '3', '3eferer', 'erere', 'erer', '', 'belum', '', 'lowongan_kerja.png'),
+('LOWONGAN006', 'dfdfd', 'dfdf', '2023-05-14', '2023-05-17', 'erer', 'erer', '10', '10', 'dfdfdf', 'dfdf', 'dfdf', '', 'belum', 'PERUSH002', 'lowongan_kerja.png'),
+('LOWONGAN007', 'ererere', 'SEK001', '2023-05-15', '2023-05-21', 'erer', 'erer', '10', '10', '3erererer', 'ererer', 'ererer', '', 'belum', 'PERUSH002', 'lowongan_kerja.png');
 
 -- --------------------------------------------------------
 
@@ -313,8 +314,27 @@ CREATE TABLE `tbl_pelamar` (
 --
 
 INSERT INTO `tbl_pelamar` (`kd_pelamar`, `nama_pelamar`, `noktp_pelamar`, `tempatlahir_pelamar`, `tanggallahir_pelamar`, `agama_pelamar`, `jk_pelamar`, `tinggibadan_pelamar`, `beratbadan_pelamar`, `disabilitas_pelamar`, `jenisdisabilitas_pelamar`, `keterangandisabilitas_pelamar`, `statusperkawinan_pelamar`, `alamatlengkap_pelamar`, `nohp_pelamar`, `password_pelamar`, `foto_pelamar`) VALUES
-('PELAMAR003', 'erererer', '545545545454', 'Banyumas', '2023-05-08', 'Kristen', 'Pria', '10', '10', '', '', '', 'kawin', '10>', '343434', 'd41d8cd98f00b204e9800998ecf8427e', 'foto_pelamar.png'),
+('PELAMAR003', 'erererer', '545545545454', 'Banyumas', '2023-05-08', 'Kristen', 'Pria', '10', '10', '', '', '', 'kawin', '10>', '343434', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png'),
 ('PELAMAR004', 'ererer', '4343', 'erererere', '2023-05-26', 'Kristen', 'Pria', '2222', '2222', '', '', '', 'lajang', 'erererer', '3434343', 'c58af20903f165a77e465fd111333f6a', 'foto_pelamar.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_pendidikan`
+--
+
+CREATE TABLE `tbl_pendidikan` (
+  `kd_pendidikan` varchar(15) NOT NULL,
+  `nama_pendidikan` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_pendidikan`
+--
+
+INSERT INTO `tbl_pendidikan` (`kd_pendidikan`, `nama_pendidikan`) VALUES
+('PEND001', 'Sekolah Dasar'),
+('PEND002', 'Sekolah Menengah Pertama');
 
 -- --------------------------------------------------------
 
@@ -393,6 +413,25 @@ INSERT INTO `tbl_perusahaan` (`kd_perush`, `nama_perush`, `desk_perush`, `jenisb
 ('PERUSH002', 'aaa', 'aaa', 'aaa', 'aaa', 'aa', 'aaa', 'aa', 'aa', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1683328914.jpg', 'acc'),
 ('PERUSH003', 'erer', 'erer', 'erer', 'erer', 'erer', 'erer', '34343', '3434', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1683333693.png', 'acc');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_sektor`
+--
+
+CREATE TABLE `tbl_sektor` (
+  `kd_sektor` varchar(15) NOT NULL,
+  `nama_sektor` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_sektor`
+--
+
+INSERT INTO `tbl_sektor` (`kd_sektor`, `nama_sektor`) VALUES
+('SEK001', 'Ekonomi'),
+('SEK002', 'Pertanian');
+
 --
 -- Indexes for dumped tables
 --
@@ -458,6 +497,12 @@ ALTER TABLE `tbl_pelamar`
   ADD PRIMARY KEY (`kd_pelamar`);
 
 --
+-- Indexes for table `tbl_pendidikan`
+--
+ALTER TABLE `tbl_pendidikan`
+  ADD PRIMARY KEY (`kd_pendidikan`);
+
+--
 -- Indexes for table `tbl_pengiklan`
 --
 ALTER TABLE `tbl_pengiklan`
@@ -468,6 +513,12 @@ ALTER TABLE `tbl_pengiklan`
 --
 ALTER TABLE `tbl_perusahaan`
   ADD PRIMARY KEY (`kd_perush`);
+
+--
+-- Indexes for table `tbl_sektor`
+--
+ALTER TABLE `tbl_sektor`
+  ADD PRIMARY KEY (`kd_sektor`);
 
 --
 -- AUTO_INCREMENT for dumped tables
