@@ -99,12 +99,12 @@
 
                     <div class="form-group">
                         <label for="">Tanggal Mulai</label>
-                        <input name="tgl_mulai" type="text" class="form-control" required>
+                        <input name="tgl_mulai" type="date" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">Tanggal Selesai</label>
-                        <input name="tgl_selesai" type="text" class="form-control" required>
+                        <input name="tgl_selesai" type="date" class="form-control" required>
                     </div>
 
 
@@ -120,12 +120,12 @@
 
                     <div class="form-group">
                         <label for="">Jumlah Pria</label>
-                        <input name="jumlah_pria" type="text" class="form-control" required>
+                        <input name="jumlah_pria" type="number" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">Jumlah Wanita</label>
-                        <input name="jumlah_wanita" type="text" class="form-control" required>
+                        <input name="jumlah_wanita" type="number" class="form-control" required>
                     </div>
 
                     <div class="form-group">
@@ -141,31 +141,6 @@
                     <div class="form-group">
                         <label for="">jurusan</label>
                         <input name="jurusan" type="text" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Status</label>
-                        <div class="form-group">
-                            <select class="form-control" name="acc_admin" id="" required>
-                                <option value="">-Pilih Status-</option>
-                                <option value="belum">Belum Acc</option>
-                                <option value="acc">ACC</option>
-                                <option value="banned">Banned</option>
-
-
-                            </select>
-                        </div>
-
-
-                    </div>
-                    <div class="form-group">
-                        <label for="">ACC Admin</label>
-                        <input name="acc_admin" type="text" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Kode Perushahaan</label>
-                        <input name="kd_perush" type="text" class="form-control" required>
                     </div>
 
                     <div class="form-group">
@@ -405,20 +380,11 @@
                             <input name="jurusan" type="text" class="form-control" value="<?php echo $a->jurusan ?>" required>
                         </div>
 
-                        <div class="form-group">
-                            <label for="">status_lowongan</label>
-                            <input name="status_lowongan" type="text" class="form-control" value="<?php echo $a->status_lowongan ?>" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">ACC Admin</label>
-                            <input name="acc_admin" type="text" class="form-control" value="<?php echo $a->acc_admin ?>" required>
-                        </div>
 
 
                         <div class="form-group">
 
-                            <label for="">Logo</label>
+                            <label for="">Gambar Lowongan</label>
                             <br>
                             <img width="100" height="100" src="<?php echo base_url('gambar/lowongan/') . $a->gambar_lowongan ?>" alt="">
                             <br>

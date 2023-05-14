@@ -60,9 +60,9 @@ class Lowongan extends CI_Controller
         'desk_lowongan' => $this->input->post('desk_lowongan'),
         'pendidikan' => $this->input->post('pendidikan'),
         'jurusan' => $this->input->post('jurusan'),
-        'acc_admin' => $this->input->post('acc_admin'),
-        'kd_perush' => $this->input->post('kd_perush'),
-        'status_lowongan' => $this->input->post('status_lowongan'),
+        // 'acc_admin' => 'belum',
+        'kd_perush' =>  $kd_perush,
+
         'gambar_lowongan' => $image['file_name'],
 
 
@@ -94,9 +94,9 @@ class Lowongan extends CI_Controller
         'desk_lowongan' => $this->input->post('desk_lowongan'),
         'pendidikan' => $this->input->post('pendidikan'),
         'jurusan' => $this->input->post('jurusan'),
-        'acc_admin' => $this->input->post('acc_admin'),
-        'kd_perush' => $this->input->post('kd_perush'),
-        'status_lowongan' => $this->input->post('status_lowongan'),
+        // 'acc_admin' => 'belum',
+        'kd_perush' =>  $kd_perush,
+
         'gambar_lowongan' => 'lowongan_kerja.png'
 
 
@@ -165,9 +165,9 @@ class Lowongan extends CI_Controller
         'desk_lowongan' => $this->input->post('desk_lowongan'),
         'pendidikan' => $this->input->post('pendidikan'),
         'jurusan' => $this->input->post('jurusan'),
-        'acc_admin' => $this->input->post('acc_admin'),
+        // 'acc_admin' => 'belum',
         'kd_perush' => $this->input->post('kd_perush'),
-        'status_lowongan' => $this->input->post('status_lowongan'),
+        // 'status_lowongan' => $this->input->post('status_lowongan'),
         'gambar_lowongan' => $image['file_name'],
 
         // 'password_lowongan' => md5($this->input->post('password_lowongan')),
@@ -196,9 +196,9 @@ class Lowongan extends CI_Controller
         'desk_lowongan' => $this->input->post('desk_lowongan'),
         'pendidikan' => $this->input->post('pendidikan'),
         'jurusan' => $this->input->post('jurusan'),
-        'acc_admin' => $this->input->post('acc_admin'),
+        // 'acc_admin' => 'belum',
         'kd_perush' => $this->input->post('kd_perush'),
-        'status_lowongan' => $this->input->post('status_lowongan'),
+        // 'status_lowongan' => $this->input->post('status_lowongan'),
         'gambar_lowongan' => 'lowongan_kerja.png'
 
 
