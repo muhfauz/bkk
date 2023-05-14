@@ -20,10 +20,7 @@ class Lowongan extends CI_Controller
     $data['x3'] = 'Lowongan';
     $data['x4'] = 'Data Lowongan ' . '| ' . $this->db->query('select nama_bkk from tbl_bkk')->row()->nama_bkk;
     $kd_perush = $this->session->userdata('kd_perush');
-    $data['sektor'] = $this->Mglobal->tampilkandata('tbl_sektor');
-    $data['pendidikan'] = $this->Mglobal->tampilkandata('tbl_pendidikan');
-    $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
-    $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_sektor S, tbl_pendidikan P, tbl_jabatan J where L.kd_sektor=S.kd_sektor and L.kd_pendidikan=P.kd_pendidikan and L.kd_jabatan=J.kd_jabatan and L.kd_perush='$kd_perush'")->result();
+    $data['lowongan'] = $this->db->query("select * from tbl_lowongan where kd_perush='$kd_perush'")->result();
     // $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
     // $data['bagian'] = $this->Mglobal->tampilkandata('tbl_bagian');
     $this->load->view('admin/temp/v_header', $data);
@@ -53,15 +50,15 @@ class Lowongan extends CI_Controller
       $data = array(
         'nama_lowongan' => $this->input->post('nama_lowongan'),
         'kd_lowongan' => $this->input->post('kd_lowongan'),
-        'kd_sektor' => $this->input->post('kd_sektor'),
-        'kd_jabatan' => $this->input->post('kd_jabatan'),
-        'kd_pendidikan' => $this->input->post('kd_pendidikan'),
+        'sektor_lowongan' => $this->input->post('sektor_lowongan'),
+        'kelompok_jabatan' => $this->input->post('kelompok_jabatan'),
         'tgl_mulai' => $this->input->post('tgl_mulai'),
         'tgl_selesai' => $this->input->post('tgl_selesai'),
         'lokasi_penempatan' => $this->input->post('lokasi_penempatan'),
         'jumlah_pria' => $this->input->post('jumlah_pria'),
         'jumlah_wanita' => $this->input->post('jumlah_wanita'),
         'desk_lowongan' => $this->input->post('desk_lowongan'),
+        'pendidikan' => $this->input->post('pendidikan'),
         'jurusan' => $this->input->post('jurusan'),
         // 'acc_admin' => 'belum',
         'kd_perush' =>  $kd_perush,
@@ -87,18 +84,19 @@ class Lowongan extends CI_Controller
       $data = array(
         'nama_lowongan' => $this->input->post('nama_lowongan'),
         'kd_lowongan' => $this->input->post('kd_lowongan'),
-        'kd_sektor' => $this->input->post('kd_sektor'),
-        'kd_jabatan' => $this->input->post('kd_jabatan'),
-        'kd_pendidikan' => $this->input->post('kd_pendidikan'),
+        'sektor_lowongan' => $this->input->post('sektor_lowongan'),
+        'kelompok_jabatan' => $this->input->post('kelompok_jabatan'),
         'tgl_mulai' => $this->input->post('tgl_mulai'),
         'tgl_selesai' => $this->input->post('tgl_selesai'),
         'lokasi_penempatan' => $this->input->post('lokasi_penempatan'),
         'jumlah_pria' => $this->input->post('jumlah_pria'),
         'jumlah_wanita' => $this->input->post('jumlah_wanita'),
         'desk_lowongan' => $this->input->post('desk_lowongan'),
+        'pendidikan' => $this->input->post('pendidikan'),
         'jurusan' => $this->input->post('jurusan'),
         // 'acc_admin' => 'belum',
         'kd_perush' =>  $kd_perush,
+
         'gambar_lowongan' => 'lowongan_kerja.png'
 
 
@@ -157,19 +155,19 @@ class Lowongan extends CI_Controller
       $data = array(
         'nama_lowongan' => $this->input->post('nama_lowongan'),
         'kd_lowongan' => $this->input->post('kd_lowongan'),
-        'kd_sektor' => $this->input->post('kd_sektor'),
-        'kd_jabatan' => $this->input->post('kd_jabatan'),
-        'kd_pendidikan' => $this->input->post('kd_pendidikan'),
+        'sektor_lowongan' => $this->input->post('sektor_lowongan'),
+        'kelompok_jabatan' => $this->input->post('kelompok_jabatan'),
         'tgl_mulai' => $this->input->post('tgl_mulai'),
         'tgl_selesai' => $this->input->post('tgl_selesai'),
         'lokasi_penempatan' => $this->input->post('lokasi_penempatan'),
         'jumlah_pria' => $this->input->post('jumlah_pria'),
         'jumlah_wanita' => $this->input->post('jumlah_wanita'),
         'desk_lowongan' => $this->input->post('desk_lowongan'),
+        'pendidikan' => $this->input->post('pendidikan'),
         'jurusan' => $this->input->post('jurusan'),
         // 'acc_admin' => 'belum',
-        'kd_perush' =>  $kd_perush,
-
+        'kd_perush' => $this->input->post('kd_perush'),
+        // 'status_lowongan' => $this->input->post('status_lowongan'),
         'gambar_lowongan' => $image['file_name'],
 
         // 'password_lowongan' => md5($this->input->post('password_lowongan')),
@@ -188,20 +186,20 @@ class Lowongan extends CI_Controller
 
         'nama_lowongan' => $this->input->post('nama_lowongan'),
         'kd_lowongan' => $this->input->post('kd_lowongan'),
-        'kd_sektor' => $this->input->post('kd_sektor'),
-        'kd_jabatan' => $this->input->post('kd_jabatan'),
-        'kd_pendidikan' => $this->input->post('kd_pendidikan'),
+        'sektor_lowongan' => $this->input->post('sektor_lowongan'),
+        'kelompok_jabatan' => $this->input->post('kelompok_jabatan'),
         'tgl_mulai' => $this->input->post('tgl_mulai'),
         'tgl_selesai' => $this->input->post('tgl_selesai'),
         'lokasi_penempatan' => $this->input->post('lokasi_penempatan'),
         'jumlah_pria' => $this->input->post('jumlah_pria'),
         'jumlah_wanita' => $this->input->post('jumlah_wanita'),
         'desk_lowongan' => $this->input->post('desk_lowongan'),
+        'pendidikan' => $this->input->post('pendidikan'),
         'jurusan' => $this->input->post('jurusan'),
         // 'acc_admin' => 'belum',
-        'kd_perush' =>  $kd_perush,
-
-
+        'kd_perush' => $this->input->post('kd_perush'),
+        // 'status_lowongan' => $this->input->post('status_lowongan'),
+        'gambar_lowongan' => 'lowongan_kerja.png'
 
 
       );

@@ -79,25 +79,6 @@
                         <label for="">Nama jabatan</label>
                         <input name="nama_jabatan" type="text" class="form-control" required>
                     </div>
-                    <div class="form-group">
-                        <label for="">Gaji Pokok</label>
-                        <input name="gaji_pokok" type="number" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Uang Makan</label>
-                        <input name="uang_makan" type="number" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Tunjangan Jabatan</label>
-                        <input name="tunjangan_jabatan" type="number" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Insentif Reguler</label>
-                        <input name="insentif_reguler" type="number" class="form-control" required>
-                    </div>
-
-
-
 
 
 
@@ -128,22 +109,8 @@
                             <th>Nama jabatan</th>
                             <td><?php echo $a->nama_jabatan ?></td>
                         </tr>
-                        <tr>
-                            <th>Gaji Pokok</th>
-                            <td><?php echo number_format($a->gaji_pokok) ?></td>
-                        </tr>
-                        <tr>
-                            <th>Uang makan</th>
-                            <td><?php echo number_format($a->uang_makan) ?></td>
-                        </tr>
-                        <tr>
-                            <th>Tunjangan jabatan</th>
-                            <td><?php echo number_format($a->tunjangan_jabatan) ?></td>
-                        </tr>
-                        <tr>
-                            <th>Insentif Reguler</th>
-                            <td><?php echo number_format($a->insentif_reguler) ?></td>
-                        </tr>
+
+
 
                         <!-- <tr>
                             <th>Foto jabatan</th>
@@ -225,22 +192,8 @@
                         </div>
 
 
-                        <div class="form-group">
-                            <label for="">Gaji Pokok</label>
-                            <input name="gaji_pokok" type="number" class="form-control" value="<?php echo $a->gaji_pokok ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Uang Makan</label>
-                            <input name="uang_makan" type="number" class="form-control" value="<?php echo $a->uang_makan ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Tunjangan Jabatan</label>
-                            <input name="tunjangan_jabatan" type="number" class="form-control" value="<?php echo $a->tunjangan_jabatan ?>" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Insentif Reguler</label>
-                            <input name="insentif_reguler" type="number" class="form-control" value="<?php echo $a->insentif_reguler ?>" required>
-                        </div>
+
+
 
                         <!-- <div class="form-group">
                             <label for="">Foto jabatan</label>

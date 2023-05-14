@@ -55,6 +55,9 @@
             <li class="ml-4"><a href="<?php echo base_url('admin/master/admin') ?>"> <i class="fa fa-user-o mr-1"></i>Data Admin</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/master/perusahaan') ?>"> <i class="fa fa-building mr-1"></i>Data Perusahaan</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/master/pelamar') ?>"> <i class="fa fa-user mr-1"></i>Data Pelamar</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/jabatan') ?>"> <i class="fa fa-user mr-1"></i>Data Kelompok Jabatan</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/pendidikan') ?>"> <i class="fa fa-user mr-1"></i>Data Pendidikan</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/sektor') ?>"> <i class="fa fa-user mr-1"></i>Data Sektor Lowongan</a></li>
 
           </ul>
         </li>
