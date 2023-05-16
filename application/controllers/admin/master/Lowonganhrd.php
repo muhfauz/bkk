@@ -23,13 +23,13 @@ class Lowonganhrd extends CI_Controller
     $data['sektor'] = $this->Mglobal->tampilkandata('tbl_sektor');
     $data['pendidikan'] = $this->Mglobal->tampilkandata('tbl_pendidikan');
     $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
-    $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_sektor S, tbl_pendidikan P, tbl_jabatan J where L.kd_sektor=S.kd_sektor and L.kd_pendidikan=P.kd_pendidikan and L.kd_jabatan=J.kd_jabatan and L.kd_perush='$kd_perush'")->result();
+    $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_sektor S, tbl_pendidikan P, tbl_jabatan J where L.kd_sektor=S.kd_sektor and L.kd_pendidikan=P.kd_pendidikan and L.kd_jabatan=J.kd_jabatan and L.kd_perush='$kd_perush' and L.acc_admin='acc'")->result();
     // $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
     // $data['bagian'] = $this->Mglobal->tampilkandata('tbl_bagian');
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
     $this->load->view('admin/temp/v_sidebar');
-    $this->load->view('admin/master/v_lowongan');
+    $this->load->view('admin/master/v_lowonganhrd');
     $this->load->view('admin/temp/v_footer');
   }
 
@@ -82,7 +82,7 @@ class Lowonganhrd extends CI_Controller
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>');
-      redirect(base_url('admin/master/lowongan/'));
+      redirect(base_url('admin/master/lowonganhrd/'));
     } else {
       $data = array(
         'nama_lowongan' => $this->input->post('nama_lowongan'),
@@ -110,7 +110,7 @@ class Lowonganhrd extends CI_Controller
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>');
-      redirect(base_url('admin/master/lowongan/'));
+      redirect(base_url('admin/master/lowonganhrd/'));
     }
   }
 
@@ -133,7 +133,7 @@ class Lowonganhrd extends CI_Controller
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-    redirect(base_url('admin/master/lowongan/'));
+    redirect(base_url('admin/master/lowonganhrd/'));
   }
 
   function aksieditlowongan()
@@ -181,7 +181,7 @@ class Lowonganhrd extends CI_Controller
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-      redirect(base_url('admin/master/perusahaan/'));
+      redirect(base_url('admin/master/lowonganhrd/'));
     } else {
       $where = array('kd_lowongan' => $this->input->post('kd_lowongan'));
       $data = array(
@@ -212,7 +212,7 @@ class Lowonganhrd extends CI_Controller
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-      redirect(base_url('admin/master/lowongan/'));
+      redirect(base_url('admin/master/lowonganhrd/'));
     }
   }
 }
