@@ -23,7 +23,7 @@ class Lowongan extends CI_Controller
     $data['sektor'] = $this->Mglobal->tampilkandata('tbl_sektor');
     $data['pendidikan'] = $this->Mglobal->tampilkandata('tbl_pendidikan');
     $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
-    $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_sektor S, tbl_pendidikan P, tbl_jabatan J where L.kd_sektor=S.kd_sektor and L.kd_pendidikan=P.kd_pendidikan and L.kd_jabatan=J.kd_jabatan and L.kd_perush='$kd_perush' and L.acc_admin='belum'")->result();
+    $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_sektor S, tbl_pendidikan P, tbl_jabatan J where L.kd_sektor=S.kd_sektor and L.kd_pendidikan=P.kd_pendidikan and L.kd_jabatan=J.kd_jabatan and L.kd_perush='$kd_perush' and L.acc_adminlowongan='belum'")->result();
     // $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
     // $data['bagian'] = $this->Mglobal->tampilkandata('tbl_bagian');
     $this->load->view('admin/temp/v_header', $data);

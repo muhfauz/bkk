@@ -40,10 +40,10 @@
                                 <td><?php echo $a->kd_lowongan ?></td>
                                 <td><?php echo $a->nama_lowongan ?></td>
                                 <td><?php echo $a->desk_lowongan ?></td>
-                                <td><?php if ($a->acc_admin == 'belum') { ?>
+                                <td><?php if ($a->acc_adminlowongan == 'belum') { ?>
                                         <span class="badge badge-primary">Belum</span>
 
-                                    <?php } elseif ($a->acc_admin == 'acc') { ?>
+                                    <?php } elseif ($a->acc_adminlowongan == 'acc') { ?>
 
                                         <span class="badge badge-success">ACC</span>
                                     <?php } else { ?>
@@ -260,7 +260,7 @@
 
                         <tr>
                             <th>ACC admin</th>
-                            <td><?php echo $a->acc_admin ?></td>
+                            <td><?php echo $a->acc_adminlowongan ?></td>
                         </tr>
 
                         <tr>
