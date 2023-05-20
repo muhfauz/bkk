@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Lowongan extends CI_Controller
+class lowonganadmin extends CI_Controller
 {
 
   public function __construct()
@@ -19,14 +19,16 @@ class Lowongan extends CI_Controller
     $data['x2'] = 'Master';
     $data['x3'] = 'Lowongan';
     $data['x4'] = 'Data Lowongan ' . '| ' . $this->db->query('select nama_bkk from tbl_bkk')->row()->nama_bkk;
-    $kd_perush = $this->session->userdata('kd_perush');
-    $data['lowongan'] = $this->db->query("select * from tbl_lowongan where kd_perush='$kd_perush'")->result();
+    // $kd_perush = $this->session->userdata('kd_perush');
+    $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_sektor S, tbl_pendidikan P, tbl_jabatan J, tbl_perusahaan PR where L.kd_sektor=S.kd_sektor and L.kd_pendidikan=P.kd_pendidikan and L.kd_jabatan=J.kd_jabatan and L.kd_perush=PR.kd_perush and L.acc_adminlowongan='belum'")->result();
+    // $data['lowongan'] = $this->db->query("select * from tbl_lowongan where acc_admin='belum'")->result();
+    // $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_perusahaan P where L.acc_admin='belum' and L.kd_perush=P.kd_perush")->result();
     // $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
     // $data['bagian'] = $this->Mglobal->tampilkandata('tbl_bagian');
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
     $this->load->view('admin/temp/v_sidebar');
-    $this->load->view('admin/master/v_lowongan');
+    $this->load->view('admin/master/v_lowonganadmin');
     $this->load->view('admin/temp/v_footer');
   }
 
@@ -132,6 +134,23 @@ class Lowongan extends CI_Controller
             </button>
           </div>');
     redirect(base_url('admin/master/lowongan/'));
+  }
+
+  function acclowongan()
+  {
+    $where = array('kd_lowongan' => $this->input->post('kd_lowongan'));
+    $data = array(
+      'acc_adminlowongan' => 'acc',
+    );
+    $this->Mglobal->editdata('tbl_lowongan', $where, $data);
+
+    $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+    redirect(base_url('admin/master/lowonganadmin/'));
   }
 
   function aksieditlowongan()
