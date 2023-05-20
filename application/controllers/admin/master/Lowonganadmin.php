@@ -15,7 +15,7 @@ class lowonganadmin extends CI_Controller
 
   function index()
   {
-    $data['x1'] = 'Data Lowongan';
+    $data['x1'] = 'Data Lowongan Belum ACC';
     $data['x2'] = 'Master';
     $data['x3'] = 'Lowongan';
     $data['x4'] = 'Data Lowongan ' . '| ' . $this->db->query('select nama_bkk from tbl_bkk')->row()->nama_bkk;
@@ -34,7 +34,7 @@ class lowonganadmin extends CI_Controller
 
   function acc()
   {
-    $data['x1'] = 'Data Lowongan';
+    $data['x1'] = 'Data Lowongan di ACC';
     $data['x2'] = 'Master';
     $data['x3'] = 'Lowongan';
     $data['x4'] = 'Data Lowongan ' . '| ' . $this->db->query('select nama_bkk from tbl_bkk')->row()->nama_bkk;
@@ -185,7 +185,7 @@ class lowonganadmin extends CI_Controller
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-    redirect(base_url('admin/master/lowonganadmin/'));
+    redirect(base_url('admin/master/lowonganadmin/acc'));
   }
 
   function aksieditlowongan()

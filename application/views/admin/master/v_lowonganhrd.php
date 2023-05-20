@@ -80,7 +80,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?php echo base_url('admin/master/lowongan/aksitambahlowongan') ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url('admin/master/lowonganhrd/aksitambahlowongan') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="">Kode lowongan</label>
                         <input name="kd_lowongan" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_lowongan", "tbl_lowongan", "LOWONGAN") ?>">
@@ -304,7 +304,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url('admin/master/lowongan/hapuslowongan') ?>" method="post">
+                    <form action="<?php echo base_url('admin/master/lowonganhrd/hapuslowongan') ?>" method="post">
                         <div class="form-group">
                             Apakah Anda Yakin akan menghapus data ini ?
                             <!-- <label for="">Nama</label>
@@ -339,7 +339,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url('admin/master/lowongan/aksieditlowongan') ?>" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo base_url('admin/master/lowonganhrd/aksieditlowongan') ?>" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="">Nama lowongan</label>
                             <input name="nama_lowongan" type="text" class="form-control" value="<?php echo $a->nama_lowongan ?>" required>
