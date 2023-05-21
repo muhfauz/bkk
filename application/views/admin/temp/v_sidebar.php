@@ -64,9 +64,9 @@
 
         <li class="treeview"> <a href="#"> <i class="fa fa-database mr-2"></i> <span>Pelamar</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
-            <li class="ml-4"><a href="<?php echo base_url('admin/master/admin') ?>"> <i class="fa fa-user-o mr-1"></i>Data Admin</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/master/perusahaan') ?>"> <i class="fa fa-building mr-1"></i>Data Perusahaan</a></li>
-            <li class="ml-4"><a href="<?php echo base_url('admin/master/pelamar') ?>"> <i class="fa fa-user mr-1"></i>Data Pelamar</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/pelamaradmin') ?>"> <i class="fa fa-window-close mr-1"></i>Belum ACC</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/pelamaradmin/acc') ?>"> <i class="fa fa-check-square-o mr-1"></i> Pelamar</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/master/pelamaradmin/ban') ?>"> <i class="fa fa-ban mr-1"></i>Banned</a></li>
 
           </ul>
         </li>

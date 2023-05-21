@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pelamar extends CI_Controller
+class Pelamaradmin extends CI_Controller
 {
 
   public function __construct()
@@ -15,17 +15,47 @@ class Pelamar extends CI_Controller
 
   function index()
   {
-    $data['x1'] = 'Data pelamar';
+    $data['x1'] = 'Data pelamar belum ACC';
     $data['x2'] = 'Master';
     $data['x3'] = 'pelamar';
     $data['x4'] = 'Data pelamar ' . '| ' . $this->db->query('select nama_bkk from tbl_bkk')->row()->nama_bkk;
-    $data['pelamar'] = $this->db->query("select * from tbl_pelamar")->result();
+    $data['pelamar'] = $this->db->query("select * from tbl_pelamar where acc_adminpelamar='belum'")->result();
     // $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
     // $data['bagian'] = $this->Mglobal->tampilkandata('tbl_bagian');
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
     $this->load->view('admin/temp/v_sidebar');
-    $this->load->view('admin/master/v_pelamar');
+    $this->load->view('admin/master/v_pelamaradmin');
+    $this->load->view('admin/temp/v_footer');
+  }
+  function acc()
+  {
+    $data['x1'] = 'Data pelamar';
+    $data['x2'] = 'Master';
+    $data['x3'] = 'pelamar';
+    $data['x4'] = 'Data pelamar ' . '| ' . $this->db->query('select nama_bkk from tbl_bkk')->row()->nama_bkk;
+    $data['pelamar'] = $this->db->query("select * from tbl_pelamar where acc_adminpelamar='acc'")->result();
+    // $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
+    // $data['bagian'] = $this->Mglobal->tampilkandata('tbl_bagian');
+    $this->load->view('admin/temp/v_header', $data);
+    $this->load->view('admin/temp/v_atas');
+    $this->load->view('admin/temp/v_sidebar');
+    $this->load->view('admin/master/v_pelamaradmin');
+    $this->load->view('admin/temp/v_footer');
+  }
+  function ban()
+  {
+    $data['x1'] = 'Data pelamar Banned';
+    $data['x2'] = 'Master';
+    $data['x3'] = 'pelamar';
+    $data['x4'] = 'Data pelamar ' . '| ' . $this->db->query('select nama_bkk from tbl_bkk')->row()->nama_bkk;
+    $data['pelamar'] = $this->db->query("select * from tbl_pelamar where acc_adminpelamar='banned'")->result();
+    // $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
+    // $data['bagian'] = $this->Mglobal->tampilkandata('tbl_bagian');
+    $this->load->view('admin/temp/v_header', $data);
+    $this->load->view('admin/temp/v_atas');
+    $this->load->view('admin/temp/v_sidebar');
+    $this->load->view('admin/master/v_pelamaradmin');
     $this->load->view('admin/temp/v_footer');
   }
 
@@ -197,5 +227,35 @@ class Pelamar extends CI_Controller
           </div>');
       redirect(base_url('admin/master/pelamar/'));
     }
+  }
+  function accpelamar()
+  {
+    $where = array('kd_pelamar' => $this->input->post('kd_pelamar'));
+    $data = array(
+      'acc_adminpelamar' => 'acc',
+    );
+    $this->Mglobal->editdata('tbl_pelamar', $where, $data);
+    $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+    redirect(base_url('admin/master/pelamaradmin/'));
+  }
+  function bannedpelamar()
+  {
+    $where = array('kd_pelamar' => $this->input->post('kd_pelamar'));
+    $data = array(
+      'acc_adminpelamar' => 'banned',
+    );
+    $this->Mglobal->editdata('tbl_pelamar', $where, $data);
+    $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+    redirect(base_url('admin/master/pelamaradmin/acc'));
   }
 }
