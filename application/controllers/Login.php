@@ -56,7 +56,7 @@ class Login extends CI_Controller
 				$proses = $dt->num_rows();
 
 				if ($proses > 0) {
-					$session = array('kd_pelamar' => $hasil->kd_pelamar, 'nama_pelamar' => $hasil->nama_pelamar, 'status' => 'login', 'status_pelamar' => $hasil->status_pelamar, 'posisi' => 'pelamar', 'password_pelamar' => $hasil->password_pelamar);
+					$session = array('kd_pelamar' => $hasil->kd_pelamar, 'nama_pelamar' => $hasil->nama_pelamar, 'status' => 'login', 'acc_adminpelamar' => $hasil->acc_adminpelamar, 'status_pelamar' => $hasil->status_pelamar, 'posisi' => 'pelamar', 'password_pelamar' => $hasil->password_pelamar);
 					$this->session->set_userdata($session);
 					redirect(base_url('welcome'));
 				} else {
