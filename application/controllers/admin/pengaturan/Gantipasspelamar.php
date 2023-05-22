@@ -39,7 +39,7 @@ class Gantipasspelamar extends CI_Controller
     if ($password_pelamar == $password_lama) {
       if ($password_baru == $konfirmasipassword_baru) {
         // edit datanya
-        $where = array('kd_pelamar' => $this->input->post('kd_pelamar'));
+        $where = array('kd_pelamar' => $this->session->userdata('kd_pelamar'));
         $data = array('password_pelamar' => $password_baru);
         $this->Mglobal->editdata('tbl_pelamar', $where, $data);
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
