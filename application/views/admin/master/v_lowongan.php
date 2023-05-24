@@ -146,7 +146,9 @@
 
                     <div class="form-group">
                         <label for="">Deskripsi lowongan</label>
-                        <textarea name="desk_lowongan" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                        <textarea name="desk_lowongan" id="tekeditor" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                        <!-- <textarea name="tekeditor" id="tekeditor" cols="30" rows="10" class="form-control"></textarea> -->
+
                     </div>
 
                     <div class="form-group">
@@ -178,6 +180,9 @@
                 <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-1" aria-hidden="true"></i>Simpan</button>
             </div>
             </form>
+            <script>
+                CKEDITOR.replace('tekeditor');
+            </script>
         </div>
     </div>
 </div>
@@ -401,7 +406,8 @@
                         <div class="form-group">
                             <label for="">Deskripsi lowongan</label>
                             <!-- <input name="desk_lowongan" type="text" class="form-control" value="<?php echo $a->desk_lowongan ?>" required> -->
-                            <textarea name="desk_lowongan" class="form-control" id="exampleFormControlTextarea1" rows="3" required><?php echo $a->desk_lowongan ?></textarea>
+                            <textarea name="desk_lowongan" id="tekeditor2" class="form-control" id="exampleFormControlTextarea1" rows="3" required><?php echo $a->desk_lowongan ?></textarea>
+                            <!-- <textarea name="desk_lowongan" id="tekeditor" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea> -->
                         </div>
 
                         <div class="form-group">
@@ -441,6 +447,9 @@
                     <button type="submit" class="btn btn-primary"> <i class="fa fa-save mr-2"></i>Simpan</button>
                 </div>
                 </form>
+                <script>
+                    CKEDITOR.replace('tekeditor2');
+                </script>
             </div>
         </div>
     </div>
