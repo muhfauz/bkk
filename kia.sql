@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2023 at 08:18 AM
+-- Generation Time: May 26, 2023 at 02:14 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -264,11 +264,11 @@ CREATE TABLE `tbl_lowongan` (
   `lokasi_penempatan` varchar(100) NOT NULL,
   `jumlah_pria` varchar(20) NOT NULL,
   `jumlah_wanita` varchar(20) NOT NULL,
-  `desk_lowongan` varchar(200) NOT NULL,
+  `desk_lowongan` text NOT NULL,
   `kd_pendidikan` varchar(100) NOT NULL,
   `jurusan` varchar(100) NOT NULL,
   `status_lowongan` varchar(100) NOT NULL,
-  `acc_admin` enum('belum','acc') NOT NULL,
+  `acc_adminlowongan` enum('belum','acc') NOT NULL,
   `kd_perush` varchar(12) NOT NULL,
   `gambar_lowongan` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -277,11 +277,12 @@ CREATE TABLE `tbl_lowongan` (
 -- Dumping data for table `tbl_lowongan`
 --
 
-INSERT INTO `tbl_lowongan` (`kd_lowongan`, `nama_lowongan`, `kd_sektor`, `tgl_mulai`, `tgl_selesai`, `kd_jabatan`, `lokasi_penempatan`, `jumlah_pria`, `jumlah_wanita`, `desk_lowongan`, `kd_pendidikan`, `jurusan`, `status_lowongan`, `acc_admin`, `kd_perush`, `gambar_lowongan`) VALUES
-('LOWONGAN004', 'erer', 'erer', '2023-05-14', '2023-05-19', '222', '', '2', '2', 'dfdf', 'defdf', 'erere', '', 'belum', '', 'lowongan_kerja.png'),
-('LOWONGAN005', 'erere', 'erer', '2023-05-14', '2023-05-19', 'erere', '', '3', '3', '3eferer', 'erere', 'erer', '', 'belum', '', 'lowongan_kerja.png'),
-('LOWONGAN006', 'dfdfd', 'dfdf', '2023-05-14', '2023-05-17', 'erer', 'erer', '10', '10', 'dfdfdf', 'dfdf', 'dfdf', '', 'belum', 'PERUSH002', 'lowongan_kerja.png'),
-('LOWONGAN007', 'ererere', 'SEK001', '2023-05-15', '2023-05-21', 'erer', 'erer', '10', '10', '3erererer', 'ererer', 'ererer', '', 'belum', 'PERUSH002', 'lowongan_kerja.png');
+INSERT INTO `tbl_lowongan` (`kd_lowongan`, `nama_lowongan`, `kd_sektor`, `tgl_mulai`, `tgl_selesai`, `kd_jabatan`, `lokasi_penempatan`, `jumlah_pria`, `jumlah_wanita`, `desk_lowongan`, `kd_pendidikan`, `jurusan`, `status_lowongan`, `acc_adminlowongan`, `kd_perush`, `gambar_lowongan`) VALUES
+('LOWONGAN005', 'erere', 'SEK001', '2023-05-14', '2023-05-19', 'JAB001', '', '3', '3', '<p>3eferer</p>\r\n', 'PEND001', 'erer', '', 'belum', 'PERUSH002', 'lowongan_kerja.png'),
+('LOWONGAN006', 'dfdfd', 'SEK001', '2023-05-14', '2023-05-17', 'JAB001', '', '10', '10', 'dfdfdf', 'PEND001', 'dfdf', '', 'acc', 'PERUSH002', 'lowongan_kerja.png'),
+('LOWONGAN007', 'ererere', 'SEK001', '2023-05-15', '2023-05-21', 'JAB001', '', '10', '10', '3erererer', 'PEND001', 'ererer', '', 'acc', 'PERUSH002', 'lowongan_kerja.png'),
+('LOWONGAN008', 'erererer', 'SEK001', '2023-05-14', '2023-05-20', 'JAB001', '', '10', '10', 'ererer', 'PEND001', 'TKJ', '', 'acc', 'PERUSH002', 'lowongan_kerja.png'),
+('LOWONGAN009', 'erere', 'SEK001', '2023-05-20', '2023-05-27', 'JAB003', '', '3', '3', 'dfdf', 'PEND001', 'ererer', '', 'belum', 'PERUSH002', 'lowongan_kerja.png');
 
 -- --------------------------------------------------------
 
@@ -306,16 +307,17 @@ CREATE TABLE `tbl_pelamar` (
   `alamatlengkap_pelamar` text NOT NULL,
   `nohp_pelamar` varchar(20) NOT NULL,
   `password_pelamar` varchar(50) NOT NULL,
-  `foto_pelamar` varchar(20) NOT NULL
+  `foto_pelamar` varchar(20) NOT NULL,
+  `acc_adminpelamar` enum('belum','acc','banned') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_pelamar`
 --
 
-INSERT INTO `tbl_pelamar` (`kd_pelamar`, `nama_pelamar`, `noktp_pelamar`, `tempatlahir_pelamar`, `tanggallahir_pelamar`, `agama_pelamar`, `jk_pelamar`, `tinggibadan_pelamar`, `beratbadan_pelamar`, `disabilitas_pelamar`, `jenisdisabilitas_pelamar`, `keterangandisabilitas_pelamar`, `statusperkawinan_pelamar`, `alamatlengkap_pelamar`, `nohp_pelamar`, `password_pelamar`, `foto_pelamar`) VALUES
-('PELAMAR003', 'erererer', '545545545454', 'Banyumas', '2023-05-08', 'Kristen', 'Pria', '10', '10', '', '', '', 'kawin', '10>', '343434', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png'),
-('PELAMAR004', 'ererer', '4343', 'erererere', '2023-05-26', 'Kristen', 'Pria', '2222', '2222', '', '', '', 'lajang', 'erererer', '3434343', 'c58af20903f165a77e465fd111333f6a', 'foto_pelamar.png');
+INSERT INTO `tbl_pelamar` (`kd_pelamar`, `nama_pelamar`, `noktp_pelamar`, `tempatlahir_pelamar`, `tanggallahir_pelamar`, `agama_pelamar`, `jk_pelamar`, `tinggibadan_pelamar`, `beratbadan_pelamar`, `disabilitas_pelamar`, `jenisdisabilitas_pelamar`, `keterangandisabilitas_pelamar`, `statusperkawinan_pelamar`, `alamatlengkap_pelamar`, `nohp_pelamar`, `password_pelamar`, `foto_pelamar`, `acc_adminpelamar`) VALUES
+('PELAMAR003', 'erererer', '545545545454', 'Banyumas', '2023-05-08', 'Kristen', 'Pria', '10', '10', '', '', '', 'kawin', '10>', '343434', 'fcea920f7412b5da7be0cf42b8c93759', 'foto_pelamar.png', 'belum'),
+('PELAMAR004', 'ererer', '4343', 'erererere', '2023-05-26', 'Kristen', 'Pria', '2222', '2222', '', '', '', 'lajang', 'erererer', '3434343', 'c58af20903f165a77e465fd111333f6a', 'foto_pelamar.png', 'belum');
 
 -- --------------------------------------------------------
 
@@ -409,7 +411,7 @@ CREATE TABLE `tbl_perusahaan` (
 --
 
 INSERT INTO `tbl_perusahaan` (`kd_perush`, `nama_perush`, `desk_perush`, `jenisbu_perush`, `nib_perush`, `sektor_perush`, `alamatlengkap_perush`, `notel_perush`, `namapj_perush`, `password_perush`, `logo_perush`, `acc_admin`) VALUES
-('PERUSH001', 'dfdfdfdfdf', 'erere', 'erere', 'ererer', 'erere', 'ererer', '34343', 'edrfererr', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush.png', 'banned'),
+('PERUSH001', 'dfdfdfdfdf', 'erere', 'erere', 'ererer', 'erere', 'ererer', '34343', 'edrfererr', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush.png', 'acc'),
 ('PERUSH002', 'aaa', 'aaa', 'aaa', 'aaa', 'aa', 'aaa', 'aa', 'aa', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1683328914.jpg', 'acc'),
 ('PERUSH003', 'erer', 'erer', 'erer', 'erer', 'erer', 'erer', '34343', '3434', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1683333693.png', 'acc');
 
