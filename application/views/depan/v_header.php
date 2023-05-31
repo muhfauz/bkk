@@ -88,28 +88,26 @@
                                 <a class="nav-link link_hd" href="<?php echo base_url('home') ?>"> FAQ </a>
 
                             </li>
-                            <?php if ($this->session->userdata('status') == 'login' and $this->session->userdata('posisi') == 'pelamar') { ?>
+
+                            <?php if ($this->session->userdata('status') == 'login') { ?>
+                                <li class="nav-item dropdown ">
+                                    <a class="nav-link link_hd" href="<?php echo base_url('login/logout') ?>"> LogOut </a>
+                                </li>
 
                             <?php } else {  ?>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link link_hd" href="#"> Daftar </a>
+                                    <ul class="navbar-nav submenu">
+                                        <li class="nav-item"><a class="nav-link" href="shop.html">Pelamar</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="product-details.html">Perusahaan</a></li>
+
+                                    </ul>
+                                </li>
                             <?php }  ?>
-                            <li class="nav-item dropdown ">
-                                <a class="nav-link link_hd" href="<?php echo base_url('home') ?>"> FAQ </a>
 
-                            </li>
-                            <li class="nav-item dropdown ">
-                                <a class="nav-link link_hd" href="<?php echo base_url('home') ?>"> FAQ </a>
 
-                            </li>
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link link_hd" href="#"> Shop </a>
-                                <ul class="navbar-nav submenu">
-                                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="product-details.html">Product detail</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="shop-cart.html">Cart</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
-                                </ul>
-                            </li>
+
 
                         </ul>
                         <ul class="navbar-nav navbar-mobile right-nav ml-auto ">
