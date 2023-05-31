@@ -5,15 +5,15 @@
 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="footer-widget first">
-                    <h2>ABOUT US</h2>
+                    <h2>Tentang Kami</h2>
                     <div class="footer-text">
-                        <p>As the only hospital in our growing county, things are buzzing as we expand our facilities and services. We are an intimate, 200 licensed bed hospital and the caregivers of neighbors we love.</p>
+                        <p><?php echo $this->db->query("select * from tbl_bkk")->row()->tentang_bkk ?></p>
 
                         <ul class="social-media">
-                            <li><a href="#" target="_blank"><i class="fa fa-facebook-f"></i></a> </li>
+                            <!-- <li><a href="#" target="_blank"><i class="fa fa-facebook-f"></i></a> </li>
                             <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a> </li>
                             <li><a href="#" target="_blank"><i class="fa fa-vimeo"></i></a> </li>
-                            <li><a href="#" target="_blank"><i class="fa fa-wifi"></i></a> </li>
+                            <li><a href="#" target="_blank"><i class="fa fa-wifi"></i></a> </li> -->
                         </ul>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
     </div>
 </div>
 
-<div class="footer-last home-one">
+<!-- <div class="footer-last home-one">
     <div class="container">
         <div class="row clearfix">
             <div class="col-lg-12">
@@ -94,7 +94,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!--------footer-------->
 

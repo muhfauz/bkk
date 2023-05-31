@@ -88,6 +88,18 @@
                                 <a class="nav-link link_hd" href="<?php echo base_url('home') ?>"> FAQ </a>
 
                             </li>
+                            <?php if ($this->session->userdata('status') == 'login' and $this->session->userdata('posisi') == 'pelamar') { ?>
+
+                            <?php } else {  ?>
+                            <?php }  ?>
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link link_hd" href="<?php echo base_url('home') ?>"> FAQ </a>
+
+                            </li>
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link link_hd" href="<?php echo base_url('home') ?>"> FAQ </a>
+
+                            </li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link link_hd" href="#"> Shop </a>
