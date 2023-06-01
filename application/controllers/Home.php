@@ -32,6 +32,7 @@ class Home extends CI_Controller
     {
         // $data['spp'] = $this->db->query("select * from tbl_spp S, tbl_tahunajaran T, tbl_admin A where S.kd_tahunajaran=T.kd_tahunajaran and S.kd_admin=A.kd_admin")->result();
         $data['slider'] = $this->db->query("select * from tbl_slider")->result();
+        $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_pendidikan P where L.kd_pendidikan=P.kd_pendidikan and L.acc_adminlowongan='acc' ORDER BY L.kd_lowongan DESC  LIMIT 10")->result();
         $this->load->view('depan/v_header', $data);
         // $this->load->view('admin/temp/v_atas');
         // $this->load->view('admin/temp/v_sidebar');

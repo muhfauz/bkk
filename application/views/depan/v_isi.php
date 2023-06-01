@@ -107,63 +107,30 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="owl-carousel owl-theme three-item">
+                        <?php foreach ($lowongan as $l) : ?>
+                            <div class="best-doctor-outer">
+                                <div class="image">
+                                    <img src="<?php echo base_url('gambar/lowongan/') . $l->gambar_lowongan ?>" class="img-fluid" alt="best-doctors" />
+                                    <a href="#" class="link"></a>
+                                </div>
+                                <div class="content-inner">
+                                    <h2> <a href="#"><?php echo $l->nama_lowongan ?> </a> </h2>
+                                    <span><?php echo $l->nama_pendidikan ?></span>
+                                    <p><?php echo $l->nama_lowongan ?> dengan tingkat pendidikan <?php echo $l->nama_pendidikan ?> masih tersedia, silaka lihat detail </p>
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                        <li><a href="#"><i class="fa fa fa-vimeo"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                        <div class="best-doctor-outer">
-                            <div class="image">
-                                <img src="assets/image/best-doctors/best-doctors1.jpg" class="img-fluid" alt="best-doctors" />
-                                <a href="#" class="link"></a>
-                            </div>
-                            <div class="content-inner">
-                                <h2> <a href="#">Dr. Genoveva Leannon </a> </h2>
-                                <span>Internal Medicine</span>
-                                <p>Dr. Will Marvin is an internist in Rochester, MN, and has been in practice between 5–10 years.</p>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                    <li><a href="#"><i class="fa fa fa-vimeo"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
 
-                        <div class="best-doctor-outer">
-                            <div class="image">
-                                <img src="assets/image/best-doctors/best-doctors2.jpg" class="img-fluid" alt="best-doctors" />
-                                <a href="#" class="link"></a>
-                            </div>
-                            <div class="content-inner">
-                                <h2><a href="#"> Dr. Bethany Kertzmann</a></h2>
-                                <span>Anesthesiology</span>
-                                <p>Dr. Bethany Kertzmann is an anesthesiologist in Rochester, MN, and has been in practice between 3–5 years.</p>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                    <li><a href="#"><i class="fa fa fa-vimeo"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <div class="best-doctor-outer">
-                            <div class="image">
-                                <img src="assets/image/best-doctors/best-doctors3.jpg" class="img-fluid" alt="best-doctors" />
-                                <a href="#" class="link"></a>
-                            </div>
-                            <div class="content-inner">
-                                <h2><a href="#"> Dr. Danielle Bechtelar</a></h2>
-                                <span>Cardiology</span>
-                                <p>Dr. Danielle Bechtelar is a cardiologist in Rochester, MN, and has been in practice between 5–10 years</p>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                    <li><a href="#"><i class="fa fa fa-vimeo"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
+
 
                     </div>
                     <div class="view-more-doctors">
