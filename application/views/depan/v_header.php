@@ -69,7 +69,7 @@
             </div>
             <div class="navbar navbar-expand-lg bsnav bsnav-sticky bsnav-sticky-slide">
                 <div class="container">
-                    <a class="navbar-brand" href="<?php echo base_url('home') ?>"><img src="<?php echo base_url('depan/') ?>assets/image/default-logo.png" class="img-fluid" alt="img"></a>
+                    <a class="navbar-brand" href="<?php echo base_url('home') ?>"><img src="<?php echo base_url() ?>assets/img/<?php echo $this->db->query("select logo_depan from tbl_bkk where kd_bkk='1'")->row()->logo_depan ?>" class="img-fluid" alt="img"></a>
                     <button class="navbar-toggler toggler-spring"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav navbar-mobile ml-auto mr-auto">
@@ -78,11 +78,11 @@
 
                             </li>
                             <li class="nav-item dropdown ">
-                                <a class="nav-link link_hd" href="<?php echo base_url('home') ?>"> Lowongan </a>
+                                <a class="nav-link link_hd" href="<?php echo base_url('home/lowongan') ?>"> Lowongan </a>
 
                             </li>
                             <li class="nav-item dropdown ">
-                                <a class="nav-link link_hd" href="<?php echo base_url('home') ?>"> Tentang Kami </a>
+                                <a class="nav-link link_hd" href="<?php echo base_url('home/tentang') ?>"> Tentang Kami </a>
                             </li>
                             <li class="nav-item dropdown ">
                                 <a class="nav-link link_hd" href="<?php echo base_url('home/faq') ?>"> FAQ </a>
@@ -100,7 +100,7 @@
                                     <ul class="navbar-nav submenu">
                                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url('welcome') ?>">Login</a></li>
                                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url('home/pelamar') ?>">Pelamar</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('home/perusahaan') ?>">Perusahaan</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('home/pe') ?>">Perusahaan</a></li>
 
                                     </ul>
                                 </li>
