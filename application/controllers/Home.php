@@ -78,7 +78,8 @@ class Home extends CI_Controller
     }
     public function lowongan()
     {
-        $data['lowongan'] = $this->db->query("select * from tbl_lowongan")->result();
+        $data['pendidikan'] = $this->db->query("select * from tbl_pendidikan")->result();
+        $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_pendidikan P where L.kd_pendidikan=P.kd_pendidikan and L.acc_adminlowongan='acc' ORDER BY L.kd_lowongan DESC  LIMIT 99")->result();
         $this->load->view('depan/v_header', $data);
         // $this->load->view('admin/temp/v_atas');
         // $this->load->view('admin/temp/v_sidebar');

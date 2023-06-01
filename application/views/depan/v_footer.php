@@ -153,20 +153,20 @@
  </div>
  <!---------mbile-navbar----->
 
-
  <!-----------------------------------script-------------------------------------->
  <script src="<?php echo base_url('depan/') ?>assets/js/jquery-3.3.1.min.js"></script>
  <script src="<?php echo base_url('depan/') ?>assets/js/popper.min.js"></script>
  <script src="<?php echo base_url('depan/') ?>assets/js/bootstrap.min.js"></script>
- <script src="<?php echo base_url('depan/') ?>assets/js/owl.js"></script>
  <script src="<?php echo base_url('depan/') ?>assets/js/bsnav.min.js"></script>
  <script src="<?php echo base_url('depan/') ?>assets/js/jquery-ui.js"></script>
+ <script src="<?php echo base_url('depan/') ?>assets/js/owl.js"></script>
+ <script src="<?php echo base_url('depan/') ?>assets/js/isotope.min.js"></script>
  <!---smooth-scrool-->
  <script src="<?php echo base_url('depan/') ?>assets/js/SmoothScroll.min.js"></script>
  <script src="<?php echo base_url('depan/') ?>assets/js/validator.min.js"></script>
  <script src="<?php echo base_url('depan/') ?>assets/js/contact.js"></script>
- <script src="<?php echo base_url('depan/') ?>assets/js/appear.js"></script>
  <script src="<?php echo base_url('depan/') ?>assets/js/script.js"></script>
+
  <!--Google Map APi Key-->
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A"></script>
  <script src="<?php echo base_url('depan/') ?>assets/js/gmaps.js"></script>
