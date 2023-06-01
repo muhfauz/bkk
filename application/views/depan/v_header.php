@@ -85,7 +85,7 @@
                                 <a class="nav-link link_hd" href="<?php echo base_url('home') ?>"> Tentang Kami </a>
                             </li>
                             <li class="nav-item dropdown ">
-                                <a class="nav-link link_hd" href="<?php echo base_url('home') ?>"> FAQ </a>
+                                <a class="nav-link link_hd" href="<?php echo base_url('home/faq') ?>"> FAQ </a>
 
                             </li>
 
@@ -98,8 +98,9 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link link_hd" href="#"> Daftar </a>
                                     <ul class="navbar-nav submenu">
-                                        <li class="nav-item"><a class="nav-link" href="shop.html">Pelamar</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="product-details.html">Perusahaan</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('welcome') ?>">Login</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('home/pelamar') ?>">Pelamar</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('home/perusahaan') ?>">Perusahaan</a></li>
 
                                     </ul>
                                 </li>

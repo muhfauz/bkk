@@ -37,4 +37,32 @@ class Home extends CI_Controller
         $this->load->view('depan/v_isi');
         $this->load->view('depan/v_footer');
     }
+
+    public function faq()
+    {
+        $data['faq'] = $this->db->query("select * from tbl_faq")->result();
+        $this->load->view('depan/v_header', $data);
+        // $this->load->view('admin/temp/v_atas');
+        // $this->load->view('admin/temp/v_sidebar');
+        $this->load->view('depan/v_faq');
+        $this->load->view('depan/v_footer');
+    }
+    public function pelamar()
+    {
+        $data['faq'] = $this->db->query("select * from tbl_faq")->result();
+        $this->load->view('depan/v_header', $data);
+        // $this->load->view('admin/temp/v_atas');
+        // $this->load->view('admin/temp/v_sidebar');
+        $this->load->view('depan/v_pelamar');
+        $this->load->view('depan/v_footer');
+    }
+    public function perusahaan()
+    {
+        $data['faq'] = $this->db->query("select * from tbl_faq")->result();
+        $this->load->view('depan/v_header', $data);
+        // $this->load->view('admin/temp/v_atas');
+        // $this->load->view('admin/temp/v_sidebar');
+        $this->load->view('depan/v_perusahaan');
+        $this->load->view('depan/v_footer');
+    }
 }
