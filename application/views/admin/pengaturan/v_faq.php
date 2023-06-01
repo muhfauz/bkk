@@ -72,7 +72,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Jawab</label>
-                        <textarea name="jawab_faq" class="form-control" id="" cols="30" rows="10" required></textarea>
+                        <textarea name="jawab_faq" class="form-control" id="jawab_faq" cols="30" rows="10" required></textarea>
                     </div>
 
 
@@ -82,6 +82,9 @@
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
             </form>
+            <script>
+                CKEDITOR.replace('jawab_faq');
+            </script>
         </div>
     </div>
 </div>
@@ -116,6 +119,7 @@
                     <!-- <button type="submit" class="btn btn-primary">Simpan</button> -->
                 </div>
                 </form>
+
             </div>
         </div>
     </div>
@@ -181,7 +185,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Jawab</label>
-                            <textarea name="jawab_faq" class="form-control" id="" cols="30" rows="10" required><?php echo $a->jawab_faq ?></textarea>
+                            <textarea name="jawab_faq" class="form-control" id="jawab_faq" cols="30" rows="10" required><?php echo $a->jawab_faq ?></textarea>
                         </div>
 
 
@@ -191,6 +195,9 @@
                     <button type="submit" class="btn btn-primary"> <i class="fa fa-save mr-2"></i>Simpan</button>
                 </div>
                 </form>
+                <script>
+                    CKEDITOR.replace('jawab_faq');
+                </script>
             </div>
         </div>
     </div>

@@ -6,51 +6,23 @@
     <!------main-slider------>
     <section class="main-slider">
         <div class="main-slider-carousel main-slider-one owl-carousel owl-theme">
-            <div class="slide" style="background-image:url(<?php echo base_url('depan/') ?>assets/image/banner/home-1-banner-1.jpg)">
-                <div class="container text-left">
-                    <div class="content ">
-                        <h1>GIVING CHILDREN<br />
-                            <span>THE CARE THEY DESERVE</span>
-                        </h1>
-                        <div class="text">The bold mission of America’s MEDITEX Companies is to bring
-                            an end to the burdens of disease, in all its forms.</div>
-                        <div class="link-box">
-                            <a href="#" class="theme-btn ">DEPARTMENTS</a>
-                            <a href="#" class="theme-btn btn-dark">get in touch</a>
+            <?php foreach ($slider as $s) : ?>
+                <div class="slide" style="background-image:url(<?php echo base_url('depan/assets/image/banner/') . $s->gambar_slider ?>)">
+                    <div class="container text-left">
+                        <div class="content ">
+                            <h1><?php echo $s->atas_slider ?><br />
+                                <span><?php echo $s->tengah_slider ?></span>
+                            </h1>
+                            <div class="text"><?php echo $s->bawah_slider ?></div>
+                            <div class="link-box">
+                                <a href="#" class="theme-btn ">DEPARTMENTS</a>
+                                <a href="#" class="theme-btn btn-dark">get in touch</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="slide" style="background-image:url(<?php echo base_url('depan/') ?>assets/image/banner/home-1-banner-2.jpg)">
-                <div class="container text-left">
-                    <div class="content ">
-                        <h1>Advanced Medicine,<br />
-                            <span>Trusted Care.</span>
-                        </h1>
-                        <div class="text">The bold mission of America’s MEDITEX Companies is to bring
-                            an end to the burdens of disease, in all its forms.</div>
-                        <div class="link-box">
-                            <a href="#" class="theme-btn ">DEPARTMENTS</a>
-                            <a href="#" class="theme-btn btn-dark">get in touch</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slide" style="background-image:url(<?php echo base_url('depan/') ?>assets/image/banner/home-1-banner-3.jpg)">
-                <div class="container text-left">
-                    <div class="content ">
-                        <h1>Enhancing Life,<br />
-                            <span>Excelling in Care.</span>
-                        </h1>
-                        <div class="text">The bold mission of America’s MEDITEX Companies is to bring
-                            an end to the burdens of disease, in all its forms.</div>
-                        <div class="link-box">
-                            <a href="#" class="theme-btn ">DEPARTMENTS</a>
-                            <a href="#" class="theme-btn btn-dark">get in touch</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach ?>
+
         </div>
     </section>
     <!------main-slider------>

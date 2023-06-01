@@ -46,7 +46,7 @@ class Slider extends CI_Controller
     // $this->form_validation->set_rules('password_slider', 'Password slider', 'required');
     // if($this->form_validation->run()!=false)
     // {
-    $config['upload_path'] = './assets/depan/images/';
+    $config['upload_path'] = './depan/assets/image/banner/';
     $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp';
     $config['max_size'] = '2048';
     $config['file_name'] = 'gambar_slider_' . time();
@@ -115,9 +115,9 @@ class Slider extends CI_Controller
     //   $this->form_validation->set_rules('password_slider', 'Password slider', 'required');
     //  if($this->form_validation->run()!=false)
     //  {
-    $config['upload_path'] = './assets/depan/images/';
+    $config['upload_path'] = './depan/assets/image/banner/';
     $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp';
-    $config['max_size'] = '2048';
+    $config['max_size'] = '2048000';
     $config['file_name'] = 'foto_slider_' . time();
     $this->load->library('upload', $config);
     if ($this->upload->do_upload('gambar_slider')) {

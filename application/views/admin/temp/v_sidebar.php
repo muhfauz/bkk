@@ -99,6 +99,8 @@
             <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/judul') ?>"> <i class="fa fa-user-o mr-1"></i>Judul</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/bkk') ?>"> <i class="fa fa-building mr-1"></i>Data BKK</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/logo') ?>"> <i class="fa fa-image mr-1"></i>Logo BKK</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/faq') ?>"> <i class="fa fa-image mr-1"></i>FAQ</a></li>
+            <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/slider') ?>"> <i class="fa fa-image mr-1"></i>Slider</a></li>
             <li class="ml-4"><a href="<?php echo base_url('admin/pengaturan/gantipas') ?>"> <i class="fa fa-image mr-1"></i>Ganti Passwordr</a></li>
 
           </ul>

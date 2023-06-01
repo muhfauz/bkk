@@ -10017,6 +10017,7 @@ textarea {
 
 .Checkout_ input[type="text"],
 .Checkout_ input[type="email"],
+.Checkout_ input[type="date"],
 .Checkout_ input[type="phone"],
 textarea {
 	position: relative;

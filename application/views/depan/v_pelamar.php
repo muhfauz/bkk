@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="heading">
-                        <h1>Checkout</h1>
+                        <h1>Daftar Sebagai Pelamar</h1>
                     </div>
                 </div>
 
@@ -40,22 +40,22 @@
                             <h2>Billing Address</h2>
                         </div>
                         <form action="#" class="row">
-                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <label>First Name *</label>
-                                    <input type="text" name="first_name">
+                                    <label>Nama Lengkap *</label>
+                                    <input type="text" name="nama_pelamar" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                    <label>Last Name *</label>
-                                    <input type="text" name="last_name">
+                                    <label>Alamat *</label>
+                                    <input type="text" name="tempatlahir_pelamar" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <label>Email Address *</label>
-                                    <input type="email" name="email">
+                                    <label>Tanggal Lahir *</label>
+                                    <input type="text" name="tanggallahir_pelamar" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -170,47 +170,7 @@
                     </div>
 
                 </div>
-                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                    <div class="your_order_details">
-                        <h2>Your Order</h2>
-                        <div class="sub_total">
-                            <ul class="top">
-                                <li>Product</li>
-                                <li><span>Total</span></li>
-                            </ul>
-                            <div class="shipping">
-                                <ul class="fir">
-                                    <li> Levi Rectangle X 2<span>$80.00 </span></li>
-                                    <li> Denis Rectangle X 1<span> $35.00</span></li>
-                                </ul>
-                                <ul class="sec">
-                                    <li>Subtotal<span> $115.00</span></li>
-                                    <li> Free Shipping<span>+00.00</span></li>
-                                </ul>
-                                <div class="total">
-                                    <ul class="clearfix">
-                                        <li>Total</li>
-                                        <li><span>$115.00</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="payment_options">
-                                <ul>
-                                    <li> Cash on delivery<br />
-                                        <span>Pay with cash upon delivery</span>
-                                    </li>
-                                    <li>
-                                        Paypal</li>
-                                    <li> Direct Bank Transfer</li>
-                                    <li> Cheque Payment
-                                    </li>
-                                </ul>
-                            </div>
 
-
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
