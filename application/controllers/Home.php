@@ -93,4 +93,13 @@ class Home extends CI_Controller
         $this->load->view('depan/v_single');
         $this->load->view('depan/v_footer');
     }
+    public function hubungi()
+    {
+        $data['lowongan'] = $this->db->query("select * from tbl_lowongan")->result();
+        $this->load->view('depan/v_header', $data);
+        // $this->load->view('admin/temp/v_atas');
+        // $this->load->view('admin/temp/v_sidebar');
+        $this->load->view('depan/v_hubungi');
+        $this->load->view('depan/v_footer');
+    }
 }

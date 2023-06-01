@@ -81,8 +81,15 @@
                                 <a class="nav-link link_hd" href="<?php echo base_url('home/lowongan') ?>"> Lowongan </a>
 
                             </li>
-                            <li class="nav-item dropdown ">
-                                <a class="nav-link link_hd" href="<?php echo base_url('home/tentang') ?>"> Tentang Kami </a>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link link_hd" href="#"> Informasi </a>
+                                <ul class="navbar-nav submenu">
+                                    <a class="nav-link link_hd" href="<?php echo base_url('home/tentang') ?>"> Tentang Kami </a>
+                                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url('home/hubungi') ?>">Hubungi Kami</a></li>
+
+
+                                </ul>
                             </li>
                             <li class="nav-item dropdown ">
                                 <a class="nav-link link_hd" href="<?php echo base_url('home/faq') ?>"> FAQ </a>
@@ -105,6 +112,7 @@
                                     </ul>
                                 </li>
                             <?php }  ?>
+
 
 
 
