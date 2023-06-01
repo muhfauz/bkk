@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2023 at 02:14 AM
+-- Generation Time: Jun 02, 2023 at 12:47 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -94,7 +94,7 @@ CREATE TABLE `tbl_bkk` (
 --
 
 INSERT INTO `tbl_bkk` (`kd_bkk`, `nama_bkk`, `alamat_bkk`, `tentang_bkk`, `telepon_bkk`, `email_bkk`, `logob_bkk`, `logok_bkk`, `logo_depan`, `kd_pos`, `kab_bkk`, `prop_bkk`) VALUES
-(1, 'BKK SMK Apa ya', 'Jl.Siliwangi, Desa Suro Kecamatan Kalibagor Banyumas. ', 'ererererer', '085742906467', 'azzuhriyyahsuro@gmail.com', 'gambar1639611256.png', 'gambar1639612064.png', 'logodepan1639612646.png', '53444', 'purbalingga', 'Jawa Tengah');
+(1, 'BKK SMK Apa ya', 'Jl.Siliwangi, Desa Suro Kecamatan Kalibagor Banyumas. ', 'ererererer', '085742906467', 'azzuhriyyahsuro@gmail.com', 'gambar1639611256.png', 'gambar1639612064.png', 'logodepan1685593123.png', '53444', 'purbalingga', 'Jawa Tengah');
 
 -- --------------------------------------------------------
 
@@ -124,6 +124,25 @@ INSERT INTO `tbl_bulan` (`kd_bulan`, `nama_bulan`) VALUES
 (10, 'Oktober'),
 (11, 'November'),
 (12, 'Desember');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_faq`
+--
+
+CREATE TABLE `tbl_faq` (
+  `kd_faq` int(11) NOT NULL,
+  `tanya_faq` varchar(100) NOT NULL,
+  `jawab_faq` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_faq`
+--
+
+INSERT INTO `tbl_faq` (`kd_faq`, `tanya_faq`, `jawab_faq`) VALUES
+(1, 'Berikut Langkah-Langkah Cara Menyewa Lapangan Di Bintang Futsal', '<p>Bagaimana sih cara sewanya?</p>\r\n\r\n<p>1. Pastikan telah masuk ke akun anda. Jika belum punya akun bisa registrasi (daftar) terlebih dahulu.</p>\r\n\r\n<p>2. Kemudian pilih tanggal dan lapangan yang ada di menu sewa lapangan.</p>\r\n\r\n<p>3. Pilih jam yang akan di booking</p>\r\n\r\n<p>4. Pilih metode pembayaran DP 50% atau Lunas .</p>\r\n\r\n<p>5. Masuk ke history sewa untuk mengkonfirmasi pembayaran dengan cara mengupload bukti bayar.</p>\r\n\r\n<p>6. Setelah upload bukti status pembayaran SUDAH BAYAR, ADMIN BELUM CEK. Tunggu beberapa saat sampai di konfirmasi oleh admin.</p>\r\n\r\n<p>7. Jika sudah terkonfirmasi maka status pembayaran telah berubah menjadi SELESAI. 8. Jika belum maka UPLOAD BUKTI PEMBAYARAN ULANG.</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -279,7 +298,7 @@ CREATE TABLE `tbl_lowongan` (
 
 INSERT INTO `tbl_lowongan` (`kd_lowongan`, `nama_lowongan`, `kd_sektor`, `tgl_mulai`, `tgl_selesai`, `kd_jabatan`, `lokasi_penempatan`, `jumlah_pria`, `jumlah_wanita`, `desk_lowongan`, `kd_pendidikan`, `jurusan`, `status_lowongan`, `acc_adminlowongan`, `kd_perush`, `gambar_lowongan`) VALUES
 ('LOWONGAN005', 'erere', 'SEK001', '2023-05-14', '2023-05-19', 'JAB001', '', '3', '3', '<p>3eferer</p>\r\n', 'PEND001', 'erer', '', 'belum', 'PERUSH002', 'lowongan_kerja.png'),
-('LOWONGAN006', 'dfdfd', 'SEK001', '2023-05-14', '2023-05-17', 'JAB001', '', '10', '10', 'dfdfdf', 'PEND001', 'dfdf', '', 'acc', 'PERUSH002', 'lowongan_kerja.png'),
+('LOWONGAN006', 'dfdfd', 'SEK001', '2023-05-14', '2023-05-17', 'JAB001', '', '10', '10', 'dfdfdf', 'PEND002', 'dfdf', '', 'acc', 'PERUSH002', 'lowongan_kerja.png'),
 ('LOWONGAN007', 'ererere', 'SEK001', '2023-05-15', '2023-05-21', 'JAB001', '', '10', '10', '3erererer', 'PEND001', 'ererer', '', 'acc', 'PERUSH002', 'lowongan_kerja.png'),
 ('LOWONGAN008', 'erererer', 'SEK001', '2023-05-14', '2023-05-20', 'JAB001', '', '10', '10', 'ererer', 'PEND001', 'TKJ', '', 'acc', 'PERUSH002', 'lowongan_kerja.png'),
 ('LOWONGAN009', 'erere', 'SEK001', '2023-05-20', '2023-05-27', 'JAB003', '', '3', '3', 'dfdf', 'PEND001', 'ererer', '', 'belum', 'PERUSH002', 'lowongan_kerja.png');
@@ -434,6 +453,50 @@ INSERT INTO `tbl_sektor` (`kd_sektor`, `nama_sektor`) VALUES
 ('SEK001', 'Ekonomi'),
 ('SEK002', 'Pertanian');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_slider`
+--
+
+CREATE TABLE `tbl_slider` (
+  `kd_slider` int(11) NOT NULL,
+  `atas_slider` varchar(30) NOT NULL,
+  `tengah_slider` varchar(20) NOT NULL,
+  `bawah_slider` varchar(20) NOT NULL,
+  `gambar_slider` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_slider`
+--
+
+INSERT INTO `tbl_slider` (`kd_slider`, `atas_slider`, `tengah_slider`, `bawah_slider`, `gambar_slider`) VALUES
+(1, 'adafafasdf adfdasfdasfdasfd', 'Tempat ', 'BINTANG FUTSAL JAMBL', 'foto_slider_1685592746.png'),
+(2, 'PERCAYAKAN LAPANGAN FUTSAL ', 'ANAK ', 'BERSAMA KAMI', 'foto_slider_1685592102.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tentang`
+--
+
+CREATE TABLE `tbl_tentang` (
+  `kd_tentang` int(5) NOT NULL,
+  `judul_tentang` varchar(30) NOT NULL,
+  `isi_tentang` text NOT NULL,
+  `gambar_tentang` varchar(20) NOT NULL,
+  `url_tentang` varchar(100) NOT NULL,
+  `kd_admin` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_tentang`
+--
+
+INSERT INTO `tbl_tentang` (`kd_tentang`, `judul_tentang`, `isi_tentang`, `gambar_tentang`, `url_tentang`, `kd_admin`) VALUES
+(1, 'Tentang Kami', '<p>Visi Kami adalah untuk apa ya</p>\r\n\r\n<p>Futsal dipopulerkan di Montevideo, Uruguay pada tahun 1930, oleh Juan Carlos Ceriani. Keunikan futsal mendapat perhatian di seluruh Amerika Selatan, terutamanya di Brasil. Ketrampilan yang dikembangkan dalam permainan ini dapat dilihat dalam gaya terkenal dunia yang diperlihatkan pemain-pemain Brasil di luar ruangan, pada lapangan berukuran biasa. Pele, bintang terkenal Brasil, contohnya, mengembangkan bakatnya di futsal. Sementara Brasil terus menjadi pusat futsal dunia, permainan ini sekarang dimainkan di bawah perlindungan F&eacute;d&eacute;ration Internationale de Football Association di seluruh dunia, dari Eropa hingga Amerika Tengah dan Amerika Utara serta Afrika, Asia, dan Oseania.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Futsal adalah permainan bola yang dimainkan oleh dua tim, yang masing-masing beranggotakan lima orang. Tujuannya adalah memasukkan bola ke gawang lawan, dengan memanipulasi bola dengan kaki. Selain lima pemain utama, setiap regu juga diizinkan memiliki pemain cadangan. Tidak seperti permainan sepak bola dalam ruangan lainnya, lapangan futsal dibatasi garis, bukan net atau papan.</p>\r\n', 'adm_1685659138.jpg', 'https://www.youtube.com/watch?v=niDjf5g1Iro', 'ADM001');
+
 --
 -- Indexes for dumped tables
 --
@@ -461,6 +524,12 @@ ALTER TABLE `tbl_bkk`
 --
 ALTER TABLE `tbl_bulan`
   ADD PRIMARY KEY (`kd_bulan`);
+
+--
+-- Indexes for table `tbl_faq`
+--
+ALTER TABLE `tbl_faq`
+  ADD PRIMARY KEY (`kd_faq`);
 
 --
 -- Indexes for table `tbl_jabatan`
@@ -523,6 +592,18 @@ ALTER TABLE `tbl_sektor`
   ADD PRIMARY KEY (`kd_sektor`);
 
 --
+-- Indexes for table `tbl_slider`
+--
+ALTER TABLE `tbl_slider`
+  ADD PRIMARY KEY (`kd_slider`);
+
+--
+-- Indexes for table `tbl_tentang`
+--
+ALTER TABLE `tbl_tentang`
+  ADD PRIMARY KEY (`kd_tentang`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -539,6 +620,12 @@ ALTER TABLE `tbl_bulan`
   MODIFY `kd_bulan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT for table `tbl_faq`
+--
+ALTER TABLE `tbl_faq`
+  MODIFY `kd_faq` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tbl_judul`
 --
 ALTER TABLE `tbl_judul`
@@ -549,6 +636,18 @@ ALTER TABLE `tbl_judul`
 --
 ALTER TABLE `tbl_logo`
   MODIFY `kd_logo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_slider`
+--
+ALTER TABLE `tbl_slider`
+  MODIFY `kd_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_tentang`
+--
+ALTER TABLE `tbl_tentang`
+  MODIFY `kd_tentang` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

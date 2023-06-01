@@ -69,7 +69,7 @@ class Home extends CI_Controller
     }
     public function tentang()
     {
-        $data['faq'] = $this->db->query("select * from tbl_faq")->result();
+        $data['tentang'] = $this->db->query("select * from tbl_tentang")->result();
         $this->load->view('depan/v_header', $data);
         // $this->load->view('admin/temp/v_atas');
         // $this->load->view('admin/temp/v_sidebar');
