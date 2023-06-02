@@ -218,14 +218,31 @@
 
 
                                 <div class="leave_reply">
-                                    <h1>Leave <span>A Reply</span></h1>
+                                    <!-- <h1>Leave <span>A Reply</span></h1> -->
                                     <form>
                                         <div class="row">
 
                                             <div class="col-lg-12">
                                                 <div class="from-group">
                                                     <?php if ($this->session->userdata('status') == 'login' and $this->session->userdata('posisi') == 'pelamar') { ?>
-                                                        <a href="" class="btn comment_btn" data-toggle="modal" data-target="#lamardata<?php echo $l->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Lamar</a>
+                                                        <?php if ($this->session->userdata('acc_adminpelamar') == 'acc') { ?>
+                                                            <?php
+                                                            $kd_pelamar = $this->session->userdata('kd_pelamar');
+                                                            $kd_lowongan = $l->kd_lowongan;
+                                                            $sudahlamar = $this->db->query("select * from tbl_lamaran where kd_lowongan='$kd_lowongan' and kd_pelamar='$kd_pelamar'")->num_rows();
+                                                            if ($sudahlamar > 0) { ?>
+                                                                <div class="alert alert-danger" role="alert">
+                                                                    Anda sudah melamar lowongan ini
+                                                                </div>
+                                                            <?php } else { ?>
+
+                                                                <a href="" class="btn comment_btn" data-toggle="modal" data-target="#lamardata<?php echo $l->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Lamar</a>
+                                                            <?php } ?>
+                                                        <?php } else { ?>
+                                                            <div class="alert alert-danger" role="alert">
+                                                                This is a danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+                                                            </div>
+                                                        <?php } ?>
                                                     <?php } ?>
 
 

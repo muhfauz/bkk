@@ -110,10 +110,18 @@ class Home extends CI_Controller
 
     public function aksitambahlamaran()
     {
+        $session = array(
+            'kd_lowongan' => $this->input->post('kd_lowongan'),
+        );
+        $this->session->set_userdata($session);
+        redirect(base_url('home/aksitambahlamaranjadi'));
+    }
+    public function aksitambahlamaranjadi()
+    {
         $data = array(
             'kd_pelamar' => $this->session->userdata('kd_pelamar'),
-            'kd_lowongan' => $this->input->post('kd_lowongan'),
-            'kd_lowongan' => date(),
+            'kd_lowongan' => $this->session->userdata('kd_lowongan'),
+            // 'kd_lowongan' => date(),
             // 'foto_kategori' => $image['file_name'],
         );
         $this->Mglobal->tambahdata($data, 'tbl_lamaran');
@@ -123,6 +131,6 @@ class Home extends CI_Controller
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>');
-        redirect(base_url('home/single/lowongan007'));
+        redirect(base_url('home/single/' . $this->session->userdata('kd_lowongan')));
     }
 }
