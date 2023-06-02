@@ -107,4 +107,22 @@ class Home extends CI_Controller
         $this->load->view('depan/v_hubungi');
         $this->load->view('depan/v_footer');
     }
+
+    public function aksitambahlamaran()
+    {
+        $data = array(
+            'kd_pelamar' => $this->session->userdata('kd_pelamar'),
+            'kd_lowongan' => $this->input->post('kd_lowongan'),
+            'kd_lowongan' => date(),
+            // 'foto_kategori' => $image['file_name'],
+        );
+        $this->Mglobal->tambahdata($data, 'tbl_lamaran');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <strong>Lamaran Anda Sukses!</strong> Data berhasil disimpan ke database.
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>');
+        redirect(base_url('home/single/lowongan007'));
+    }
 }

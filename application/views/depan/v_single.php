@@ -95,6 +95,7 @@
                             <div class="blog-single_post-inner">
 
                                 <div class="blog-content">
+                                    <?php echo $this->session->userdata('pesan'); ?>
                                     <p><?php echo $lb->nama_pendidikan ?> <span><?php echo $this->Mglobal->tanggalindo($lb->tgl_selesai) ?></span></p>
                                     <h2><a href="#">Lowongan Kerja <?php echo $l->nama_lowongan ?> di <?php echo $l->nama_perush ?> </a></h2>
                                     <p class="desc">In the 12 months following Meditex Health’s launch of the Screening, Brief Intervention and
@@ -102,7 +103,7 @@
                                         substance abuse have been referred to treatment.</p>
                                 </div>
                                 <div class="image blog_sub_ban">
-                                    <img src="assets/image/blog/blog_single_4.jpg" class="img-fluid" alt="case" />
+                                    <img src="<?php echo base_url('gambar/lowongan/') . $l->gambar_lowongan ?>" class="img-fluid" alt="case" />
                                 </div>
                                 <div class="authour_desc">
 
@@ -223,8 +224,11 @@
 
                                             <div class="col-lg-12">
                                                 <div class="from-group">
-                                                    <button type="submit" class="comment_btn">SUBMIT COMMENTS</button>
-                                                    <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#hapusdata"> <i class="fa fa-edit mr-2"></i> Lamar</a>
+                                                    <?php if ($this->session->userdata('status') == 'login' and $this->session->userdata('posisi') == 'pelamar') { ?>
+                                                        <a href="" class="btn comment_btn" data-toggle="modal" data-target="#lamardata<?php echo $l->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Lamar</a>
+                                                    <?php } ?>
+
+
                                                 </div>
                                             </div>
 
@@ -243,33 +247,34 @@
 
 
     <!-- Modal Lamar -->
-    <div class="modal fade" id="hapusdata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Hapus Data</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="<?php echo base_url('admin/deskripsi/kegiatan/hapuskegiatan') ?>" method="post">
-                        <div class="form-group">
-                            Apakah Anda Yakin akan menghapus data ini ?
-                            <!-- <label for="">Nama</label>
-                  <input name="nama_kegiatan" type="text" class="form-control" value="<?php echo $a->nama_kegiatan ?>" required> -->
-                            <input name="kd_kegiatan" type="hidden" class="form-control" value="<?php echo $a->kd_kegiatan ?>" required>
-                        </div>
+    <?php foreach ($lowongan as $l) : ?>
+        <div class="modal fade main-content" id="lamardata<?php echo $l->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Lamar Lowongan</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="<?php echo base_url('home/aksitambahlamaran') ?>" method="post">
+                            <div class="form-group">
+                                Apakah Anda Yakin akan Melamar Lowongan Kerja <?php echo $l->nama_lowongan ?> di <?php echo $l->nama_perush ?> ini ?
+
+                                <input name="kd_lowongan" type="hidden" class="form-control" value="<?php echo $l->kd_lowongan ?>" required>
+                            </div>
 
 
 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-window-close mr-2" aria-hidden="true"></i>Tidak</button>
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-check mr-2" aria-hidden="true"></i>Ya</button>
+                    </div>
+                    </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                    <button type="submit" class="btn btn-danger">Ya</button>
-                </div>
-                </form>
             </div>
         </div>
-    </div>
+    <?php endforeach; ?>
     <!-- Akhir Modal Lamar -->
