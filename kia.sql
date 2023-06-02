@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2023 at 12:47 AM
+-- Generation Time: Jun 02, 2023 at 12:17 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -252,6 +252,34 @@ INSERT INTO `tbl_karyawan` (`kd_karyawan`, `nama_karyawan`, `tempatlahir_karyawa
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_lamaran`
+--
+
+CREATE TABLE `tbl_lamaran` (
+  `kd_lamaran` int(11) NOT NULL,
+  `kd_pelamar` varchar(15) NOT NULL,
+  `kd_lowongan` varchar(15) NOT NULL,
+  `tgl_lamaran` date NOT NULL,
+  `status_lamaran` varchar(10) NOT NULL,
+  `berkas_lamaran` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_lamaran`
+--
+
+INSERT INTO `tbl_lamaran` (`kd_lamaran`, `kd_pelamar`, `kd_lowongan`, `tgl_lamaran`, `status_lamaran`, `berkas_lamaran`) VALUES
+(1, 'PELAMAR003', 'LOWONGAN007', '0000-00-00', '', ''),
+(2, 'PELAMAR003', '0', '0000-00-00', '', ''),
+(3, 'PELAMAR003', '0', '0000-00-00', '', ''),
+(4, 'PELAMAR003', '0', '0000-00-00', '', ''),
+(5, 'PELAMAR003', '0', '0000-00-00', '', ''),
+(6, 'PELAMAR004', '0', '0000-00-00', '', ''),
+(7, 'PELAMAR004', '0', '0000-00-00', '', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_logo`
 --
 
@@ -335,8 +363,8 @@ CREATE TABLE `tbl_pelamar` (
 --
 
 INSERT INTO `tbl_pelamar` (`kd_pelamar`, `nama_pelamar`, `noktp_pelamar`, `tempatlahir_pelamar`, `tanggallahir_pelamar`, `agama_pelamar`, `jk_pelamar`, `tinggibadan_pelamar`, `beratbadan_pelamar`, `disabilitas_pelamar`, `jenisdisabilitas_pelamar`, `keterangandisabilitas_pelamar`, `statusperkawinan_pelamar`, `alamatlengkap_pelamar`, `nohp_pelamar`, `password_pelamar`, `foto_pelamar`, `acc_adminpelamar`) VALUES
-('PELAMAR003', 'erererer', '545545545454', 'Banyumas', '2023-05-08', 'Kristen', 'Pria', '10', '10', '', '', '', 'kawin', '10>', '343434', 'fcea920f7412b5da7be0cf42b8c93759', 'foto_pelamar.png', 'belum'),
-('PELAMAR004', 'ererer', '4343', 'erererere', '2023-05-26', 'Kristen', 'Pria', '2222', '2222', '', '', '', 'lajang', 'erererer', '3434343', 'c58af20903f165a77e465fd111333f6a', 'foto_pelamar.png', 'belum');
+('PELAMAR003', 'erererer', '545545545454', 'Banyumas', '2023-05-08', 'Kristen', 'Pria', '10', '10', '', '', '', 'kawin', '10>', '343434', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png', 'belum'),
+('PELAMAR004', 'ererer', '4343', 'erererere', '2023-05-26', 'Kristen', 'Pria', '2222', '2222', '', '', '', 'lajang', 'erererer', '3434343', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png', 'acc');
 
 -- --------------------------------------------------------
 
@@ -430,9 +458,9 @@ CREATE TABLE `tbl_perusahaan` (
 --
 
 INSERT INTO `tbl_perusahaan` (`kd_perush`, `nama_perush`, `desk_perush`, `jenisbu_perush`, `nib_perush`, `sektor_perush`, `alamatlengkap_perush`, `notel_perush`, `namapj_perush`, `password_perush`, `logo_perush`, `acc_admin`) VALUES
-('PERUSH001', 'dfdfdfdfdf', 'erere', 'erere', 'ererer', 'erere', 'ererer', '34343', 'edrfererr', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush.png', 'acc'),
-('PERUSH002', 'aaa', 'aaa', 'aaa', 'aaa', 'aa', 'aaa', 'aa', 'aa', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1683328914.jpg', 'acc'),
-('PERUSH003', 'erer', 'erer', 'erer', 'erer', 'erer', 'erer', '34343', '3434', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1683333693.png', 'acc');
+('PERUSH001', 'Pusat Laptor Nusantara', 'Perusahaan Penjualan Laptop di Purwokerto', 'PT', '8888888888', 'Penjualan', 'Jl. Pramuka No.202, Samudra, Purwokerto Kidul, Kec. Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah', '088888888', 'edrfererr', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush.png', 'acc'),
+('PERUSH002', 'Kei Ramen', 'Perusahaan yang bergerak dalam bidang restoran', 'CV', '8888888', 'Restauran', 'Purwokerto', '08888888', 'Sumantri', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1683328914.jpg', 'acc'),
+('PERUSH003', 'Mulya Pratama', 'Perusahaan perdagangan kalung berliang', 'CV', '888888', 'Perdagangan', 'Jalan Raya Krangklesem Purwokreto', '88888888888', 'Sumanjaya', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1683333693.png', 'acc');
 
 -- --------------------------------------------------------
 
@@ -550,6 +578,12 @@ ALTER TABLE `tbl_karyawan`
   ADD PRIMARY KEY (`kd_karyawan`);
 
 --
+-- Indexes for table `tbl_lamaran`
+--
+ALTER TABLE `tbl_lamaran`
+  ADD PRIMARY KEY (`kd_lamaran`);
+
+--
 -- Indexes for table `tbl_logo`
 --
 ALTER TABLE `tbl_logo`
@@ -630,6 +664,12 @@ ALTER TABLE `tbl_faq`
 --
 ALTER TABLE `tbl_judul`
   MODIFY `kd_judul` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_lamaran`
+--
+ALTER TABLE `tbl_lamaran`
+  MODIFY `kd_lamaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_logo`
