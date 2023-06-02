@@ -98,6 +98,9 @@
 
                             <?php if ($this->session->userdata('status') == 'login') { ?>
                                 <li class="nav-item dropdown ">
+                                    <a class="nav-link link_hd" href="<?php echo base_url('welcome') ?>"> Beranda </a>
+                                </li>
+                                <li class="nav-item dropdown ">
                                     <a class="nav-link link_hd" href="<?php echo base_url('login/logout') ?>"> LogOut </a>
                                 </li>
 
