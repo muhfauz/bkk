@@ -86,9 +86,11 @@ class Home extends CI_Controller
         $this->load->view('depan/v_lowongan');
         $this->load->view('depan/v_footer');
     }
-    public function single()
+    public function single($id)
     {
-        $data['lowongan'] = $this->db->query("select * from tbl_lowongan")->result();
+        $data['lowonganbaru'] = $this->db->query("select * from tbl_lowongan L, tbl_pendidikan P, tbl_perusahaan PR where L.kd_pendidikan=P.kd_pendidikan and L.kd_perush=PR.kd_perush ORDER BY L.kd_lowongan desc limit 5")->result();
+        $data['pendidikan'] = $this->Mglobal->tampilkandata('tbl_pendidikan');
+        $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_pendidikan P, tbl_perusahaan PR where L.kd_pendidikan=P.kd_pendidikan and L.kd_perush=PR.kd_perush and  L.kd_lowongan='$id'")->result();
         $this->load->view('depan/v_header', $data);
         // $this->load->view('admin/temp/v_atas');
         // $this->load->view('admin/temp/v_sidebar');

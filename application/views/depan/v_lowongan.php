@@ -47,12 +47,12 @@
                         <div class="blog-grid-inner">
                             <div class="image">
                                 <img src="<?php echo base_url('gambar/lowongan/') . $l->gambar_lowongan ?>" class="img-fluid" alt="case" width="370" height="296" />
-                                <a href="#" class="link"></a>
+                                <a href="<?php echo base_url('home/single/') . $l->kd_lowongan ?>" class="link"></a>
                             </div>
                             <div class="blog-grid-content">
                                 <p><?php echo $l->nama_pendidikan ?> . <span>July 10, 2018</span></p>
-                                <h2><a href="#"><?php echo $l->nama_lowongan ?> </a></h2>
-                                <a href="#" class="rd-more">READ MORE</a>
+                                <h2><a href="<?php echo base_url('home/single/') . $l->kd_lowongan ?>"><?php echo $l->nama_lowongan ?> </a></h2>
+                                <a href="<?php echo base_url('home/single/') . $l->kd_lowongan ?>" class="rd-more">READ MORE</a>
                             </div>
                         </div>
                     </div>

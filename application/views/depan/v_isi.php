@@ -100,7 +100,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="heading">
-                        <h1>BEST DOCTORS<span> FOR YOU</span></h1>
+                        <h1>Lowongan<span> Kerja</span></h1>
                     </div>
                 </div>
             </div>
@@ -111,10 +111,10 @@
                             <div class="best-doctor-outer">
                                 <div class="image">
                                     <img src="<?php echo base_url('gambar/lowongan/') . $l->gambar_lowongan ?>" class="img-fluid" alt="best-doctors" />
-                                    <a href="#" class="link"></a>
+                                    <a href="<?php echo base_url('home/single/') . $l->kd_lowongan ?>" class="link"></a>
                                 </div>
                                 <div class="content-inner">
-                                    <h2> <a href="#"><?php echo $l->nama_lowongan ?> </a> </h2>
+                                    <h2> <a href="<?php echo base_url('home/single/') . $l->kd_lowongan ?>"><?php echo $l->nama_lowongan ?> </a> </h2>
                                     <span><?php echo $l->nama_pendidikan ?></span>
                                     <p><?php echo $l->nama_lowongan ?> dengan tingkat pendidikan <?php echo $l->nama_pendidikan ?> masih tersedia, silaka lihat detail </p>
                                     <ul>
