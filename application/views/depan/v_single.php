@@ -55,40 +55,34 @@
                             <!----Categories---->
                             <!---Popular Posts--->
                             <div class="popular_posts">
-                                <h2 class="sub_head">Popular Posts</h2>
+                                <h2 class="sub_head">Lowongan Terbaru</h2>
                                 <?php foreach ($lowonganbaru as $lb) : ?>
                                     <div class="posts_">
-                                        <a href="#"><img src="<?php echo base_url('gambar/lowongan/') . $lb->gambar_lowongan ?>" class="img-responsive" alt="popular_post" /></a>
+                                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                                            <a class="thumbnail" href="#">
+                                                <img class="img-responsive" src="" alt="">
+                                                <a href="<?php echo base_url('home/single/') . $lb->kd_lowongan ?>"><img src="<?php echo base_url('gambar/lowongan/') . $lb->gambar_lowongan ?>" class="img-responsive" alt="popular_post" /></a>
+                                            </a>
+                                        </div>
+
                                         <div class="post_content">
-                                            <p>Business . July 10, 2018</p>
-                                            <h2><a href="#">Lowongan Kerja <?php echo $lb->nama_lowongan ?> di <?php echo $lb->nama_perush ?></a></h2>
+                                            <p><?php echo $lb->nama_pendidikan . ', ' . $this->Mglobal->tanggalindo($lb->tgl_selesai) ?> </p>
+                                            <h2><a href="<?php echo base_url('home/single/') . $lb->kd_lowongan ?>">Lowongan Kerja <?php echo $lb->nama_lowongan ?> di <?php echo $lb->nama_perush ?></a></h2>
                                         </div>
                                     </div>
                                 <?php endforeach ?>
 
-                                <div class="posts_">
-                                    <a href="#"><img src="assets/image/post/blog-post-2.jpg" class="img-fluid" alt="popular_post" /></a>
-                                    <div class="post_content">
-                                        <p>Experience . April 04, 2018</p>
-                                        <h2><a href="#">Urban Mosquito Control With Help From Scientists</a></h2>
-                                    </div>
-                                </div>
-                                <div class="posts_">
-                                    <a href="#"><img src="assets/image/post/blog-post-3.jpg" class="img-fluid" alt="popular_post" /></a>
-                                    <div class="post_content">
-                                        <p>Lifestyle . April 04, 2018</p>
-                                        <h2><a href="#">Study Finds 43% Drop in Stroke Rate</a></h2>
-                                    </div>
-                                </div>
+
                             </div>
                             <!---Popular Posts--->
                             <!----TAG CLOUD----->
                             <div class="tag_cloud">
-                                <h2 class="sub_head">Tag Cloud</h2>
+                                <h2 class="sub_head">Perusahaan</h2>
                                 <div class="tags">
-                                    <a href="#">Care</a><a href="#">Healing</a><a href="#">Cancer</a>
-                                    <a href="#">Technolory</a><a href="#">Hospital</a>
-                                    <a href="#">Clinic</a><a href="#">Health</a><a href="#">Patient</a>
+                                    <?php foreach ($perusahaan as $pr) : ?>
+                                        <a href="#"><?php echo $pr->nama_perush ?> </a>
+                                    <?php endforeach; ?>
+
                                 </div>
                             </div>
                             <!----TAG CLOUD----->
@@ -101,7 +95,7 @@
                             <div class="blog-single_post-inner">
 
                                 <div class="blog-content">
-                                    <p>Business . <span>July 10, 2018</span></p>
+                                    <p><?php echo $lb->nama_pendidikan ?> <span><?php echo $this->Mglobal->tanggalindo($lb->tgl_selesai) ?></span></p>
                                     <h2><a href="#">Lowongan Kerja <?php echo $l->nama_lowongan ?> di <?php echo $l->nama_perush ?> </a></h2>
                                     <p class="desc">In the 12 months following Meditex Health’s launch of the Screening, Brief Intervention and
                                         Referral to Treatment program known as SBIRT, more than 4.560 patients struggling with
@@ -171,16 +165,24 @@
                                 </div>
 
                                 <div class="authour_testimonial">
-                                    <div class="image">
-                                        <img src="assets/image/blog/blog_single_post_authour.png" class="img-fluid" alt="img" />
+                                    <div class="col-lg-3 col-md-4 col-xs-6 image mb-3">
+                                        <a class="thumbnail" href="#">
+                                            <img class="img-responsive" src="<?php echo base_url('gambar/') . $l->logo_perush ?>" alt="">
+
+                                        </a>
                                     </div>
+                                    <!-- <div class="image">
+                                        <img src="<?php echo base_url('gambar/') . $l->logo_perush ?>" class="img-fluid" alt="img" />
+                                    </div> -->
                                     <div class="content">
-                                        <h6>Keven Feil <span>Author</span></h6>
-                                        <p>Keven Feil is a contributing writer for Live Science. She covers animals, health and other general science topics. Her work has appeared in the Jewish Daily Forward</p>
+                                        <h6><?php echo $l->namapj_perush ?> <span>Author</span></h6>
+                                        <p><?php echo $l->nama_perush ?> , <?php echo $l->desk_perush ?></p>
                                     </div>
                                 </div>
 
-                                <div class="suggesstions">
+
+                                <div class="suggesstions mt-5">
+                                    <h1></h1>
                                     <h1>You May <span>Also Like</span></h1>
                                     <div class="row">
                                         <div class="col-lg-6">
@@ -212,33 +214,7 @@
                                     </div>
                                 </div>
 
-                                <div class="comments">
-                                    <h1>02 <span>Comments</span></h1>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="comment_innner">
-                                                <div class="image">
-                                                    <img src="assets/image/blog/blog_comment_img-1.png" class="img-fluid" alt="img" />
-                                                </div>
-                                                <div class="comment_text first">
-                                                    <h2>Willy Fahey</h2>
-                                                    <p>I would like help with a problem I’m having, but I have concerns about going to Student Mental Health & Counseling. Should I go to “Let’s Chat”?</p>
-                                                    <a href="#">Reply</a>
-                                                </div>
-                                            </div>
-                                            <div class="comment_innner">
-                                                <div class="image">
-                                                    <img src="assets/image/blog/blog_comment_img-2.png" class="img-fluid" alt="img" />
-                                                </div>
-                                                <div class="comment_text">
-                                                    <h2>Willy Fahey</h2>
-                                                    <p>I would like help with a problem I’m having, but I have concerns about going to Student Mental Health & Counseling. Should I go to “Let’s Chat”?</p>
-                                                    <a href="#">Reply</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
 
                                 <div class="leave_reply">
                                     <h1>Leave <span>A Reply</span></h1>
