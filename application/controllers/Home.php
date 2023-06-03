@@ -121,7 +121,7 @@ class Home extends CI_Controller
         $data = array(
             'kd_pelamar' => $this->session->userdata('kd_pelamar'),
             'kd_lowongan' => $this->session->userdata('kd_lowongan'),
-            // 'kd_lowongan' => date(),
+            'tgl_lamaran' => date("Y-m-d"),
             // 'foto_kategori' => $image['file_name'],
         );
         $this->Mglobal->tambahdata($data, 'tbl_lamaran');
