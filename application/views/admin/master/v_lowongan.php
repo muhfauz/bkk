@@ -406,7 +406,7 @@
                         <div class="form-group">
                             <label for="">Deskripsi lowongan</label>
                             <!-- <input name="desk_lowongan" type="text" class="form-control" value="<?php echo $a->desk_lowongan ?>" required> -->
-                            <textarea name="desk_lowongan" id="tekeditor2" class="form-control" id="exampleFormControlTextarea1" rows="3" required><?php echo $a->desk_lowongan ?></textarea>
+                            <textarea name="desk_lowongan" id="tekeditoredit" class="form-control" id="exampleFormControlTextarea1" rows="3" required><?php echo $a->desk_lowongan ?></textarea>
                             <!-- <textarea name="desk_lowongan" id="tekeditor" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea> -->
                         </div>
 
@@ -448,7 +448,7 @@
                 </div>
                 </form>
                 <script>
-                    CKEDITOR.replace('tekeditor2');
+                    CKEDITOR.replace('tekeditoredit');
                 </script>
             </div>
         </div>

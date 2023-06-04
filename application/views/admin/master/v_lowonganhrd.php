@@ -26,6 +26,7 @@
                             <th class="text-center text-white align-middle" rowspan="2">Nama lowongan</th>
                             <th class="text-center text-white align-middle" rowspan="2">Deskripsi lowongan</th>
                             <th class="text-center text-white align-middle" rowspan="2">Status</th>
+                            <th class="text-center text-white align-middle" rowspan="2">Jumlah Pelamar</th>
                             <th class="text-center text-white align-middle" rowspan="2"></th>
 
                         </tr>
@@ -51,6 +52,9 @@
                                     <?php } ?>
 
                                 </td>
+                                <td><?php
+                                    $kd_lowongan = $a->kd_lowongan;
+                                    echo $this->db->query("select * from tbl_lamaran where kd_lowongan='$kd_lowongan'")->num_rows() ?> pelamar</td>
                                 <td class="float-right">
                                     <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_lowongan ?>"> <i class="fa fa-info mr-2"></i> Detail</a>
                                     <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Edit</a>
@@ -146,7 +150,7 @@
 
                     <div class="form-group">
                         <label for="">Deskripsi lowongan</label>
-                        <textarea name="desk_lowongan" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                        <textarea name="desk_lowongan" class="form-control" id="tekeditor1" rows="3" required></textarea>
                     </div>
 
                     <div class="form-group">
@@ -178,6 +182,9 @@
                 <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-1" aria-hidden="true"></i>Simpan</button>
             </div>
             </form>
+            <script>
+                CKEDITOR.replace('tekeditor1');
+            </script>
         </div>
     </div>
 </div>
@@ -383,8 +390,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="">lokasi_penempatan</label>
-                            <input name="lokas_penempatan" type="text" class="form-control" value="<?php echo $a->lokasi_penempatan ?>" required>
+                            <label for="">Lokasi Penempatan</label>
+                            <input name="lokasi_penempatan" type="text" class="form-control" value="<?php echo $a->lokasi_penempatan ?>" required>
                         </div>
 
                         <div class="form-group">
@@ -401,7 +408,7 @@
                         <div class="form-group">
                             <label for="">Deskripsi lowongan</label>
                             <!-- <input name="desk_lowongan" type="text" class="form-control" value="<?php echo $a->desk_lowongan ?>" required> -->
-                            <textarea name="desk_lowongan" class="form-control" id="exampleFormControlTextarea1" rows="3" required><?php echo $a->desk_lowongan ?></textarea>
+                            <textarea name="desk_lowongan" class="form-control" id="tekeditoredit" rows="3" required><?php echo $a->desk_lowongan ?></textarea>
                         </div>
 
                         <div class="form-group">
@@ -441,6 +448,9 @@
                     <button type="submit" class="btn btn-primary"> <i class="fa fa-save mr-2"></i>Simpan</button>
                 </div>
                 </form>
+                <script>
+                    CKEDITOR.replace('tekeditoredit');
+                </script>
             </div>
         </div>
     </div>
