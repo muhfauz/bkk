@@ -59,6 +59,7 @@
                                     <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_lowongan ?>"> <i class="fa fa-info mr-2"></i> Detail</a>
                                     <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Edit</a>
                                     <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#tetapkantest<?php echo $a->kd_lowongan ?>"> <i class="fa fa-paper-plane mr-2" aria-hidden="true"></i></i> Lokasi Seleksi</a>
+                                    <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#lihatpelamar<?php echo $a->kd_lowongan ?>"> <i class="fa fa-address-book mr-2" aria-hidden="true"></i></i> Lihat Pelamar</a>
                                     <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a>
 
 
@@ -300,8 +301,6 @@
 <!-- akhir detail -->
 <!-- modal detail -->
 <?php foreach ($lowongan as $a) : ?>
-
-
     <div class="modal fade" id="hapusdata<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -471,6 +470,34 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close mr-2"></i>Close</button>
                     <button type="submit" class="btn btn-primary"> <i class="fa fa-save mr-2"></i>Simpan</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+<!-- Lihat pelamar -->
+<?php foreach ($lowongan as $a) : ?>
+    <div class="modal fade" id="lihatpelamar<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Lihat Pelamar Lowongan <?php echo $a->nama_lowongan ?></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?php echo base_url('admin/lamaran/lamaranhrd') ?>" method="post">
+                        <div class="form-group">
+                            Apakah Anda Yakin akan menghapus data ini ?
+                            <input name="kd_lowongan" type="hidden" class="form-control" value="<?php echo $a->kd_lowongan ?>" required>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                    <button type="submit" class="btn btn-danger">Ya</button>
                 </div>
                 </form>
             </div>

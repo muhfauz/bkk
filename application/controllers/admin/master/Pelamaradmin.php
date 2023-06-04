@@ -233,6 +233,7 @@ class Pelamaradmin extends CI_Controller
     $where = array('kd_pelamar' => $this->input->post('kd_pelamar'));
     $data = array(
       'acc_adminpelamar' => 'acc',
+      'kd_admin' => $this->session->userdata('kd_admin'),
     );
     $this->Mglobal->editdata('tbl_pelamar', $where, $data);
     $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -248,6 +249,7 @@ class Pelamaradmin extends CI_Controller
     $where = array('kd_pelamar' => $this->input->post('kd_pelamar'));
     $data = array(
       'acc_adminpelamar' => 'banned',
+      'kd_admin' => $this->session->userdata('kd_admin'),
     );
     $this->Mglobal->editdata('tbl_pelamar', $where, $data);
     $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">

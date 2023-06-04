@@ -223,6 +223,7 @@ class Perusahaanadmin extends CI_Controller
     $where = array('kd_perush' => $this->input->post('kd_perush'));
     $data = array(
       'acc_admin' => 'acc',
+      'kd_admin' => $this->session->userdata('kd_admin'),
     );
     $this->Mglobal->editdata('tbl_perusahaan', $where, $data);
     $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -238,6 +239,7 @@ class Perusahaanadmin extends CI_Controller
     $where = array('kd_perush' => $this->input->post('kd_perush'));
     $data = array(
       'acc_admin' => 'banned',
+      'kd_admin' => $this->session->userdata('kd_admin'),
     );
     $this->Mglobal->editdata('tbl_perusahaan', $where, $data);
     $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">

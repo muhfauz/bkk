@@ -160,6 +160,7 @@ class lowonganadmin extends CI_Controller
     $where = array('kd_lowongan' => $this->input->post('kd_lowongan'));
     $data = array(
       'acc_adminlowongan' => 'acc',
+      'kd_admin' => $this->session->userdata('kd_admin'),
     );
     $this->Mglobal->editdata('tbl_lowongan', $where, $data);
 
@@ -176,6 +177,7 @@ class lowonganadmin extends CI_Controller
     $where = array('kd_lowongan' => $this->input->post('kd_lowongan'));
     $data = array(
       'acc_adminlowongan' => 'belum',
+      'kd_admin' => $this->session->userdata('kd_admin'),
     );
     $this->Mglobal->editdata('tbl_lowongan', $where, $data);
 
