@@ -85,15 +85,12 @@
                         <label for="">Kode lowongan</label>
                         <input name="kd_lowongan" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_lowongan", "tbl_lowongan", "LOWONGAN") ?>">
                     </div>
-
                     <div class="form-group">
                         <label for="">Nama lowongan</label>
                         <input name="nama_lowongan" type="text" class="form-control" required>
                     </div>
-
                     <div class="form-group">
                         <label for="">Sektor lowongan</label>
-
                         <div class="form-group">
                             <select class="form-control" name="kd_sektor" id="" required>
                                 <option value="">-Pilih Sektor-</option>
@@ -103,22 +100,16 @@
                             </select>
                         </div>
                     </div>
-
-
                     <div class="form-group">
                         <label for="">Tanggal Mulai</label>
                         <input name="tgl_mulai" type="date" class="form-control" required>
                     </div>
-
                     <div class="form-group">
                         <label for="">Tanggal Selesai</label>
                         <input name="tgl_selesai" type="date" class="form-control" required>
                     </div>
-
-
                     <div class="form-group">
                         <label for="">Kelompok Jabatan</label>
-
                         <div class="form-group">
                             <select class="form-control" name="kd_jabatan" id="" required>
                                 <option value="">-Pilih Kelompok Jabatan-</option>
@@ -128,29 +119,22 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="">Lokasi Penempatan</label>
                         <input name="lokasi_penempatan" type="text" class="form-control" required>
                     </div>
-
                     <div class="form-group">
                         <label for="">Jumlah Pria</label>
                         <input name="jumlah_pria" type="number" class="form-control" required>
                     </div>
-
                     <div class="form-group">
                         <label for="">Jumlah Wanita</label>
                         <input name="jumlah_wanita" type="number" class="form-control" required>
                     </div>
-
                     <div class="form-group">
                         <label for="">Deskripsi lowongan</label>
                         <textarea name="desk_lowongan" id="tekeditor" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
-                        <!-- <textarea name="tekeditor" id="tekeditor" cols="30" rows="10" class="form-control"></textarea> -->
-
                     </div>
-
                     <div class="form-group">
                         <label for="">Pendidikan</label>
                         <div class="form-group">
@@ -162,18 +146,15 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="">jurusan</label>
                         <input name="jurusan" type="text" class="form-control" required>
                     </div>
-
                     <div class="form-group">
                         <label for="">Gambar Lowongan </label>
                         <input name="gambar_lowongan" type="file" class="form-control" multiple="multiple">
                         <span class="text-red font-italic text-sm-left">Gambar harus berukuran 370 x 240px untuk tampilan terbaik</span>
                     </div>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -208,79 +189,60 @@
                             <th>Nama lowongan</th>
                             <td><?php echo $a->nama_lowongan ?></td>
                         </tr>
-
                         <tr>
                             <th>Sektor Lowongan</th>
                             <td><?php echo $a->nama_sektor ?></td>
                         </tr>
-
                         <tr>
-
                             <th>Tanggal Mulai</th>
                             <td><?php echo $a->tgl_mulai ?></td>
                         </tr>
-
                         <tr>
                             <th>Tanggal Selesai</th>
                             <td><?php echo $a->tgl_selesai ?></td>
                         </tr>
-
                         <tr>
                             <th>Kelompok Jabatan</th>
                             <td><?php echo $a->nama_jabatan ?></td>
                         </tr>
-
                         <tr>
                             <th>Lokasi Penempatan</th>
                             <td><?php echo $a->lokasi_penempatan ?></td>
                         </tr>
-
                         <tr>
                             <th>Jumlah Pria</th>
                             <td><?php echo $a->jumlah_pria ?></td>
                         </tr>
-
                         <tr>
                             <th>Jumlah Wanita</th>
                             <td><?php echo $a->jumlah_wanita ?></td>
                         </tr>
-
                         <tr>
                             <th>Deskripsi lowongan</th>
                             <td><?php echo $a->desk_lowongan ?></td>
                         </tr>
-
                         <tr>
                             <th>Pendidikan</th>
                             <td><?php echo $a->nama_pendidikan ?></td>
                         </tr>
-
                         <tr>
                             <th>Jurusan</th>
                             <td><?php echo $a->jurusan ?></td>
                         </tr>
-
-
-
-
                         <tr>
                             <th>ACC admin</th>
                             <td><?php echo $a->acc_adminlowongan ?></td>
                         </tr>
-
                         <tr>
                             <th>Kode Perusahaan</th>
                             <td><?php echo $a->kd_perush ?></td>
                         </tr>
-
                         <tr>
                             <th>Gambar lowongan </th>
                             <td>
                                 <img width="100" height="100" src="<?php echo base_url('gambar/lowongan/') . $a->gambar_lowongan ?>" alt="">
                             </td>
                         </tr>
-
-
                     </table>
 
                 </div>
@@ -297,8 +259,6 @@
 <!-- akhir detail -->
 <!-- modal detail -->
 <?php foreach ($lowongan as $a) : ?>
-
-
     <div class="modal fade" id="hapusdata<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -316,9 +276,6 @@
                   <input name="nama_karyawan" type="text" class="form-control" value="<?php echo $a->nama_karyawan ?>" required> -->
                             <input name="kd_lowongan" type="hidden" class="form-control" value="<?php echo $a->kd_lowongan ?>" required>
                         </div>
-
-
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
@@ -350,7 +307,6 @@
                             <input name="nama_lowongan" type="text" class="form-control" value="<?php echo $a->nama_lowongan ?>" required>
                             <input name="kd_lowongan" type="hidden" class="form-control" value="<?php echo $a->kd_lowongan ?>" required>
                         </div>
-
                         <div class="form-group">
                             <label for="">Sektor Lowongan</label>
                             <div class="form-group">
@@ -363,17 +319,14 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="">Tanggal Mulai</label>
                             <input name="tgl_mulai" type="text" class="form-control" value="<?php echo $a->tgl_mulai ?>" required>
                         </div>
-
                         <div class="form-group">
                             <label for="">Tanggal Selesai</label>
                             <input name="tgl_selesai" type="text" class="form-control" value="<?php echo $a->tgl_selesai ?>" required>
                         </div>
-
                         <div class="form-group">
                             <label for="">Kelompok Jabatan</label>
                             <div class="form-group">
@@ -386,30 +339,22 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="">lokasi_penempatan</label>
                             <input name="lokas_penempatan" type="text" class="form-control" value="<?php echo $a->lokasi_penempatan ?>" required>
                         </div>
-
                         <div class="form-group">
                             <label for="">Jumlah Pria</label>
                             <input name="jumlah_pria" type="text" class="form-control" value="<?php echo $a->jumlah_pria ?>" required>
                         </div>
-
                         <div class="form-group">
                             <label for="">Jumlah Wanita</label>
                             <input name="jumlah_wanita" type="text" class="form-control" value="<?php echo $a->jumlah_wanita ?>" required>
                         </div>
-
-
                         <div class="form-group">
                             <label for="">Deskripsi lowongan</label>
-                            <!-- <input name="desk_lowongan" type="text" class="form-control" value="<?php echo $a->desk_lowongan ?>" required> -->
                             <textarea name="desk_lowongan" id="tekeditoredit" class="form-control" id="exampleFormControlTextarea1" rows="3" required><?php echo $a->desk_lowongan ?></textarea>
-                            <!-- <textarea name="desk_lowongan" id="tekeditor" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea> -->
                         </div>
-
                         <div class="form-group">
                             <label for="">Pendidikan</label>
                             <div class="form-group">
@@ -422,25 +367,17 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="">Jurusan</label>
                             <input name="jurusan" type="text" class="form-control" value="<?php echo $a->jurusan ?>" required>
                         </div>
-
-
-
                         <div class="form-group">
-
                             <label for="">Gambar Lowongan</label>
                             <br>
                             <img width="100" height="100" src="<?php echo base_url('gambar/lowongan/') . $a->gambar_lowongan ?>" alt="">
                             <br>
                             <input name="gambar_lowongan" type="file" class="form-control" value="">
                         </div>
-
-
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close mr-2"></i>Close</button>

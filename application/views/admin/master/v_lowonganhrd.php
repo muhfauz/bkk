@@ -58,6 +58,7 @@
                                 <td class="float-right">
                                     <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_lowongan ?>"> <i class="fa fa-info mr-2"></i> Detail</a>
                                     <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Edit</a>
+                                    <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#tetapkantest<?php echo $a->kd_lowongan ?>"> <i class="fa fa-paper-plane mr-2" aria-hidden="true"></i></i> Lokasi Seleksi</a>
                                     <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a>
 
 
@@ -375,7 +376,6 @@
                             <label for="">Tanggal Selesai</label>
                             <input name="tgl_selesai" type="text" class="form-control" value="<?php echo $a->tgl_selesai ?>" required>
                         </div>
-
                         <div class="form-group">
                             <label for="">Kelompok Jabatan</label>
                             <div class="form-group">
@@ -388,29 +388,22 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="">Lokasi Penempatan</label>
                             <input name="lokasi_penempatan" type="text" class="form-control" value="<?php echo $a->lokasi_penempatan ?>" required>
                         </div>
-
                         <div class="form-group">
                             <label for="">Jumlah Pria</label>
                             <input name="jumlah_pria" type="text" class="form-control" value="<?php echo $a->jumlah_pria ?>" required>
                         </div>
-
                         <div class="form-group">
                             <label for="">Jumlah Wanita</label>
                             <input name="jumlah_wanita" type="text" class="form-control" value="<?php echo $a->jumlah_wanita ?>" required>
                         </div>
-
-
                         <div class="form-group">
                             <label for="">Deskripsi lowongan</label>
-                            <!-- <input name="desk_lowongan" type="text" class="form-control" value="<?php echo $a->desk_lowongan ?>" required> -->
                             <textarea name="desk_lowongan" class="form-control" id="tekeditoredit" rows="3" required><?php echo $a->desk_lowongan ?></textarea>
                         </div>
-
                         <div class="form-group">
                             <label for="">Pendidikan</label>
                             <div class="form-group">
@@ -423,25 +416,17 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="">Jurusan</label>
                             <input name="jurusan" type="text" class="form-control" value="<?php echo $a->jurusan ?>" required>
                         </div>
-
-
-
                         <div class="form-group">
-
                             <label for="">Gambar Lowongan</label>
                             <br>
                             <img width="100" height="100" src="<?php echo base_url('gambar/lowongan/') . $a->gambar_lowongan ?>" alt="">
                             <br>
                             <input name="gambar_lowongan" type="file" class="form-control" value="">
                         </div>
-
-
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close mr-2"></i>Close</button>
@@ -451,6 +436,43 @@
                 <script>
                     CKEDITOR.replace('tekeditoredit');
                 </script>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+<!-- Modal -->
+<?php foreach ($lowongan as $a) : ?>
+    <div class="modal fade" id="tetapkantest<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-aqua">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-paper-plane" aria-hidden="true"></i> Seleksi Test</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?php echo base_url('admin/master/lowonganhrd/aksieditlokasi') ?>" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="">Tanggal Seleksi</label>
+                            <input name="kd_lowongan" type="hidden" class="form-control" value="<?php echo $a->kd_lowongan ?>" required>
+                            <input name="tgl_test" type="date" class="form-control" value="<?php echo $a->tgl_test ?>" required>
+                        </div>
+                        <div class=" form-group">
+                            <label for="">Jam Seleksi</label>
+                            <input name="jam_test" type="text" class="form-control" value="<?php echo $a->jam_test ?>" required>
+                        </div>
+                        <div class=" form-group">
+                            <label for="">Lokasi / Alamat Seleksi</label>
+                            <textarea name="lokasi_test" cols="30" rows="10" class="form-control" required><?php echo $a->lokasi_test ?></textarea>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close mr-2"></i>Close</button>
+                    <button type="submit" class="btn btn-primary"> <i class="fa fa-save mr-2"></i>Simpan</button>
+                </div>
+                </form>
             </div>
         </div>
     </div>

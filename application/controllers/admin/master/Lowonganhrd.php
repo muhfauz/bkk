@@ -138,13 +138,6 @@ class Lowonganhrd extends CI_Controller
 
   function aksieditlowongan()
   {
-
-    //Form Validasi jika kosong
-    //  $this->form_validation->set_rules('nama_karyawan', 'Nama karyawan', 'required');
-    //  $this->form_validation->set_rules('username_karyawan', 'Username karyawan', 'required');
-    //   $this->form_validation->set_rules('password_karyawan', 'Password karyawan', 'required');
-    //  if($this->form_validation->run()!=false)
-    //  {
     $kd_perush = $this->session->userdata('kd_perush');
     $config['upload_path'] = './gambar/lowongan/';
     $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp';
@@ -162,14 +155,15 @@ class Lowonganhrd extends CI_Controller
         'kd_pendidikan' => $this->input->post('kd_pendidikan'),
         'tgl_mulai' => $this->input->post('tgl_mulai'),
         'tgl_selesai' => $this->input->post('tgl_selesai'),
+        'tgl_test' => $this->input->post('tgl_test'),
+        'jam_test' => $this->input->post('jam_test'),
+        'lokasi_test' => $this->input->post('lokasi_test'),
         'lokasi_penempatan' => $this->input->post('lokasi_penempatan'),
         'jumlah_pria' => $this->input->post('jumlah_pria'),
         'jumlah_wanita' => $this->input->post('jumlah_wanita'),
         'desk_lowongan' => $this->input->post('desk_lowongan'),
         'jurusan' => $this->input->post('jurusan'),
-        // 'acc_admin' => 'belum',
         'kd_perush' =>  $kd_perush,
-
         'gambar_lowongan' => $image['file_name'],
 
         // 'password_lowongan' => md5($this->input->post('password_lowongan')),
@@ -193,17 +187,15 @@ class Lowonganhrd extends CI_Controller
         'kd_pendidikan' => $this->input->post('kd_pendidikan'),
         'tgl_mulai' => $this->input->post('tgl_mulai'),
         'tgl_selesai' => $this->input->post('tgl_selesai'),
+        'tgl_test' => $this->input->post('tgl_test'),
+        'jam_test' => $this->input->post('jam_test'),
+        'lokasi_test' => $this->input->post('lokasi_test'),
         'lokasi_penempatan' => $this->input->post('lokasi_penempatan'),
         'jumlah_pria' => $this->input->post('jumlah_pria'),
         'jumlah_wanita' => $this->input->post('jumlah_wanita'),
         'desk_lowongan' => $this->input->post('desk_lowongan'),
         'jurusan' => $this->input->post('jurusan'),
-        // 'acc_admin' => 'belum',
         'kd_perush' =>  $kd_perush,
-
-
-
-
       );
       $this->Mglobal->editdata('tbl_lowongan', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -214,5 +206,24 @@ class Lowonganhrd extends CI_Controller
           </div>');
       redirect(base_url('admin/master/lowonganhrd/'));
     }
+  }
+  function aksieditlokasi()
+  {
+    $kd_perush = $this->session->userdata('kd_perush');
+
+    $where = array('kd_lowongan' => $this->input->post('kd_lowongan'));
+    $data = array(
+      'tgl_test' => $this->input->post('tgl_test'),
+      'jam_test' => $this->input->post('jam_test'),
+      'lokasi_test' => $this->input->post('lokasi_test'),
+    );
+    $this->Mglobal->editdata('tbl_lowongan', $where, $data);
+    $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Setting Tempat dan Waktu Berhasil!</strong> Data berhasil disimpan ke database.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>');
+    redirect(base_url('admin/master/lowonganhrd/'));
   }
 }
