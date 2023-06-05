@@ -166,7 +166,7 @@
         <div class="col-lg-3 col-xs-6">
           <a href="<?php echo base_url('admin/seleksi/seleksipelamar/arsippelamar') ?>">
             <div class="info-box"> <span class="info-box-icon bg-aqua"><i class="fa fa-file-archive-o text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number"> Arsipku</span> <span class="info-box-text">Lihat</span></div>
+              <div class="info-box-content"> <span class="info-box-number"> Arsip Lamaran</span> <span class="info-box-text">Lihat</span></div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
