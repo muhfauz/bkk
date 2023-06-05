@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2023 at 05:42 AM
+-- Generation Time: Jun 05, 2023 at 12:22 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -94,7 +94,7 @@ CREATE TABLE `tbl_bkk` (
 --
 
 INSERT INTO `tbl_bkk` (`kd_bkk`, `nama_bkk`, `alamat_bkk`, `tentang_bkk`, `telepon_bkk`, `email_bkk`, `logob_bkk`, `logok_bkk`, `logo_depan`, `kd_pos`, `kab_bkk`, `prop_bkk`) VALUES
-(1, 'BKK SMK Apa ya', 'Jl.Siliwangi, Desa Suro Kecamatan Kalibagor Banyumas. ', 'ererererer', '085742906467', 'azzuhriyyahsuro@gmail.com', 'gambar1639611256.png', 'gambar1639612064.png', 'logodepan1685593123.png', '53444', 'purbalingga', 'Jawa Tengah');
+(1, 'BKK SMK Apa ya', 'Jl.Siliwangi, Desa Suro Kecamatan Kalibagor Banyumas. ', 'BKK SMK Mulya Husada adalah bkk yang mmakakakak akakakkakakak', '085742906467', 'azzuhriyyahsuro@gmail.com', 'gambar1639611256.png', 'gambar1639612064.png', 'logodepan1685593123.png', '53444', 'purbalingga', 'Jawa Tengah');
 
 -- --------------------------------------------------------
 
@@ -185,9 +185,7 @@ CREATE TABLE `tbl_lamaran` (
 --
 
 INSERT INTO `tbl_lamaran` (`kd_lamaran`, `kd_pelamar`, `kd_lowongan`, `tgl_lamaran`, `status_lamaran`, `berkas_lamaran`) VALUES
-(12, 'PELAMAR004', 'LOWONGAN007', '2023-06-03', 'sudah', 'lamaranererer1685766612.pdf'),
-(13, 'PELAMAR004', 'LOWONGAN008', '2023-06-03', 'lolos_adm', 'lamaranererer1685766649.pdf'),
-(14, 'PELAMAR004', 'LOWONGAN005', '2023-06-03', 'belum', '');
+(17, 'PELAMAR003', 'LOWONGAN001', '2023-06-05', 'diterima', 'lamaranerererer1685957719.pdf');
 
 -- --------------------------------------------------------
 
@@ -241,7 +239,7 @@ CREATE TABLE `tbl_lowongan` (
 --
 
 INSERT INTO `tbl_lowongan` (`kd_lowongan`, `nama_lowongan`, `kd_sektor`, `tgl_mulai`, `tgl_selesai`, `kd_jabatan`, `lokasi_penempatan`, `jumlah_pria`, `jumlah_wanita`, `desk_lowongan`, `kd_pendidikan`, `jurusan`, `status_lowongan`, `acc_adminlowongan`, `kd_perush`, `gambar_lowongan`, `tgl_test`, `jam_test`, `lokasi_test`, `kd_admin`) VALUES
-('LOWONGAN001', 'Karyawan outlet', 'SEK001', '2023-06-05', '2023-06-07', 'JAB002', '', '3', '3', '<p><strong>KRITERIA</strong></p>\r\n\r\n<ol>\r\n	<li>Perempuan/ muslimah single</li>\r\n	<li>Lulusan minimal SMA sederajat</li>\r\n	<li>Maksimal umur 25 tahun</li>\r\n	<li>Berpenampilan menarik dan rapi</li>\r\n	<li>Jujur &amp; bertanggung jawab</li>\r\n	<li>Fresh graduate dipersilahkan</li>\r\n	<li>Domisili Dukuhwaluh/Purwokerto diutamakan</li>\r\n</ol>\r\n\r\n<p><strong>SISTEM KERJA</strong></p>\r\n\r\n<ul>\r\n	<li>melayani sesuai keinginan customer/ pelanggan</li>\r\n	<li>full time, enam hari kerja</li>\r\n</ul>\r\n', 'PEND002', '-', '', 'acc', 'PERUSH002', 'gambar_lowongan1685845291.jpg', '2023-06-16', '10.00 - 12.00  WIB', 'Hotel Panca Bakti, Jalan Suparjo Rustam 16 Sokarja', 'ADM001');
+('LOWONGAN001', 'DIRECT SALES AGENT [DSA] HOME FIBER', 'SEK001', '2023-06-05', '2023-06-16', 'JAB002', '', '10', '10', '<p><strong>Kualifikasi:</strong><br />\r\n&ndash; Pria/Wanita<br />\r\n&ndash; Maksimal usia 35 tahun<br />\r\n&ndash; Pendidikan Min. SMA<br />\r\n&ndash; Terbiasa dengan target<br />\r\n&ndash; Niat, jujur, tanggung jawab<br />\r\n&ndash; Good communication<br />\r\n&ndash; Good selling</p>\r\n', 'PEND002', 'Umum', '', 'acc', 'PERUSH002', 'gambar_lowongan1685957158.PNG', '2023-06-30', '-', '-', 'ADM001');
 
 -- --------------------------------------------------------
 
@@ -276,7 +274,7 @@ CREATE TABLE `tbl_pelamar` (
 --
 
 INSERT INTO `tbl_pelamar` (`kd_pelamar`, `nama_pelamar`, `noktp_pelamar`, `tempatlahir_pelamar`, `tanggallahir_pelamar`, `agama_pelamar`, `jk_pelamar`, `tinggibadan_pelamar`, `beratbadan_pelamar`, `disabilitas_pelamar`, `jenisdisabilitas_pelamar`, `keterangandisabilitas_pelamar`, `statusperkawinan_pelamar`, `alamatlengkap_pelamar`, `nohp_pelamar`, `password_pelamar`, `foto_pelamar`, `acc_adminpelamar`, `kd_admin`) VALUES
-('PELAMAR003', 'erererer', '545545545454', 'Banyumas', '2023-05-08', 'Kristen', 'Pria', '10', '10', '', '', '', 'kawin', '10>', '343434', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png', 'belum', ''),
+('PELAMAR003', 'erererer', '545545545454', 'Banyumas', '2023-05-08', 'Kristen', 'Pria', '10', '10', '', '', '', 'kawin', '10>', '343434', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png', 'acc', ''),
 ('PELAMAR004', 'ererer', '4343', 'erererere', '2023-05-26', 'Kristen', 'Pria', '2222', '2222', '', '', '', 'lajang', 'erererer', '3434343', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png', 'acc', '');
 
 -- --------------------------------------------------------
@@ -512,7 +510,7 @@ ALTER TABLE `tbl_judul`
 -- AUTO_INCREMENT for table `tbl_lamaran`
 --
 ALTER TABLE `tbl_lamaran`
-  MODIFY `kd_lamaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `kd_lamaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tbl_logo`
