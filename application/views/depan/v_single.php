@@ -98,18 +98,45 @@
                                     <?php echo $this->session->userdata('pesan'); ?>
                                     <p><?php echo $lb->nama_pendidikan ?> <span><?php echo $this->Mglobal->tanggalindo($lb->tgl_selesai) ?></span></p>
                                     <h2><a href="#">Lowongan Kerja <?php echo $l->nama_lowongan ?> di <?php echo $l->nama_perush ?> </a></h2>
-                                    <p class="desc">In the 12 months following Meditex Health’s launch of the Screening, Brief Intervention and
-                                        Referral to Treatment program known as SBIRT, more than 4.560 patients struggling with
-                                        substance abuse have been referred to treatment.</p>
+                                    <p class="desc">Lowongan Kerja <?php echo $l->nama_lowongan ?> dengan spesifikasi :</p>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <table class="table table-borderless">
+                                                <tr>
+                                                    <th>Nama Perusahaan </th>
+                                                    <td><?php echo $lb->nama_perush ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Tanggal Tutup Lowongan</th>
+                                                    <td><?php echo $this->Mglobal->tanggalindo($lb->tgl_selesai) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Tanggal</th>
+                                                    <td><?php echo $lb->tgl_test ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Pendidikan</th>
+                                                    <td><?php echo $lb->nama_pendidikan ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Penempatan</th>
+                                                    <td><?php echo $lb->lokasi_penempatan ?></td>
+                                                </tr>
+                                            </table>
+
+                                        </div>
+
+
+                                    </div>
+
                                 </div>
                                 <div class="image blog_sub_ban">
                                     <img src="<?php echo base_url('gambar/lowongan/') . $l->gambar_lowongan ?>" class="img-fluid" alt="case" />
                                 </div>
                                 <div class="authour_desc">
+                                    <h2>Kualifikasi</h2>
 
-                                    <p>As the nation struggles with the opioid epidemic and a spike in fentanyl-related overdoses, emergency departments are often on the front line in treating patients with addiction. These patients often return to the emergency department again and again, and without an interventional program like SBIRT, could see their addiction and overall health worsen.<br /> <br />
-                                        Under the program, which is conducted in partnership with Mosaic Group, a Maryland healthcare consulting firm, all patients in the emergency department are screened for risky substance abuse behaviors. If the screening indicates a moderate or high risk, a peer recovery coach uses motivational interviewing techniques in an attempt to promote the patient’s own desire to change. The peer recovery coach then offers additional evaluation and referral services for high-risk patients.
-                                    </p>
+                                    <?php echo $lb->desk_lowongan ?>
                                 </div>
                                 <div class="authour_quotes">
                                     <div class="quotes_inner">
@@ -122,26 +149,11 @@
                                 </div>
 
 
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="blog_single_post_img_">
-                                            <img src="assets/image/blog/blog_single_post_1.jpg" class="img-fluid" alt="img" />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="blog_single_post_img_">
-                                            <img src="assets/image/blog/blog_single_post_2.jpg" class="img-fluid" alt="img" />
-                                        </div>
-                                    </div>
-                                </div>
-
                                 <div class="about_authour_description">
-                                    <h2>About Meditex Health</h2>
+
+                                    <h6 class="authour_name"><?php echo $lb->nama_perush ?></h6>
                                     <p>
-                                        Meditex Health is a not-for-profit health system dedicated to caring for people in Maryland and the Washington, D.C., region, while advancing the practice of medicine through education, innovation and research. MedStar’s 20,000 associates, 5,000 affiliated physicians, 15 hospitals, ambulatory care and urgent care centers, and the Meditex Health Research Institute are recognized regionally and nationally for excellence in medical care. As the medical education and clinical partner of Georgetown University,
-                                        <br /><br />
-                                        Meditex trains more than 1,100 medical residents annually. MedStar Health’s patient-first philosophy combines care, compassion and clinical excellence with an emphasis on customer service. For more information, visit
-                                        MeditexHealth.com
+                                        <?php echo $lb->nama_perush ?> merupakan<?php echo $lb->desk_perush ?> yang beralamat di <?php echo $lb->alamatlengkap_perush ?>
                                     </p>
                                 </div>
                                 <div class="tage_and_share clearfix">

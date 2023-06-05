@@ -64,7 +64,7 @@
       </div>
       <!-- /.row -->
       <!-- Main row -->
-    <?php } elseif ($this->session->userdata('posisi') == 'service') { ?>
+    <?php } elseif ($this->session->userdata('posisi') == 'perusahaan') { ?>
       <div class="row">
 
         <!-- /.col -->
@@ -84,26 +84,27 @@
           </a>
         </div>
 
+
         <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/transaksi/service/') ?>">
-            <div class="info-box"> <span class="info-box-icon bg-info"><i class="fa fa-wpexplorer text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-bo-number"> Input Service </span> <span class="info-box-text">Lihat</span></div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </a>
-        </div>
-        <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/seleksi/seleksihrd/arsiservice') ?>">
+          <a href="<?php echo base_url('admin/master/lowongan') ?>">
             <div class="info-box"> <span class="info-box-icon bg-aqua"><i class="fa fa-file-archive-o text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number"> Arsip</span> <span class="info-box-text">Service</span></div>
+              <div class="info-box-content"> <span class="info-box-number"> Input </span> <span class="info-box-text">Service</span></div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
           </a>
         </div>
         <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/pengaturan/gantipassadmin') ?>">
+          <a href="<?php echo base_url('admin/master/lowonganhrd') ?>">
+            <div class="info-box"> <span class="info-box-icon bg-aqua"><i class="fa fa-file-archive-o text-white" aria-hidden="true"></i></span>
+              <div class="info-box-content"> <span class="info-box-number"> Lowongan Aktif</span> <span class="info-box-text">Service</span></div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </a>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+          <a href="<?php echo base_url('admin/pengaturan/gantipassperush') ?>">
             <div class="info-box"> <span class="info-box-icon bg-danger"><i class="fa fa-key text-white" aria-hidden="true"></i></span>
               <div class="info-box-content"> <span class="info-box-number"> Ganti</span> <span class="info-box-text">Password</span></div>
               <!-- /.info-box-content -->
@@ -154,9 +155,9 @@
         </div>
 
         <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/transaksi/penjualan/') ?>">
+          <a href="<?php echo base_url('admin/lamaran/lamaranpelamar') ?>">
             <div class="info-box"> <span class="info-box-icon bg-info"><i class="fa fa-wpexplorer text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number"> Input Penjualan</span> <span class="info-box-text">Lihat</span></div>
+              <div class="info-box-content"> <span class="info-box-number"> Lamaranku</span> <span class="info-box-text">Lihat</span></div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -172,7 +173,7 @@
           </a>
         </div>
         <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/pengaturan/gantipassadmin') ?>">
+          <a href="<?php echo base_url('admin/pengaturan/gantipasspelamar') ?>">
             <div class="info-box"> <span class="info-box-icon bg-danger"><i class="fa fa-key text-white" aria-hidden="true"></i></span>
               <div class="info-box-content"> <span class="info-box-number"> Ganti</span> <span class="info-box-text">Password</span></div>
               <!-- /.info-box-content -->
