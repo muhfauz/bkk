@@ -240,7 +240,7 @@
                                                             <?php } ?>
                                                         <?php } else { ?>
                                                             <div class="alert alert-danger" role="alert">
-                                                                This is a danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+                                                                Akun Anda masih belum Aktif <a href="#" class="alert-link"></a>. Tidak bisa melamar.
                                                             </div>
                                                         <?php } ?>
                                                     <?php } ?>

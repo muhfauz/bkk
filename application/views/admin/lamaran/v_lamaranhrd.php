@@ -22,9 +22,9 @@
                     <thead class="bg-aqua">
                         <tr>
                             <th class="text-center text-white align-middle" rowspan="2" width="10px">No</th>
-                            <th class="text-center text-white align-middle" rowspan="2">Posisi Lowongan</th>
-                            <th class="text-center text-white align-middle" rowspan="2">Nama Perusahaan</th>
-                            <th class="text-center text-white align-middle" rowspan="2">Upload Berkas </th>
+                            <th class="text-center text-white align-middle" rowspan="2">Nama Pelamar</th>
+                            <th class="text-center text-white align-middle" rowspan="2">Alamat Pelamar</th>
+                            <th class="text-center text-white align-middle" rowspan="2">Berkas lamaran </th>
                             <th class="text-center text-white align-middle" rowspan="2">Status </th>
                             <th class="text-center text-white align-middle" rowspan="2"></th>
 
@@ -37,15 +37,13 @@
                         foreach ($lamaran as $a) :  ?>
                             <tr>
                                 <td class="text-center font-weight-bold"><?php echo $no++; ?></td>
-                                <td><?php echo $a->nama_lowongan ?></td>
-                                <td><?php echo $a->nama_perush ?></td>
+                                <td><?php echo $a->nama_pelamar ?></td>
+                                <td><?php echo $a->alamatlengkap_pelamar ?></td>
                                 <td>
                                     <?php if ($a->berkas_lamaran == '') { ?>
-                                        <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#uploadlamaran<?php echo $a->kd_lamaran ?>"> <i class="fa fa-upload mr-2" aria-hidden="true"></i></i> Upload</a>
+                                        <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#xuploadlamaran<?php echo $a->kd_lamaran ?>"> <i class="fa fa-window-close mr-2" aria-hidden="true"></i></i></i> Kosong</a>
                                     <?php } else { ?>
-                                        <?php if ($a->status_lamaran == 'sudah') { ?>
-                                            <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#uploadlamaran<?php echo $a->kd_lamaran ?>"> <i class="fa fa-upload mr-2" aria-hidden="true"></i></i> Upload Ulang</a>
-                                        <?php } ?>
+
                                         <a href="" class="btn btn-success btn-sm mb-1" data-toggle="modal" data-target="#lihatlamaran<?php echo $a->kd_lamaran ?>"> <i class="fa fa-file-pdf-o mr-2" aria-hidden="true"></i></i> Lihat Berkas</a>
 
                                     <?php } ?>
@@ -54,14 +52,12 @@
                                         <span class="badge badge-primary"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i>Belum Upload Berkas Lamaran</span>
 
                                     <?php } elseif ($a->status_lamaran == 'sudah') { ?>
-
                                         <span class="badge badge-success"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i> Menunggu Seleksi </span>
                                     <?php } elseif ($a->status_lamaran == 'taklolos_adm') { ?>
-
-                                        <span class="badge badge-danger"> <i class="fa fa-window-close mr-2" aria-hidden="true">Tidak Lolos Seleksi Administrasi </span>
+                                        <span class="badge badge-danger"> <i class="fa fa-window-close mr-2" aria-hidden="true"></i>Tidak Lolos Seleksi Administrasi </span>
                                     <?php } elseif ($a->status_lamaran == 'lolos_adm') { ?>
                                         <span class="badge badge-primary"> <i class="fa fa-check-square mr-2" aria-hidden="true"></i> Lolos Seleksi Administrasi </span>
-                                        <a href="" class="badge badge-primary mb-1" data-toggle="modal" data-target="#lihatlamaran<?php echo $a->kd_lamaran ?>"> <i class="fa fa-file-pdf-o mr-2" aria-hidden="true"></i></i> Lihat Lokasi Test</a>
+                                        <a href="" class="badge badge-primary mb-1" data-toggle="modal" data-target="#lihatlokasi<?php echo $a->kd_lamaran ?>"> <i class="fa fa-file-pdf-o mr-2" aria-hidden="true"></i></i> Lihat Lokasi Test</a>
                                     <?php } elseif ($a->status_lamaran == 'diterima') { ?>
                                         <span class="badge badge-primary"> <i class="fa fa-check-square mr-2" aria-hidden="true"></i>Diterima </span>
                                         <a href="" class="badge badge-primary mb-1" data-toggle="modal" data-target="#lihatlamaran<?php echo $a->kd_lamaran ?>"> <i class="fa fa-file-pdf-o mr-2" aria-hidden="true"></i></i> Lihat Hasil Test</a>
@@ -71,9 +67,12 @@
 
                                 </td>
                                 <td class="float-right">
-                                    <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_lowongan ?>"> <i class="fa fa-info mr-2"></i> Detail</a>
-                                    <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a>
+                                    <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_pelamar ?>"> <i class="fa fa-info mr-2"></i> Data Pelamar</a>
+                                    <!-- <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Edit</a> -->
+                                    <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#terimaadm<?php echo $a->kd_lowongan ?>"> <i class="fa fa-check-circle mr-2" aria-hidden="true"></i> Lolos ADM</a>
+                                    <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#tolakadm<?php echo $a->kd_lowongan ?>"> <i class="fa fa-window-close mr-2" aria-hidden="true"></i> Tak Lolos ADM</a>
+                                    <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#terima<?php echo $a->kd_lowongan ?>"> <i class="fa fa-check-circle mr-2" aria-hidden="true"></i> Diterima</a>
+                                    <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#tolak<?php echo $a->kd_lowongan ?>"> <i class="fa fa-window-close mr-2" aria-hidden="true"></i> Ditolak</a>
 
 
                                 </td>
@@ -88,131 +87,13 @@
 </div>
 <!-- /.content-wrapper -->
 
-<!-- Modal -->
-<div class="modal fade" id="tambahdata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header bg-aqua">
-                <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Form Tambah Data</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="<?php echo base_url('admin/master/lowongan/aksitambahlowongan') ?>" method="post" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="">Kode lowongan</label>
-                        <input name="kd_lowongan" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_lowongan", "tbl_lowongan", "LOWONGAN") ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Nama lowongan</label>
-                        <input name="nama_lowongan" type="text" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Sektor lowongan</label>
-
-                        <div class="form-group">
-                            <select class="form-control" name="kd_sektor" id="" required>
-                                <option value="">-Pilih Sektor-</option>
-                                <?php foreach ($sektor as $s) : ?>
-                                    <option value="<?php echo $s->kd_sektor ?>"><?php echo $s->nama_sektor ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="">Tanggal Mulai</label>
-                        <input name="tgl_mulai" type="date" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Tanggal Selesai</label>
-                        <input name="tgl_selesai" type="date" class="form-control" required>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="">Kelompok Jabatan</label>
-
-                        <div class="form-group">
-                            <select class="form-control" name="kd_jabatan" id="" required>
-                                <option value="">-Pilih Kelompok Jabatan-</option>
-                                <?php foreach ($jabatan as $j) : ?>
-                                    <option value="<?php echo $j->kd_jabatan ?>"><?php echo $j->nama_jabatan ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Lokasi Penempatan</label>
-                        <input name="lokasi_penempatan" type="text" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Jumlah Pria</label>
-                        <input name="jumlah_pria" type="number" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Jumlah Wanita</label>
-                        <input name="jumlah_wanita" type="number" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Deskripsi lowongan</label>
-                        <textarea name="desk_lowongan" id="tekeditor" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
-                        <!-- <textarea name="tekeditor" id="tekeditor" cols="30" rows="10" class="form-control"></textarea> -->
-
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Pendidikan</label>
-                        <div class="form-group">
-                            <select class="form-control" name="kd_pendidikan" id="" required>
-                                <option value="">-Pilih Pendidikan-</option>
-                                <?php foreach ($pendidikan as $p) : ?>
-                                    <option value="<?php echo $p->kd_pendidikan ?>"><?php echo $p->nama_pendidikan ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">jurusan</label>
-                        <input name="jurusan" type="text" class="form-control" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Gambar Lowongan </label>
-                        <input name="gambar_lowongan" type="file" class="form-control" multiple="multiple">
-                        <span class="text-red font-italic text-sm-left">Gambar harus berukuran 370 x 240px untuk tampilan terbaik</span>
-                    </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o mr-1" aria-hidden="true"></i>Simpan</button>
-            </div>
-            </form>
-            <script>
-                CKEDITOR.replace('tekeditor');
-            </script>
-        </div>
-    </div>
-</div>
-
 <!-- modal detail -->
-<?php foreach ($lowongan as $a) : ?>
-    <div class="modal fade" id="datadetail<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<?php foreach ($lamaran as $a) : ?>
+    <div class="modal fade" id="datadetail<?php echo $a->kd_pelamar ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-aqua">
-                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Detail Data lowongan</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Detail Data Pelamar</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -220,82 +101,57 @@
                 <div class="modal-body">
                     <table class="table table-borderless">
                         <tr>
-                            <th>Kode lowongan</th>
-                            <td><?php echo $a->kd_lowongan ?></td>
+                            <th>Kode pelamar</th>
+                            <td><?php echo $a->kd_pelamar ?></td>
                         </tr>
                         <tr>
-                            <th>Nama lowongan</th>
-                            <td><?php echo $a->nama_lowongan ?></td>
+                            <th>Nama pelamar</th>
+                            <td><?php echo $a->nama_pelamar ?></td>
                         </tr>
-
                         <tr>
-                            <th>Sektor Lowongan</th>
-                            <td><?php echo $a->nama_sektor ?></td>
+                            <th>No KTP pelamar</th>
+                            <td><?php echo $a->noktp_pelamar ?></td>
                         </tr>
-
                         <tr>
-
-                            <th>Tanggal Mulai</th>
-                            <td><?php echo $a->tgl_mulai ?></td>
+                            <th>Tempat Lahir pelamar</th>
+                            <td><?php echo $a->tempatlahir_pelamar ?></td>
                         </tr>
-
                         <tr>
-                            <th>Tanggal Selesai</th>
-                            <td><?php echo $a->tgl_selesai ?></td>
+                            <th>Tanggal Lahir pelamar</th>
+                            <td><?php echo $a->tanggallahir_pelamar ?></td>
                         </tr>
-
                         <tr>
-                            <th>Kelompok Jabatan</th>
-                            <td><?php echo $a->nama_jabatan ?></td>
+                            <th>Agama Pelamar</th>
+                            <td><?php echo $a->agama_pelamar ?></td>
                         </tr>
-
                         <tr>
-                            <th>Lokasi Penempatan</th>
-                            <td><?php echo $a->lokasi_penempatan ?></td>
+                            <th>Jenis Kelamin pelamar</th>
+                            <td><?php echo $a->jk_pelamar ?></td>
                         </tr>
-
                         <tr>
-                            <th>Jumlah Pria</th>
-                            <td><?php echo $a->jumlah_pria ?></td>
+                            <th>Tinggi Badan pelamar</th>
+                            <td><?php echo $a->tinggibadan_pelamar ?></td>
                         </tr>
-
                         <tr>
-                            <th>Jumlah Wanita</th>
-                            <td><?php echo $a->jumlah_wanita ?></td>
+                            <th>Berat Badan pelamar</th>
+                            <td><?php echo $a->beratbadan_pelamar ?></td>
                         </tr>
-
                         <tr>
-                            <th>Deskripsi lowongan</th>
-                            <td><?php echo $a->desk_lowongan ?></td>
+                            <th>Status Perkawinan pelamar</th>
+                            <td><?php echo $a->statusperkawinan_pelamar ?></td>
                         </tr>
-
                         <tr>
-                            <th>Pendidikan</th>
-                            <td><?php echo $a->nama_pendidikan ?></td>
+                            <th>Alamat Lengkap pelamar</th>
+                            <td><?php echo $a->alamatlengkap_pelamar ?></td>
                         </tr>
-
                         <tr>
-                            <th>Jurusan</th>
-                            <td><?php echo $a->jurusan ?></td>
+                            <th>No HP pelamar</th>
+                            <td><?php echo $a->nohp_pelamar ?></td>
                         </tr>
-
-
-
-
                         <tr>
-                            <th>ACC admin</th>
-                            <td><?php echo $a->acc_adminlowongan ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Kode Perusahaan</th>
-                            <td><?php echo $a->kd_perush ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Gambar lowongan </th>
+                            <th>Foto</th>
                             <td>
-                                <img width="100" height="100" src="<?php echo base_url('gambar/lowongan/') . $a->gambar_lowongan ?>" alt="">
+                                <img width="100" height="100" src="<?php echo base_url('gambar/pelamar/') . $a->foto_pelamar ?>" alt="">
                             </td>
                         </tr>
 
@@ -314,30 +170,27 @@
 <?php endforeach; ?>
 
 <!-- akhir detail -->
-<!-- modal detail -->
-<?php foreach ($lowongan as $a) : ?>
+<!-- modal terima adm -->
+<?php foreach ($lamaran as $a) : ?>
 
 
-    <div class="modal fade" id="hapusdata<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="terimaadm<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Hapus Data</h5>
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-check-circle mr-2" aria-hidden="true"></i> Lolos Administrasi</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url('admin/master/lowongan/hapuslowongan') ?>" method="post">
+                    <form action="<?php echo base_url('admin/lamaran/lamaranhrd/lolosadm') ?>" method="post">
                         <div class="form-group">
-                            Apakah Anda Yakin akan menghapus data ini ?
+                            Apakah Anda Yakin pelamar ini lolos seleksi Administrasi ?
                             <!-- <label for="">Nama</label>
                   <input name="nama_karyawan" type="text" class="form-control" value="<?php echo $a->nama_karyawan ?>" required> -->
                             <input name="kd_lowongan" type="hidden" class="form-control" value="<?php echo $a->kd_lowongan ?>" required>
                         </div>
-
-
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
@@ -349,170 +202,101 @@
     </div>
 <?php endforeach; ?>
 
-<!-- akhir detail -->
+<!-- Tolak Adm -->
+<?php foreach ($lamaran as $a) : ?>
 
-<!-- Modal -->
-<?php foreach ($lowongan as $a) : ?>
-    <div class="modal fade" id="editdata<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+
+    <div class="modal fade" id="tolakadm<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-aqua">
-                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Form Edit Data</h5>
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-window-close mr-2" aria-hidden="true"></i> Tidak Lolos Administrasi</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url('admin/master/lowongan/aksieditlowongan') ?>" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo base_url('admin/lamaran/lamaranhrd/taklolosadm') ?>" method="post">
                         <div class="form-group">
-                            <label for="">Nama lowongan</label>
-                            <input name="nama_lowongan" type="text" class="form-control" value="<?php echo $a->nama_lowongan ?>" required>
+                            Apakah Anda Yakin pelamar ini Tidak Lolos seleksi Administrasi ?
+                            <!-- <label for="">Nama</label>
+              <input name="nama_karyawan" type="text" class="form-control" value="<?php echo $a->nama_karyawan ?>" required> -->
                             <input name="kd_lowongan" type="hidden" class="form-control" value="<?php echo $a->kd_lowongan ?>" required>
                         </div>
-
-                        <div class="form-group">
-                            <label for="">Sektor Lowongan</label>
-                            <div class="form-group">
-                                <select class="form-control" name="kd_sektor" id="" required>
-                                    <option value="<?php echo $a->kd_sektor ?>"><?php echo $a->nama_sektor ?></option>
-                                    <option value="">-Pilih Sektor-</option>
-                                    <?php foreach ($sektor as $s) : ?>
-                                        <option value="<?php echo $s->kd_sektor ?>"><?php echo $s->nama_sektor ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Tanggal Mulai</label>
-                            <input name="tgl_mulai" type="text" class="form-control" value="<?php echo $a->tgl_mulai ?>" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Tanggal Selesai</label>
-                            <input name="tgl_selesai" type="text" class="form-control" value="<?php echo $a->tgl_selesai ?>" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Kelompok Jabatan</label>
-                            <div class="form-group">
-                                <select class="form-control" name="kd_jabatan" id="" required>
-                                    <option value="<?php echo $a->kd_jabatan ?>"><?php echo $a->nama_jabatan ?></option>
-                                    <option value="">-Pilih Kelompok Jabatan-</option>
-                                    <?php foreach ($jabatan as $j) : ?>
-                                        <option value="<?php echo $j->kd_jabatan ?>"><?php echo $j->nama_jabatan ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">lokasi_penempatan</label>
-                            <input name="lokas_penempatan" type="text" class="form-control" value="<?php echo $a->lokasi_penempatan ?>" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Jumlah Pria</label>
-                            <input name="jumlah_pria" type="text" class="form-control" value="<?php echo $a->jumlah_pria ?>" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Jumlah Wanita</label>
-                            <input name="jumlah_wanita" type="text" class="form-control" value="<?php echo $a->jumlah_wanita ?>" required>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="">Deskripsi lowongan</label>
-                            <!-- <input name="desk_lowongan" type="text" class="form-control" value="<?php echo $a->desk_lowongan ?>" required> -->
-                            <textarea name="desk_lowongan" id="tekeditor2" class="form-control" id="exampleFormControlTextarea1" rows="3" required><?php echo $a->desk_lowongan ?></textarea>
-                            <!-- <textarea name="desk_lowongan" id="tekeditor" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea> -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Pendidikan</label>
-                            <div class="form-group">
-                                <select class="form-control" name="kd_pendidikan" id="" required>
-                                    <option value="<?php echo $a->kd_pendidikan ?>"><?php echo $a->nama_pendidikan ?></option>
-                                    <option value="">-Pilih Pendidikan-</option>
-                                    <?php foreach ($pendidikan as $p) : ?>
-                                        <option value="<?php echo $p->kd_pendidikan ?>"><?php echo $p->nama_pendidikan ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Jurusan</label>
-                            <input name="jurusan" type="text" class="form-control" value="<?php echo $a->jurusan ?>" required>
-                        </div>
-
-
-
-                        <div class="form-group">
-
-                            <label for="">Gambar Lowongan</label>
-                            <br>
-                            <img width="100" height="100" src="<?php echo base_url('gambar/lowongan/') . $a->gambar_lowongan ?>" alt="">
-                            <br>
-                            <input name="gambar_lowongan" type="file" class="form-control" value="">
-                        </div>
-
-
-
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close mr-2"></i>Close</button>
-                    <button type="submit" class="btn btn-primary"> <i class="fa fa-save mr-2"></i>Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                    <button type="submit" class="btn btn-danger">Ya</button>
                 </div>
                 </form>
-                <script>
-                    CKEDITOR.replace('tekeditor2');
-                </script>
             </div>
         </div>
     </div>
 <?php endforeach; ?>
-<!-- Modal -->
+<!-- modal Diterima -->
 <?php foreach ($lamaran as $a) : ?>
-    <div class="modal fade" id="uploadlamaran<?php echo $a->kd_lamaran ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+
+
+    <div class="modal fade" id="terima<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-aqua">
-                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-upload mr-2"></i> Upload Berkas Lamaran</h5>
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-check-circle mr-2" aria-hidden="true"></i> Diterima </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url('admin/lamaran/lamaranpelamar/aksiuploadberkas') ?>" method="post" enctype="multipart/form-data">
-
+                    <form action="<?php echo base_url('admin/lamaran/lamaranhrd/terima') ?>" method="post">
                         <div class="form-group">
-
-                            <label for="">Seluruh berkas dijadikan satu dalam file pdf</label>
-
-                            <br>
-                            <img width="100" height="100" src="<?php echo base_url('gambar/lowongan/') . $a->gambar_lowongan ?>" alt="">
-                            <br>
-                            <input name="berkas_lamaran" type="file" class="form-control" value="" required>
-                            <input name="kd_lamaran" type="hidden" class="form-control" value="<?php echo $a->kd_lamaran ?>" required>
+                            Apakah Anda Yakin pelamar ini Akan Diterima sebagai Karyawan ?
+                            <!-- <label for="">Nama</label>
+              <input name="nama_karyawan" type="text" class="form-control" value="<?php echo $a->nama_karyawan ?>" required> -->
+                            <input name="kd_lowongan" type="hidden" class="form-control" value="<?php echo $a->kd_lowongan ?>" required>
                         </div>
-
-
-
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close mr-2"></i>Close</button>
-                    <button type="submit" class="btn btn-primary"> <i class="fa fa-save mr-2"></i>Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                    <button type="submit" class="btn btn-danger">Ya</button>
                 </div>
                 </form>
-                <script>
-                    CKEDITOR.replace('tekeditor2');
-                </script>
             </div>
         </div>
     </div>
 <?php endforeach; ?>
+
+<!-- Tolak Adm -->
+<?php foreach ($lamaran as $a) : ?>
+
+
+    <div class="modal fade" id="tolak<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-window-close mr-2" aria-hidden="true"></i> Tidak Diterima</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="<?php echo base_url('admin/lamaran/lamaranhrd/tolak') ?>" method="post">
+                        <div class="form-group">
+                            Apakah Anda Yakin pelamar ini Ditolak sebagai karyawan ?
+                            <!-- <label for="">Nama</label>
+          <input name="nama_karyawan" type="text" class="form-control" value="<?php echo $a->nama_karyawan ?>" required> -->
+                            <input name="kd_lowongan" type="hidden" class="form-control" value="<?php echo $a->kd_lowongan ?>" required>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                    <button type="submit" class="btn btn-danger">Ya</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+<!-- lihat berkas -->
 <?php foreach ($lamaran as $a) : ?>
     <div class="modal fade" id="lihatlamaran<?php echo $a->kd_lamaran ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -536,9 +320,7 @@
                     <!-- <button type="submit" class="btn btn-primary"> <i class="fa fa-save mr-2"></i>Simpan</button> -->
                 </div>
                 </form>
-                <script>
-                    CKEDITOR.replace('tekeditor2');
-                </script>
+
             </div>
         </div>
     </div>

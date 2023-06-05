@@ -58,22 +58,23 @@
                                         <span class="badge badge-success"><i class="fa fa-clock-o mr-2" aria-hidden="true"></i> Menunggu Seleksi </span>
                                     <?php } elseif ($a->status_lamaran == 'taklolos_adm') { ?>
 
-                                        <span class="badge badge-danger"> <i class="fa fa-window-close mr-2" aria-hidden="true">Tidak Lolos Seleksi Administrasi </span>
+                                        <span class="badge badge-danger"> <i class="fa fa-window-close mr-2" aria-hidden="true"></i>Tidak Lolos Seleksi Administrasi </span>
                                     <?php } elseif ($a->status_lamaran == 'lolos_adm') { ?>
                                         <span class="badge badge-primary"> <i class="fa fa-check-square mr-2" aria-hidden="true"></i> Lolos Seleksi Administrasi </span>
-                                        <a href="" class="badge badge-primary mb-1" data-toggle="modal" data-target="#lihatlamaran<?php echo $a->kd_lamaran ?>"> <i class="fa fa-file-pdf-o mr-2" aria-hidden="true"></i></i> Lihat Lokasi Test</a>
+                                        <a href="" class="badge badge-primary mb-1" data-toggle="modal" data-target="#lihatlokasi<?php echo $a->kd_lamaran ?>"> <i class="fa fa-map-marker mr-2" aria-hidden="true"></i></i> Lihat Lokasi Test</a>
                                     <?php } elseif ($a->status_lamaran == 'diterima') { ?>
                                         <span class="badge badge-primary"> <i class="fa fa-check-square mr-2" aria-hidden="true"></i>Diterima </span>
                                         <a href="" class="badge badge-primary mb-1" data-toggle="modal" data-target="#lihatlamaran<?php echo $a->kd_lamaran ?>"> <i class="fa fa-file-pdf-o mr-2" aria-hidden="true"></i></i> Lihat Hasil Test</a>
                                     <?php } else { ?>
-                                        <span class="badge badge-danger"><i class="fa fa-window-close mr-2" aria-hidden="true"></i>Ditolak</span>
+                                        <span class="badge badge-danger"><i class="fa fa-window-close mr-2" aria-hidden="true"></i>Tidak Diterima</span>
                                     <?php } ?>
 
                                 </td>
                                 <td class="float-right">
-                                    <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_lowongan ?>"> <i class="fa fa-info mr-2"></i> Detail</a>
-                                    <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a>
+                                    <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_lamaran ?>"> <i class="fa fa-info mr-2"></i> Data Perush</a>
+                                    <a href="<?php echo base_url('home/single/') . $a->kd_lowongan ?>" class="btn btn-primary btn-sm mb-1"> <i class="fa fa-info mr-2"></i> Lowongan Detail</a>
+                                    <!-- <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Edit</a> -->
+                                    <!-- <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a> -->
 
 
                                 </td>
@@ -207,12 +208,12 @@
 </div>
 
 <!-- modal detail -->
-<?php foreach ($lowongan as $a) : ?>
-    <div class="modal fade" id="datadetail<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<?php foreach ($lamaran as $a) : ?>
+    <div class="modal fade" id="datadetail<?php echo $a->kd_lamaran ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-aqua">
-                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Detail Data lowongan</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-user-circle-o mr-2"></i> Detail Data Perusahaan</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -220,82 +221,67 @@
                 <div class="modal-body">
                     <table class="table table-borderless">
                         <tr>
-                            <th>Kode lowongan</th>
-                            <td><?php echo $a->kd_lowongan ?></td>
-                        </tr>
-                        <tr>
-                            <th>Nama lowongan</th>
-                            <td><?php echo $a->nama_lowongan ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Sektor Lowongan</th>
-                            <td><?php echo $a->nama_sektor ?></td>
-                        </tr>
-
-                        <tr>
-
-                            <th>Tanggal Mulai</th>
-                            <td><?php echo $a->tgl_mulai ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Tanggal Selesai</th>
-                            <td><?php echo $a->tgl_selesai ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Kelompok Jabatan</th>
-                            <td><?php echo $a->nama_jabatan ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Lokasi Penempatan</th>
-                            <td><?php echo $a->lokasi_penempatan ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Jumlah Pria</th>
-                            <td><?php echo $a->jumlah_pria ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Jumlah Wanita</th>
-                            <td><?php echo $a->jumlah_wanita ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Deskripsi lowongan</th>
-                            <td><?php echo $a->desk_lowongan ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Pendidikan</th>
-                            <td><?php echo $a->nama_pendidikan ?></td>
-                        </tr>
-
-                        <tr>
-                            <th>Jurusan</th>
-                            <td><?php echo $a->jurusan ?></td>
-                        </tr>
-
-
-
-
-                        <tr>
-                            <th>ACC admin</th>
-                            <td><?php echo $a->acc_adminlowongan ?></td>
-                        </tr>
-
-                        <tr>
                             <th>Kode Perusahaan</th>
                             <td><?php echo $a->kd_perush ?></td>
                         </tr>
+                        <tr>
+                            <th>Nama Perusahaan</th>
+                            <td><?php echo $a->nama_perush ?></td>
+                        </tr>
 
                         <tr>
-                            <th>Gambar lowongan </th>
+                            <th>Deskripsi Perusahaan</th>
+                            <td><?php echo $a->desk_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>Jenis Badan Usaha Perusahaan</th>
+                            <td><?php echo $a->jenisbu_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>NIB Perusahaan</th>
+                            <td><?php echo $a->nib_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>Sektor Perusahaan</th>
+                            <td><?php echo $a->sektor_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>Alamat Lengkap Perusahaan</th>
+                            <td><?php echo $a->alamatlengkap_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>No Telephone Perusahaan</th>
+                            <td><?php echo $a->notel_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>Nama Penanggungjawab Perusahaan</th>
+                            <td><?php echo $a->namapj_perush ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>Status Perusahaan</th>
+                            <td><?php if ($a->acc_admin == 'belum') { ?>
+                                    <span class="badge badge-primary">Belum</span>
+
+                                <?php } elseif ($a->acc_admin == 'acc') { ?>
+
+                                    <span class="badge badge-success">ACC</span>
+                                <?php } else { ?>
+                                    <span class="badge badge-danger">Banned</span>
+                                <?php } ?>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Logo Perusahaan </th>
                             <td>
-                                <img width="100" height="100" src="<?php echo base_url('gambar/lowongan/') . $a->gambar_lowongan ?>" alt="">
+                                <img width="100" height="100" src="<?php echo base_url('gambar/') . $a->logo_perush ?>" alt="">
                             </td>
                         </tr>
 
@@ -315,7 +301,7 @@
 
 <!-- akhir detail -->
 <!-- modal detail -->
-<?php foreach ($lowongan as $a) : ?>
+<?php foreach ($lamaran as $a) : ?>
 
 
     <div class="modal fade" id="hapusdata<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -352,7 +338,7 @@
 <!-- akhir detail -->
 
 <!-- Modal -->
-<?php foreach ($lowongan as $a) : ?>
+<?php foreach ($lamaran as $a) : ?>
     <div class="modal fade" id="editdata<?php echo $a->kd_lowongan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -539,6 +525,56 @@
                 <script>
                     CKEDITOR.replace('tekeditor2');
                 </script>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+<!-- lokasi lamaran -->
+<?php foreach ($lamaran as $a) : ?>
+    <div class="modal fade" id="lihatlokasi<?php echo $a->kd_lamaran ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-aqua">
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-map-marker mr-2"></i> Lokasi Test</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-borderless">
+                        <p>Selamat Anda sudah lolos seleksi Administrasi</p>
+                        <tr>
+                            <th>Lokasi / Tempat Test </th>
+                            <td><?php echo $a->lokasi_test ?></td>
+                        </tr>
+                        <tr>
+                            <th>Tanggal</th>
+                            <td><?php echo $a->tgl_test ?></td>
+                        </tr>
+
+                        <tr>
+                            <th>Waktu</th>
+                            <td><?php echo $a->jam_test ?></td>
+                        </tr>
+
+
+                        <tr>
+                            <th>Gambar lowongan </th>
+                            <td>
+                                <img width="100" height="100" src="<?php echo base_url('gambar/lowongan/') . $a->gambar_lowongan ?>" alt="">
+                            </td>
+                        </tr>
+
+
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    <!-- <button type="submit" class="btn btn-primary">Simpan</button> -->
+                </div>
+                </form>
             </div>
         </div>
     </div>

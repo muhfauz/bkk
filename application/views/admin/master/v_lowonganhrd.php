@@ -489,7 +489,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url('admin/lamaran/lamaranhrd') ?>" method="post">
+                    <form action="<?php echo base_url('admin/lamaran/lamaranhrd/putar') ?>" method="post">
                         <div class="form-group">
                             Apakah Anda Yakin akan menghapus data ini ?
                             <input name="kd_lowongan" type="hidden" class="form-control" value="<?php echo $a->kd_lowongan ?>" required>
