@@ -5,29 +5,29 @@
              <div class="col-lg-3 col-md-3 col-sm-6">
                  <div class="contact_through_inner">
                      <span class="flaticon-phone-1 icon"></span>
-                     <p>Emergency Cases: <br />
-                         (052) 611-5711</p>
+                     <p>Telepon : <br />
+                         <?php echo $this->db->query("select * from tbl_bkk")->row()->telepon_bkk ?></p>
                  </div>
              </div>
              <div class="col-lg-3 col-md-3 col-sm-6">
                  <div class="contact_through_inner">
                      <span class="flaticon-placeholder icon"></span>
-                     <p>E7088 Micaela Cliffs, <br />
-                         Thielshire, OK 95062</p>
+                     <p>Alamat : <br />
+                         <?php echo $this->db->query("select * from tbl_bkk")->row()->alamat_bkk ?></p>
                  </div>
              </div>
              <div class="col-lg-3 col-md-3 col-sm-6">
                  <div class="contact_through_inner">
                      <span class="flaticon-envelope icon"></span>
-                     <p>Email Address<br />
-                         contact@meditex.com</p>
+                     <p>Email :<br />
+                         <?php echo $this->db->query("select * from tbl_bkk")->row()->email_bkk ?></p>
                  </div>
              </div>
              <div class="col-lg-3 col-md-3 col-sm-6">
                  <div class="contact_through_inner">
                      <span class="flaticon-calendar icon"></span>
-                     <p>Book Online<br />
-                         Appointment Now</p>
+                     <p>Kode Pos<br />
+                         <?php echo $this->db->query("select * from tbl_bkk")->row()->kd_pos ?></p>
                  </div>
              </div>
          </div>
@@ -57,17 +57,14 @@
 
              <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
                  <div class="footer-widget two">
-                     <h2>DEPARTMENTS</h2>
+                     <h2>Link</h2>
                      <div class="footer-text">
                          <ul>
-                             <li><a href="#"> Psychiatry</a></li>
-                             <li><a href="#">Ophthalmology</a></li>
-                             <li><a href="#">Cardiology </a></li>
-                             <li><a href="#">Immunology </a></li>
-                             <li><a href="#">Hematology </a></li>
-                             <li><a href="#">Gastroenterology </a></li>
-                             <li><a href="#">Orthopedics </a></li>
-                             <li><a href="#">Pulmonary</a></li>
+                             <li><a href="<?php echo base_url('home/tentang') ?>"> Tentang Kami</a></li>
+                             <li><a href="<?php echo base_url('home/tentang') ?>">Lowongan</a></li>
+                             <li><a href="<?php echo base_url('home/faq') ?>">FAQ </a></li>
+                             <li><a href="<?php echo base_url('home/hubungi') ?>">Hubungi </a></li>
+
                          </ul>
 
                      </div>
@@ -75,18 +72,9 @@
              </div>
              <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
                  <div class="footer-widget two">
-                     <h2>LINKS</h2>
+                     <!-- <h2>LINKS</h2> -->
                      <div class="footer-text">
-                         <ul>
-                             <li><a href="#"> About Us</a></li>
-                             <li><a href="#">Appointment</a></li>
-                             <li><a href="#">Contact Us </a></li>
-                             <li><a href="#">Blog </a></li>
-                             <li><a href="#">Doctors</a></li>
-                             <li><a href="#">Gallery </a></li>
-                             <li><a href="#">Timetable </a></li>
-                             <li><a href="#">FAQs</a></li>
-                         </ul>
+
 
 
                      </div>

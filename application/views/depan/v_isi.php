@@ -118,11 +118,11 @@
                                     <span><?php echo $l->nama_pendidikan ?></span>
                                     <p><?php echo $l->nama_lowongan ?> dengan tingkat pendidikan <?php echo $l->nama_pendidikan ?> masih tersedia, silaka lihat detail </p>
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                         <li><a href="#"><i class="fa fa-skype"></i></a></li>
                                         <li><a href="#"><i class="fa fa fa-vimeo"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-share-alt"></i></a></li> -->
                                     </ul>
                                 </div>
                             </div>

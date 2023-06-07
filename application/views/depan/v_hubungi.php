@@ -48,28 +48,27 @@
                     <div class="contact_address_inner">
                         <div class="contact_our_office">
                             <h2>Our <span>Office</span></h2>
-                            <p>7088 Micaela Cliffs, Thielshire, <br />
-                                OK 95062</p>
+                            <p> <?php echo $this->db->query("select * from tbl_bkk")->row()->alamat_bkk ?></p>
                         </div>
                         <div class="contact_get_in_touch">
                             <h2>Get in <span>Touch</span></h2>
                             <div class="mail">
                                 <p>EMAIL<br />
-                                    <a href="mailto:contact@meditex.com">contact@meditex.com</a>
+                                    <a href=" <?php echo $this->db->query("select * from tbl_bkk")->row()->email_bkk ?>"> <?php echo $this->db->query("select * from tbl_bkk")->row()->email_bkk ?></a>
                                 </p>
                             </div>
                             <div class="phone">
                                 <p>Phone number<br />
-                                    <a href="#" class="phne">(052) 611-5711</a>
+                                    <a href="#" class="phne"><?php echo $this->db->query("select * from tbl_bkk")->row()->telepon_bkk ?></a>
                                 </p>
                             </div>
                         </div>
                         <div class="contact_social_media">
                             <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                <li><a href="#"><i class="fa fa-wifi"></i></a></li>
+                                <li><a href="#"><i class="fa fa-wifi"></i></a></li> -->
                             </ul>
                         </div>
                     </div>

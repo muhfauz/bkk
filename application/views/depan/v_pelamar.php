@@ -3,7 +3,7 @@
 
 
     <!-----------------breadcrumb------------------------>
-    <section class="ban-bread-crumb">
+    <section class="ban-bread-crumb mb-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -21,157 +21,79 @@
 
     </section>
 
+
     <!--------Checkout-------->
 
     <section class="Checkout_">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="heading">
-                        <h1>Daftar Sebagai Pelamar</h1>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="billing_address submit_form">
-                        <div class="section-title inner">
-                            <h2>Billing Address</h2>
+            <div class="appointment_inner">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="heading">
+                            <h1>Daftar Sebagai Pelamar</h1>
                         </div>
-                        <form action="#" class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <label>Nama Lengkap *</label>
-                                    <input type="text" name="nama_pelamar" required>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label>Alamat *</label>
-                                    <input type="text" name="tempatlahir_pelamar" required>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <label>Tanggal Lahir *</label>
-                                    <input type="text" name="tanggallahir_pelamar" required>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label>Phone Number *</label>
-                                    <input type="text" name="phone">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label>Country *</label>
-                                    <select name="country" id="country">
-                                        <option selected="selected">United Kingdom</option>
-                                        <option>India</option>
-                                        <option>Australia</option>
-                                        <option>Fast</option>
-                                        <option>Faster</option>
-                                    </select>
-                                </div>
-
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label> Street Address *</label>
-                                    <input type="text" name="st_address">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <label>Town / City *</label>
-                                    <input type="email" name="city">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label>Postcode / ZIP</label>
-                                    <input type="text" name="zip">
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group">
-
-                                    <h2 class="dff_add"> <input type="checkbox"> Shipping to a Different Address</h2>
-
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <label>First Name *</label>
-                                    <input type="text" name="first_name">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label>Last Name *</label>
-                                    <input type="text" name="last_name">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <label>Email Address *</label>
-                                    <input type="email" name="email">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label>Phone Number *</label>
-                                    <input type="text" name="phone">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label>Country *</label>
-                                    <select name="country" id="countrytwo">
-                                        <option selected="selected">United Kingdom</option>
-                                        <option>India</option>
-                                        <option>Australia</option>
-                                        <option>Fast</option>
-                                        <option>Faster</option>
-                                    </select>
-                                </div>
-
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label> Street Address *</label>
-                                    <input type="text" name="st_address">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                    <label>Town / City *</label>
-                                    <input type="email" name="city">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label>Postcode / ZIP</label>
-                                    <input type="text" name="zip">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label>Additional Information</label>
-                                    <textarea name="message" placeholder="Notes about your order, e.g. special notes for delivery." rows="5"></textarea>
-                                </div>
-                            </div>
-
-                        </form>
                     </div>
 
                 </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="appont_sec_inner">
+                            <h6>EMERGENCY</h6>
+                            <a href="#">(052) 611-5711</a>
+                            <p>Urgent cases are always seen immediately. Always stand out In the event of an emergency, please call us as soon as like out possible we can.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="appont_sec_inner">
+                            <h6>WORK HOURS</h6>
+                            <ul>
+                                <li>Mon - Thu...............<span>7:00 - 17:00</span></li>
+                                <li> Friday.......................<span>7:30 - 17:00</span></li>
+                                <li> Saturday.................<span>8:00 - 16:00</span></li>
+                                <li> Sunday....................<span>9:00 - 16:00</span></li>
+                                <li> Holiday....................<span>9:00 - 11:00</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="appont_sec_inner">
+                            <h6>BOOK AN APPOINTMENT</h6>
+                            <form method="post" action="#">
 
+                                <div class="row clearfix">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text" name="name" placeholder="Name*" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <input type="email" name="email" placeholder="email*" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text" name="phone" placeholder="Phone*" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <input id="datepicker" class="form-control date" name="date" placeholder="Date">
+
+                                            <span class="add-on"><i class="icon flaticon-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                                        <button class="theme-btn" type="submit" name="submit-form">BOOK YOUR APPOINTMENT NOW</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
+
 
         </div>
     </section>
