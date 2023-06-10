@@ -74,7 +74,7 @@
                                     <!-- <div class="col-lg-6 col-md-6 col-sm-12"> -->
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
                                         <div class="form-group">
-                                            <input type="text" name="alamat_pelamar" placeholder="Alamat*" required="">
+                                            <input type="text" name="alamatlengkap_pelamar" placeholder="Alamat*" required="">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">

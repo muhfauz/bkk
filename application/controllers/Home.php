@@ -139,16 +139,26 @@ class Home extends CI_Controller
         $data = array(
             'kd_pelamar' => $this->input->post('kd_pelamar'),
             'nama_pelamar' => $this->input->post('nama_pelamar'),
+            'alamatlengkap_pelamar' => $this->input->post('alamatlengkap_pelamar'),
             'password_pelamar' => md5($this->input->post('password_pelamar')),
             'foto_pelamar' => 'foto_pelamar.png',
         );
         $this->Mglobal->tambahdata($data, 'tbl_pelamar');
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Tambah Data Sukses!</strong> Data berhasil disimpan ke database.
+                <strong>Pendaftaran Anda Berhasil!</strong> Data berhasil disimpan ke database.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>');
-        redirect(base_url('home/pelamar/'));
+        redirect(base_url('home/pelamarok/'));
+    }
+    public function pelamarok()
+    {
+        $data['pelamar'] = $this->db->query("select * from tbl_pelamar order by kd_pelamar desc limit 1")->result();
+        $this->load->view('depan/v_header', $data);
+        // $this->load->view('admin/temp/v_atas');
+        // $this->load->view('admin/temp/v_sidebar');
+        $this->load->view('depan/v_pelamarok');
+        $this->load->view('depan/v_footer');
     }
 }
