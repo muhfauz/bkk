@@ -133,4 +133,22 @@ class Home extends CI_Controller
                     </div>');
         redirect(base_url('home/single/' . $this->session->userdata('kd_lowongan')));
     }
+
+    public function aksitambahpelamar()
+    {
+        $data = array(
+            'kd_pelamar' => $this->input->post('kd_pelamar'),
+            'nama_pelamar' => $this->input->post('nama_pelamar'),
+            'password_pelamar' => md5($this->input->post('password_pelamar')),
+            'foto_pelamar' => 'foto_pelamar.png',
+        );
+        $this->Mglobal->tambahdata($data, 'tbl_pelamar');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Tambah Data Sukses!</strong> Data berhasil disimpan ke database.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>');
+        redirect(base_url('home/pelamar/'));
+    }
 }

@@ -1261,6 +1261,7 @@ textarea:focus {
 .default-form .form-group input[type="phone"],
 .default-form .form-group input[name="date"],
 .default-form .form-group input[type="email"],
+.default-form .form-group input[type="password"],
 .default-form .form-group select {
 	position: relative;
 	display: block;
@@ -1284,6 +1285,7 @@ textarea:focus {
 .default-form .form-group input[type="phone"]:focus,
 .default-form .form-group input[name="date"]:focus,
 .default-form .form-group input[type="email"]:focus,
+.default-form .form-group input[type="password"]:focus,
 .default-form .form-group select:focus,
 .default-form .form-group textarea:focus {
 	border-color: #fff;
@@ -2162,6 +2164,7 @@ textarea:focus {
 .get-in-touch .form-group input[type="text"],
 .get-in-touch .form-group input[type="phone"],
 .get-in-touch .form-group input[type="email"],
+.get-in-touch .form-group input[type="password"],
 .get-in-touch .form-group textarea {
 	position: relative;
 	display: block;
@@ -2190,6 +2193,7 @@ textarea:focus {
 .get-in-touch .form-group input[type="phone"]:focus,
 .get-in-touch .form-group input[name="date"]:focus,
 .get-in-touch .form-group input[type="email"]:focus,
+.get-in-touch .form-group input[type="password"]:focus,
 .get-in-touch .form-group select:focus,
 .get-in-touch .form-group textarea:focus {
 	border-color: #fff;
@@ -2688,6 +2692,17 @@ textarea:focus {
 	background: #f8f8f8;
 	padding: 11px 10px 10px;
 }
+.right-nav .form-group input[type="password"] {
+	padding: 10px;
+	min-height: 40px;
+	line-height: 26px;
+	color: #888888!important;
+	width: 100%;
+	border: 0px;
+	box-shadow: none;
+	background: #f8f8f8;
+	padding: 11px 10px 10px;
+}
 
 .right-nav .form-group {
 	margin-bottom: 0px;
@@ -2930,6 +2945,7 @@ textarea:focus {
 .contact_pg_form input[type="text"],
 .contact_pg_form input[type="email"],
 .contact_pg_form input[type="phone"],
+.contact_pg_form input[type="password"],
 textarea {
 	position: relative;
 	display: block;
@@ -3106,7 +3122,9 @@ textarea {
 .appont_sec_inner input[type="text"],
 .appont_sec_inner input[type="email"],
 .appont_sec_inner input[type="phone"],
+.appont_sec_inner input[type="password"],
 .appont_sec_inner input[name="date"] {
+	
 	position: relative;
 	display: block;
 	box-shadow: none!important;
@@ -7189,6 +7207,7 @@ textarea {
 
 .leave_reply input[type="text"],
 .leave_reply input[type="email"],
+.leave_reply input[type="password"],
 .leave_reply input[type="phone"],
 textarea {
 	position: relative;
@@ -7567,6 +7586,7 @@ textarea {
 .department_with_sidebar input[type="text"],
 .department_with_sidebar input[name="date"],
 .department_with_sidebar input[type="email"],
+.department_with_sidebar input[type="password"],
 .department_with_sidebar input[type="phone"],
 .department_with_sidebar textarea {
 	position: relative;
@@ -8734,6 +8754,7 @@ textarea {
 .single_doctors input[type="text"],
 .single_doctors input[name="date"],
 .single_doctors input[type="email"],
+.single_doctors input[type="password"],
 .single_doctors input[type="phone"],
 .department_with_sidebar textarea {
 	position: relative;
@@ -9546,6 +9567,26 @@ textarea {
 	transition: all 300ms ease;
 	margin-bottom: 20px;
 }
+.shop_cart_ .coupon_discount input[type="password"] {
+	position: relative;
+	display: block;
+	width: 100%;
+	line-height: 26px;
+	padding: 10px 28px;
+	color: #888888!important;
+	height: 50px;
+	font-size: 14px;
+	resize: none;
+	border-radius: 3px;
+	background: #f8f8f8;
+	border: 1px solid transparent;
+	--webkit-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	transition: all 300ms ease;
+	margin-bottom: 20px;
+}
 
 .shop_cart_ .coupon_discount input::placeholder {
 	font-size: 16px;
@@ -10017,6 +10058,7 @@ textarea {
 
 .Checkout_ input[type="text"],
 .Checkout_ input[type="email"],
+.Checkout_ input[type="password"],
 .Checkout_ input[type="date"],
 .Checkout_ input[type="phone"],
 textarea {

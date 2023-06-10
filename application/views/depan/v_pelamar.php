@@ -58,33 +58,32 @@
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="appont_sec_inner">
                             <h6>BOOK AN APPOINTMENT</h6>
-                            <form method="post" action="#">
+                            <form method="post" action="<?php echo base_url('home/aksitambahpelamar') ?>">
 
                                 <div class="row clearfix">
                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <input type="text" name="name" placeholder="Name*" required="">
+                                            <input type="text" name="kd_pelamar" placeholder="Name*" value="<?php echo $this->Mglobal->kode_otomatis("kd_pelamar", "tbl_pelamar", "PELAMAR"); ?>" readonly>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <input type="email" name="email" placeholder="email*" required="">
+                                            <input type="text" name="nama_pelamar" placeholder="Nama Pelamar*" required="">
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <!-- <div class="col-lg-6 col-md-6 col-sm-12"> -->
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
                                         <div class="form-group">
-                                            <input type="text" name="phone" placeholder="Phone*" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <div class="form-group">
-                                            <input id="datepicker" class="form-control date" name="date" placeholder="Date">
-
-                                            <span class="add-on"><i class="icon flaticon-calendar"></i></span>
+                                            <input type="text" name="alamat_pelamar" placeholder="Alamat*" required="">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
-                                        <button class="theme-btn" type="submit" name="submit-form">BOOK YOUR APPOINTMENT NOW</button>
+                                        <div class="form-group">
+                                            <input type="password" name="password_pelamar" placeholder="Password*" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                                        <button class="theme-btn" type="submit" name="submit-form">DAFTAR SEBAGAI PELAMAR</button>
                                     </div>
                                 </div>
 
