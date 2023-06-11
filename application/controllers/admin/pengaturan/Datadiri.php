@@ -19,10 +19,10 @@ class Datadiri extends CI_Controller
     $data['x2'] = 'Pengaturan';
     $data['x3'] = 'Data Diri';
     // $data['x4']='Data Admin Sahabat Optik';
-    $kd_admin = $this->session->userdata('kd_admin');
+    $kd_pelamar = $this->session->userdata('kd_pelamar');
     // $where = array('kd_santri' => $kd_santri);
     $data['nama_perush'] = $this->db->query("select nama_perush from tbl_perusahaan")->row()->nama_perush;
-    $data['admin'] = $this->db->query("select * from tbl_admin where kd_admin='$kd_admin'")->result();
+    $data['pelamar'] = $this->db->query("select * from tbl_pelamar where kd_pelamar='$kd_pelamar'")->result();
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
     $this->load->view('admin/temp/v_sidebar');
