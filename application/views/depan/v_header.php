@@ -110,7 +110,7 @@
                                     <ul class="navbar-nav submenu">
                                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url('welcome') ?>">Login</a></li>
                                         <li class="nav-item"><a class="nav-link" href="<?php echo base_url('home/pelamar') ?>">Pelamar</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('home/pe') ?>">Perusahaan</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url('home/perusahaan') ?>">Perusahaan</a></li>
 
                                     </ul>
                                 </li>

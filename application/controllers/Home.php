@@ -161,4 +161,31 @@ class Home extends CI_Controller
         $this->load->view('depan/v_pelamarok');
         $this->load->view('depan/v_footer');
     }
+    public function aksitambahperusahaan()
+    {
+        $data = array(
+            'kd_perush' => $this->input->post('kd_perush'),
+            'nama_perush' => $this->input->post('nama_perush'),
+            'alamatlengkap_perush' => $this->input->post('alamatlengkap_perush'),
+            'password_perush' => md5($this->input->post('password_perush')),
+            'logo_perush' => 'logo_perush.png',
+        );
+        $this->Mglobal->tambahdata($data, 'tbl_perusahaan');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Pendaftaran Anda Berhasil!</strong> Data berhasil disimpan ke database.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>');
+        redirect(base_url('home/perusahaanok/'));
+    }
+    public function perusahaanok()
+    {
+        $data['perusahaan'] = $this->db->query("select * from tbl_perusahaan order by kd_perush desc limit 1")->result();
+        $this->load->view('depan/v_header', $data);
+        // $this->load->view('admin/temp/v_atas');
+        // $this->load->view('admin/temp/v_sidebar');
+        $this->load->view('depan/v_perusahaanok');
+        $this->load->view('depan/v_footer');
+    }
 }
