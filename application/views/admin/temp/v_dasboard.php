@@ -66,86 +66,9 @@
       <!-- Main row -->
     <?php } elseif ($this->session->userdata('posisi') == 'perusahaan') { ?>
       <div class="row">
-
-        <!-- /.col -->
-
-        <!-- /.col -->
-
-
-        <div class="col-lg-3 col-xs-6">
-
-
-          <a href="<?php echo base_url('admin/pengaturan/datadiri') ?>">
-            <div class="info-box"> <span class="info-box-icon bg-blue"><i class="fa fa-user text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number "> Data Diri</span> <span class="info-box-text">Data Diri Saya</span></div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </a>
-        </div>
-
-
-        <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/master/lowongan') ?>">
-            <div class="info-box"> <span class="info-box-icon bg-aqua"><i class="fa fa-file-archive-o text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number"> Input </span> <span class="info-box-text">Service</span></div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </a>
-        </div>
-        <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/master/lowonganhrd') ?>">
-            <div class="info-box"> <span class="info-box-icon bg-aqua"><i class="fa fa-file-archive-o text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number"> Lowongan Aktif</span> <span class="info-box-text">Service</span></div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </a>
-        </div>
-        <div class="col-lg-3 col-xs-6">
-          <a href="<?php echo base_url('admin/pengaturan/gantipassperush') ?>">
-            <div class="info-box"> <span class="info-box-icon bg-danger"><i class="fa fa-key text-white" aria-hidden="true"></i></span>
-              <div class="info-box-content"> <span class="info-box-number"> Ganti</span> <span class="info-box-text">Password</span></div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </a>
-        </div>
-
-        <!-- /.col -->
-
-        <!-- /.col -->
-
-        <!-- /.col -->
-      </div>
-
-
-
-      <!-- keuangan -->
-
-
-
-      <!-- pajak -->
-
-
-      <!-- penjualan -->
-
-    <?php } else { ?>
-
-      <!-- apoteker -->
-
-      <div class="row">
-
-        <!-- /.col -->
-
-        <!-- /.col -->
-
-        <?php if ($this->session->userdata('acc_adminpelamar') == 'acc') { ?>
+        <?php if ($this->session->userdata('acc_admin') == 'acc') { ?>
           <div class="col-lg-3 col-xs-6">
-
-
-            <a href="<?php echo base_url('admin/pengaturan/datadiri') ?>">
+            <a href="<?php echo base_url('admin/pengaturan/datadiriperush') ?>">
               <div class="info-box"> <span class="info-box-icon bg-blue"><i class="fa fa-user text-white" aria-hidden="true"></i></span>
                 <div class="info-box-content"> <span class="info-box-number "> Data Diri</span> <span class="info-box-text">Data Diri Saya</span></div>
                 <!-- /.info-box-content -->
@@ -153,27 +76,26 @@
               <!-- /.info-box -->
             </a>
           </div>
-
           <div class="col-lg-3 col-xs-6">
-            <a href="<?php echo base_url('admin/lamaran/lamaranpelamar') ?>">
-              <div class="info-box"> <span class="info-box-icon bg-info"><i class="fa fa-wpexplorer text-white" aria-hidden="true"></i></span>
-                <div class="info-box-content"> <span class="info-box-number"> Lamaranku</span> <span class="info-box-text">Lihat</span></div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </a>
-          </div>
-          <div class="col-lg-3 col-xs-6">
-            <a href="<?php echo base_url('admin/seleksi/seleksipelamar/arsippelamar') ?>">
+            <a href="<?php echo base_url('admin/master/lowongan') ?>">
               <div class="info-box"> <span class="info-box-icon bg-aqua"><i class="fa fa-file-archive-o text-white" aria-hidden="true"></i></span>
-                <div class="info-box-content"> <span class="info-box-number"> Arsip Lamaran</span> <span class="info-box-text">Lihat</span></div>
+                <div class="info-box-content"> <span class="info-box-number"> Input </span> <span class="info-box-text">Service</span></div>
                 <!-- /.info-box-content -->
               </div>
               <!-- /.info-box -->
             </a>
           </div>
           <div class="col-lg-3 col-xs-6">
-            <a href="<?php echo base_url('admin/pengaturan/gantipasspelamar') ?>">
+            <a href="<?php echo base_url('admin/master/lowonganhrd') ?>">
+              <div class="info-box"> <span class="info-box-icon bg-aqua"><i class="fa fa-file-archive-o text-white" aria-hidden="true"></i></span>
+                <div class="info-box-content"> <span class="info-box-number"> Lowongan Aktif</span> <span class="info-box-text">Service</span></div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </a>
+          </div>
+          <div class="col-lg-3 col-xs-6">
+            <a href="<?php echo base_url('admin/pengaturan/gantipassperush') ?>">
               <div class="info-box"> <span class="info-box-icon bg-danger"><i class="fa fa-key text-white" aria-hidden="true"></i></span>
                 <div class="info-box-content"> <span class="info-box-number"> Ganti</span> <span class="info-box-text">Password</span></div>
                 <!-- /.info-box-content -->
@@ -181,56 +103,142 @@
               <!-- /.info-box -->
             </a>
           </div>
-        <?php } elseif ($this->session->userdata('acc_adminpelamar') == 'belum') { ?>
-          <div class="col-lg-3 col-xs-6">
-
-
-            <a href="<?php echo base_url('admin/pengaturan/datadiri') ?>">
-              <div class="info-box"> <span class="info-box-icon bg-blue"><i class="fa fa-user text-white" aria-hidden="true"></i></span>
-                <div class="info-box-content"> <span class="info-box-number "> Data Diri</span> <span class="info-box-text">Data Diri Saya</span></div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </a>
+      </div>
+    <?php } elseif ($this->session->userdata('acc_admin') == 'belum') { ?>
+      <div class="col-lg-3 col-xs-6">
+        <a href="<?php echo base_url('admin/pengaturan/datadiriperush') ?>">
+          <div class="info-box"> <span class="info-box-icon bg-blue"><i class="fa fa-user text-white" aria-hidden="true"></i></span>
+            <div class="info-box-content"> <span class="info-box-number "> Data Diri</span> <span class="info-box-text">Data Diri Saya</span></div>
+            <!-- /.info-box-content -->
           </div>
+          <!-- /.info-box -->
+        </a>
+      </div>
 
-
-
-          <div class="col-lg-3 col-xs-6">
-            <a href="<?php echo base_url('admin/pengaturan/gantipasspelamar') ?>">
-              <div class="info-box"> <span class="info-box-icon bg-danger"><i class="fa fa-key text-white" aria-hidden="true"></i></span>
-                <div class="info-box-content"> <span class="info-box-number"> Ganti</span> <span class="info-box-text">Password</span></div>
-                <!-- /.info-box-content -->
-              </div>
-              <!-- /.info-box -->
-            </a>
+      <div class="col-lg-3 col-xs-6">
+        <a href="<?php echo base_url('admin/pengaturan/gantipassperush') ?>">
+          <div class="info-box"> <span class="info-box-icon bg-danger"><i class="fa fa-key text-white" aria-hidden="true"></i></span>
+            <div class="info-box-content"> <span class="info-box-number"> Ganti</span> <span class="info-box-text">Password</span></div>
+            <!-- /.info-box-content -->
           </div>
-        <?php } else { ?>
-        <?php } ?>
+          <!-- /.info-box -->
+        </a>
+      </div>
+  </div>
+<?php } else { ?>
+<?php } ?>
 
-        <!-- /.col -->
 
-        <!-- /.col -->
 
-        <!-- /.col -->
+<!-- keuangan -->
+
+
+
+<!-- pajak -->
+
+
+<!-- penjualan -->
+
+<?php } else { ?>
+
+  <!-- apoteker -->
+
+  <div class="row">
+
+    <!-- /.col -->
+
+    <!-- /.col -->
+
+    <?php if ($this->session->userdata('acc_adminpelamar') == 'acc') { ?>
+      <div class="col-lg-3 col-xs-6">
+
+
+        <a href="<?php echo base_url('admin/pengaturan/datadiri') ?>">
+          <div class="info-box"> <span class="info-box-icon bg-blue"><i class="fa fa-user text-white" aria-hidden="true"></i></span>
+            <div class="info-box-content"> <span class="info-box-number "> Data Diri</span> <span class="info-box-text">Data Diri Saya</span></div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-xs-6">
+        <a href="<?php echo base_url('admin/lamaran/lamaranpelamar') ?>">
+          <div class="info-box"> <span class="info-box-icon bg-info"><i class="fa fa-wpexplorer text-white" aria-hidden="true"></i></span>
+            <div class="info-box-content"> <span class="info-box-number"> Lamaranku</span> <span class="info-box-text">Lihat</span></div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </a>
+      </div>
+      <div class="col-lg-3 col-xs-6">
+        <a href="<?php echo base_url('admin/seleksi/seleksipelamar/arsippelamar') ?>">
+          <div class="info-box"> <span class="info-box-icon bg-aqua"><i class="fa fa-file-archive-o text-white" aria-hidden="true"></i></span>
+            <div class="info-box-content"> <span class="info-box-number"> Arsip Lamaran</span> <span class="info-box-text">Lihat</span></div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </a>
+      </div>
+      <div class="col-lg-3 col-xs-6">
+        <a href="<?php echo base_url('admin/pengaturan/gantipasspelamar') ?>">
+          <div class="info-box"> <span class="info-box-icon bg-danger"><i class="fa fa-key text-white" aria-hidden="true"></i></span>
+            <div class="info-box-content"> <span class="info-box-number"> Ganti</span> <span class="info-box-text">Password</span></div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </a>
+      </div>
+    <?php } elseif ($this->session->userdata('acc_adminpelamar') == 'belum') { ?>
+      <div class="col-lg-3 col-xs-6">
+
+
+        <a href="<?php echo base_url('admin/pengaturan/datadiri') ?>">
+          <div class="info-box"> <span class="info-box-icon bg-blue"><i class="fa fa-user text-white" aria-hidden="true"></i></span>
+            <div class="info-box-content"> <span class="info-box-number "> Data Diri</span> <span class="info-box-text">Data Diri Saya</span></div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </a>
       </div>
 
 
 
-      <!-- keuangan -->
-
-
-
-      <!-- pajak -->
-
-
-      <!-- penjualan -->
-
-
-
-
+      <div class="col-lg-3 col-xs-6">
+        <a href="<?php echo base_url('admin/pengaturan/gantipasspelamar') ?>">
+          <div class="info-box"> <span class="info-box-icon bg-danger"><i class="fa fa-key text-white" aria-hidden="true"></i></span>
+            <div class="info-box-content"> <span class="info-box-number"> Ganti</span> <span class="info-box-text">Password</span></div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </a>
+      </div>
+    <?php } else { ?>
     <?php } ?>
+
+    <!-- /.col -->
+
+    <!-- /.col -->
+
+    <!-- /.col -->
   </div>
-  <!-- /.content -->
+
+
+
+  <!-- keuangan -->
+
+
+
+  <!-- pajak -->
+
+
+  <!-- penjualan -->
+
+
+
+
+<?php } ?>
+</div>
+<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
