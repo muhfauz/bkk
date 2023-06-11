@@ -18,10 +18,8 @@ class Datadiri extends CI_Controller
     $data['x1'] = 'Data Diri';
     $data['x2'] = 'Pengaturan';
     $data['x3'] = 'Data Diri';
-    // $data['x4']='Data Admin Sahabat Optik';
     $kd_pelamar = $this->session->userdata('kd_pelamar');
-    // $where = array('kd_santri' => $kd_santri);
-    $data['nama_perush'] = $this->db->query("select nama_perush from tbl_perusahaan")->row()->nama_perush;
+    $data['x4'] = 'Data pelamar ' . '| ' . $this->db->query('select nama_bkk from tbl_bkk')->row()->nama_bkk;
     $data['pelamar'] = $this->db->query("select * from tbl_pelamar where kd_pelamar='$kd_pelamar'")->result();
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
@@ -116,22 +114,30 @@ class Datadiri extends CI_Controller
   }
   function aksieditdatadiri()
   {
-    $where = array('kd_admin' => $this->session->userdata('kd_admin'));
-    $config['upload_path'] = './gambar/';
-    $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp|jfif';
-    $config['max_size'] = '20480000';
-    $config['file_name'] = 'adm_' . time();
+    $where = array('kd_pelamar' => $this->session->userdata('kd_pelamar'));
+    $config['upload_path'] = './gambar/pelamar/';
+    $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp';
+    $config['max_size'] = '2048';
+    $config['file_name'] = 'foto_pelamar' . time();
     $this->load->library('upload', $config);
-    if ($this->upload->do_upload('gambar_admin')) {
+    if ($this->upload->do_upload('foto_pelamar')) {
       $image = $this->upload->data();
       $data = array(
-        'nama_admin' => $this->input->post('nama_admin'),
-        'nohp_admin' => $this->input->post('nohp_admin'),
-        'alamat_admin' => $this->input->post('alamat_admin'),
-        'gambar_admin' => $image['file_name'],
-        //  'password_admin'=>md5($this->input->post('password_admin'))
+        'nama_pelamar' => $this->input->post('nama_pelamar'),
+        'noktp_pelamar' => $this->input->post('noktp_pelamar'),
+        'tempatlahir_pelamar' => $this->input->post('tempatlahir_pelamar'),
+        'tanggallahir_pelamar' => $this->input->post('tanggallahir_pelamar'),
+        'agama_pelamar' => $this->input->post('agama_pelamar'),
+        'jk_pelamar' => $this->input->post('jk_pelamar'),
+        'nohp_pelamar' => $this->input->post('nohp_pelamar'),
+        'tinggibadan_pelamar' => $this->input->post('tinggibadan_pelamar'),
+        'beratbadan_pelamar' => $this->input->post('beratbadan_pelamar'),
+        'statusperkawinan_pelamar' => $this->input->post('statusperkawinan_pelamar'),
+        'alamatlengkap_pelamar' => $this->input->post('alamatlengkap_pelamar'),
+        'password_pelamar' => md5($this->input->post('password_pelamar')),
+        'foto_pelamar' => $image['file_name'],
       );
-      $this->Mglobal->editdata('tbl_admin', $where, $data);
+      $this->Mglobal->editdata('tbl_pelamar', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -149,13 +155,22 @@ class Datadiri extends CI_Controller
       //  }
     } else {
       $data = array(
-        'nama_admin' => $this->input->post('nama_admin'),
-        'nohp_admin' => $this->input->post('nohp_admin'),
-        'alamat_admin' => $this->input->post('alamat_admin'),
+        'nama_pelamar' => $this->input->post('nama_pelamar'),
+        'noktp_pelamar' => $this->input->post('noktp_pelamar'),
+        'tempatlahir_pelamar' => $this->input->post('tempatlahir_pelamar'),
+        'tanggallahir_pelamar' => $this->input->post('tanggallahir_pelamar'),
+        'agama_pelamar' => $this->input->post('agama_pelamar'),
+        'jk_pelamar' => $this->input->post('jk_pelamar'),
+        'nohp_pelamar' => $this->input->post('nohp_pelamar'),
+        'tinggibadan_pelamar' => $this->input->post('tinggibadan_pelamar'),
+        'beratbadan_pelamar' => $this->input->post('beratbadan_pelamar'),
+        'statusperkawinan_pelamar' => $this->input->post('statusperkawinan_pelamar'),
+        'alamatlengkap_pelamar' => $this->input->post('alamatlengkap_pelamar'),
+        'password_pelamar' => md5($this->input->post('password_pelamar')),
         // 'gambar_admin' => $image['file_name'],
         //  'password_admin'=>md5($this->input->post('password_admin'))
       );
-      $this->Mglobal->editdata('tbl_admin', $where, $data);
+      $this->Mglobal->editdata('tbl_pelamar', $where, $data);
       $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
