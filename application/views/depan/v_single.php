@@ -46,7 +46,7 @@
                                     <li><a href="#">All Pendidkan<span>(<?php echo $this->db->query("select * from tbl_lowongan")->num_rows() ?>)</span></a></li>
                                     <?php foreach ($pendidikan as $p) : ?>
                                         <?php $kd_pendidikan = $p->kd_pendidikan; ?>
-                                        <li><a href="#"> <?php echo $p->nama_pendidikan ?><span>(<?php echo $this->db->query("select * from tbl_lowongan where kd_pendidikan='$kd_pendidikan'")->num_rows() ?>)</span></a></li>
+                                        <li><a href="<?php echo base_url('home/pendidikan/') . $p->kd_pendidikan ?>"> <?php echo $p->nama_pendidikan ?><span>(<?php echo $this->db->query("select * from tbl_lowongan where kd_pendidikan='$kd_pendidikan'")->num_rows() ?>)</span></a></li>
                                     <?php endforeach ?>
 
 
@@ -80,7 +80,7 @@
                                 <h2 class="sub_head">Perusahaan</h2>
                                 <div class="tags">
                                     <?php foreach ($perusahaan as $pr) : ?>
-                                        <a href="#"><?php echo $pr->nama_perush ?> </a>
+                                        <a href="<?php echo base_url('home/perush/') . $pr->kd_perush ?>"><?php echo $pr->nama_perush ?> </a>
                                     <?php endforeach; ?>
 
                                 </div>
@@ -107,13 +107,14 @@
                                                     <td><?php echo $lb->nama_perush ?></td>
                                                 </tr>
                                                 <tr>
+                                                    <th>Tanggal Buka</th>
+                                                    <td><?php echo $this->Mglobal->tanggalindo($lb->tgl_mulai) ?></td>
+                                                </tr>
+                                                <tr>
                                                     <th>Tanggal Tutup Lowongan</th>
                                                     <td><?php echo $this->Mglobal->tanggalindo($lb->tgl_selesai) ?></td>
                                                 </tr>
-                                                <tr>
-                                                    <th>Tanggal</th>
-                                                    <td><?php echo $lb->tgl_test ?></td>
-                                                </tr>
+
                                                 <tr>
                                                     <th>Pendidikan</th>
                                                     <td><?php echo $lb->nama_pendidikan ?></td>
@@ -121,6 +122,16 @@
                                                 <tr>
                                                     <th>Penempatan</th>
                                                     <td><?php echo $lb->lokasi_penempatan ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Status Lowongan</th>
+                                                    <td>
+                                                        <?php if (date('Y-m-d') < $lb->tgl_selesai) { ?>
+                                                            Masih Tersedia
+                                                        <?php } else { ?>
+                                                            Tutup
+                                                        <?php } ?>
+                                                    </td>
                                                 </tr>
                                             </table>
 
@@ -184,8 +195,11 @@
                                                                     Anda sudah melamar lowongan ini
                                                                 </div>
                                                             <?php } else { ?>
-
-                                                                <a href="" class="btn comment_btn" data-toggle="modal" data-target="#lamardata<?php echo $l->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Lamar</a>
+                                                                <?php if (date('Y-m-d') < $lb->tgl_selesai) { ?>
+                                                                    <a href="" class="btn comment_btn" data-toggle="modal" data-target="#lamardata<?php echo $l->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Lamar</a>
+                                                                <?php } else { ?>
+                                                                    <button class="btn comment_btn btn-danger"><i class="fa fa-window-close mr-2"></i>Tutup</button>
+                                                                <?php } ?>
                                                             <?php } ?>
                                                         <?php } else { ?>
                                                             <div class="alert alert-danger" role="alert">
