@@ -36,13 +36,13 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12">
+                    <!-- <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="appont_sec_inner">
                             <h6>EMERGENCY</h6>
                             <a href="#">(052) 611-5711</a>
                             <p>Urgent cases are always seen immediately. Always stand out In the event of an emergency, please call us as soon as like out possible we can.</p>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="appont_sec_inner">
                             <h6>WORK HOURS</h6>
@@ -57,7 +57,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="appont_sec_inner">
-                            <h6>BOOK AN APPOINTMENT</h6>
+                            <h6>BIODATA PELAMAR</h6>
                             <form method="post" action="<?php echo base_url('home/aksitambahpelamar') ?>">
 
                                 <div class="row clearfix">

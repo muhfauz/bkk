@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="heading clearfix">
-                        <h1>Medical <span>News Today </span></h1>
+                        <h1>Lowongan <span>Kerja</span></h1>
                     </div>
                 </div>
             </div>

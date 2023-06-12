@@ -134,7 +134,7 @@
 
                     </div>
                     <div class="view-more-doctors">
-                        <a href="#" class="view-doctors">SEE ALL DOCTORS</a>
+                        <a href="<?php echo base_url('home/lowongan') ?>" class="view-doctors">SEMUA LOWONGAN</a>
                     </div>
                 </div>
             </div>

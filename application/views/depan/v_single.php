@@ -41,7 +41,7 @@
                             <!----search-box---->
                             <!----Categories---->
                             <div class="categories">
-                                <h2 class="sub_head">Categories</h2>
+                                <h2 class="sub_head">Tingkat Pendidikan</h2>
                                 <ul>
                                     <li><a href="#">All Pendidkan<span>(<?php echo $this->db->query("select * from tbl_lowongan")->num_rows() ?>)</span></a></li>
                                     <?php foreach ($pendidikan as $p) : ?>
@@ -138,44 +138,17 @@
 
                                     <?php echo $lb->desk_lowongan ?>
                                 </div>
-                                <div class="authour_quotes">
-                                    <div class="quotes_inner">
-                                        <span class="flaticon-quote"></span>
-                                        <p> We go over plans, I meet with them. ‘Let’s help you become a better you.’
-                                            I really love what I do and it’s helping me grow as a person as well.</p>
-                                        <h6 class="authour_name">Reta Schmidt</h6>
-                                    </div>
-                                    <p class="desc">Reta Schmidt, a peer recovery coach at Meditex Good Samaritan Hospital, struggled with alcohol abuse and has had family members who have had substance use issues. The peer recovery coaches in the program must have been sober for at least three years and in a support program themselves.</p>
-                                </div>
+
 
 
                                 <div class="about_authour_description">
 
                                     <h6 class="authour_name"><?php echo $lb->nama_perush ?></h6>
                                     <p>
-                                        <?php echo $lb->nama_perush ?> merupakan<?php echo $lb->desk_perush ?> yang beralamat di <?php echo $lb->alamatlengkap_perush ?>
+                                        <?php echo $lb->nama_perush ?> merupakan<?php echo $lb->desk_perush ?> yang beralamat di <?php echo $lb->alamatlengkap_perush ?> dengan Nomor <?php echo $lb->nib_perush ?>
                                     </p>
                                 </div>
-                                <div class="tage_and_share clearfix">
-                                    <div class="tags">
-                                        <ul>
-                                            <li>Tags:</li>
-                                            <li><a href="#"> Health,</a></li>
-                                            <li><a href="#"> Lifestyle, </a></li>
-                                            <li><a href="#">Experience</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="share">
-                                        <ul>
-                                            <li>Share on:</li>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+
 
                                 <div class="authour_testimonial">
                                     <div class="col-lg-3 col-md-4 col-xs-6 image mb-3">
@@ -192,42 +165,6 @@
                                         <p><?php echo $l->nama_perush ?> , <?php echo $l->desk_perush ?></p>
                                     </div>
                                 </div>
-
-
-                                <div class="suggesstions mt-5">
-                                    <h1></h1>
-                                    <h1>You May <span>Also Like</span></h1>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="popular_articles_content">
-                                                <div class="image">
-                                                    <img src="assets/image/articles/hm-2-articles-2.jpg" class="img-fluid" alt="articles">
-                                                    <a href="#" class="link"></a>
-                                                </div>
-                                                <div class="articles_content">
-                                                    <p>Lifestyle . <span> April 04, 2018 </span></p>
-                                                    <h6><a href="#">Medstar Health Bel Air Cancer Services Aligns Expertise </a></h6>
-                                                    <a href="#" class="read_">Read More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="popular_articles_content">
-                                                <div class="image">
-                                                    <img src="assets/image/articles/hm-2-articles-2.jpg" class="img-fluid" alt="articles">
-                                                    <a href="#" class="link"></a>
-                                                </div>
-                                                <div class="articles_content">
-                                                    <p>Lifestyle . <span> April 04, 2018 </span></p>
-                                                    <h6><a href="#">Dr. Gabriel Del Corral Joins MedStar Plastic & Reconstructive Surgery</a> </h6>
-                                                    <a href="#" class="read_">Read More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
 
                                 <div class="leave_reply">
                                     <!-- <h1>Leave <span>A Reply</span></h1> -->
