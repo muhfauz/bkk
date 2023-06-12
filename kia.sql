@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2023 at 12:22 PM
+-- Generation Time: Jun 12, 2023 at 09:41 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -264,7 +264,7 @@ CREATE TABLE `tbl_pelamar` (
   `alamatlengkap_pelamar` text NOT NULL,
   `nohp_pelamar` varchar(20) NOT NULL,
   `password_pelamar` varchar(50) NOT NULL,
-  `foto_pelamar` varchar(20) NOT NULL,
+  `foto_pelamar` varchar(100) NOT NULL,
   `acc_adminpelamar` enum('belum','acc','banned') NOT NULL,
   `kd_admin` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -275,7 +275,21 @@ CREATE TABLE `tbl_pelamar` (
 
 INSERT INTO `tbl_pelamar` (`kd_pelamar`, `nama_pelamar`, `noktp_pelamar`, `tempatlahir_pelamar`, `tanggallahir_pelamar`, `agama_pelamar`, `jk_pelamar`, `tinggibadan_pelamar`, `beratbadan_pelamar`, `disabilitas_pelamar`, `jenisdisabilitas_pelamar`, `keterangandisabilitas_pelamar`, `statusperkawinan_pelamar`, `alamatlengkap_pelamar`, `nohp_pelamar`, `password_pelamar`, `foto_pelamar`, `acc_adminpelamar`, `kd_admin`) VALUES
 ('PELAMAR003', 'erererer', '545545545454', 'Banyumas', '2023-05-08', 'Kristen', 'Pria', '10', '10', '', '', '', 'kawin', '10>', '343434', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png', 'acc', ''),
-('PELAMAR004', 'ererer', '4343', 'erererere', '2023-05-26', 'Kristen', 'Pria', '2222', '2222', '', '', '', 'lajang', 'erererer', '3434343', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png', 'acc', '');
+('PELAMAR004', 'ererer', '4343', 'erererere', '2023-05-26', 'Kristen', 'Pria', '2222', '2222', '', '', '', 'lajang', 'erererer', '3434343', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png', 'acc', ''),
+('PELAMAR005', 'Sutrisno', '', '', '0000-00-00', '', 'Pria', '', '', '', '', '', 'kawin', '', '', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png', 'belum', ''),
+('PELAMAR006', 'Sutrisno', '', '', '0000-00-00', '', 'Pria', '', '', '', '', '', 'kawin', '', '', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png', 'belum', ''),
+('PELAMAR007', 'erererewr', '', '', '0000-00-00', '', 'Pria', '', '', '', '', '', 'kawin', '', '', '464a34e3e589afa6a7272385cfc8aea7', 'foto_pelamar.png', 'belum', ''),
+('PELAMAR008', 'dfdfdf', '', '', '0000-00-00', '', 'Pria', '', '', '', '', '', 'kawin', '', '', '5d5cc48db70ecce234a443a9a05d66ee', 'foto_pelamar.png', 'belum', ''),
+('PELAMAR009', 'dfdfdf', '', '', '0000-00-00', '', 'Pria', '', '', '', '', '', 'kawin', '', '', 'fbb82de80869972099f9c61c818df222', 'foto_pelamar.png', 'belum', ''),
+('PELAMAR010', 'Miftahudin', '', '', '0000-00-00', '', 'Pria', '', '', '', '', '', 'kawin', 'Purwokerto', '', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png', 'belum', ''),
+('PELAMAR011', 'dfdfasdfas', '', '', '0000-00-00', '', 'Pria', '', '', '', '', '', 'kawin', 'dfdfdasfdasf', '', 'ae27a4b4821b13cad2a17a75d219853e', 'foto_pelamar.png', 'belum', ''),
+('PELAMAR012', 'erererer', '', '', '0000-00-00', '', 'Pria', '', '', '', '', '', 'kawin', 'ererere', '', '7481678c27f3968c568fbfbd9f70ffa0', 'foto_pelamar.png', 'belum', ''),
+('PELAMAR013', 'dfdfdf', '', '', '0000-00-00', '', 'Pria', '', '', '', '', '', 'kawin', 'dfdfdfdfd', '', '6d5678a7dd76fb64c4d147e651c6a714', 'foto_pelamar.png', 'belum', ''),
+('PELAMAR014', 'DFDFDF', '', '', '0000-00-00', '', 'Pria', '', '', '', '', '', 'kawin', 'DFDFDF', '', 'c0af3a9ecba7ab3344dce50db239e589', 'foto_pelamar.png', 'belum', ''),
+('PELAMAR015', 'DFDFDF', '', '', '0000-00-00', '', 'Pria', '', '', '', '', '', 'kawin', 'DFDFDF', '', 'b0133b6cf453c9cd8b58eae44a67ebec', 'foto_pelamar.png', 'belum', ''),
+('PELAMAR016', 'SUTRISNO', '', '', '0000-00-00', '', 'Pria', '', '', '', '', '', 'kawin', 'Jalan haji Sudiro 44 Purwokerto Jawa tengah', '', 'e10adc3949ba59abbe56e057f20f883e', 'foto_pelamar.png', 'belum', ''),
+('PELAMAR017', 'aaaaaa', '3434343', '34343434', '2023-06-15', 'Islam', 'Wanita', '3', '3', '', '', '', 'janda', 'dfdasff ', '08888888', 'd41d8cd98f00b204e9800998ecf8427e', 'foto_pelamar1686443185.png', 'belum', ''),
+('PELAMAR018', 'ERERERERE', '', '', '0000-00-00', '', 'Pria', '', '', '', '', '', 'kawin', 'ERERERE', '', '85064cbee4d2fe3f194c852f55944d51', 'foto_pelamar.png', 'belum', '');
 
 -- --------------------------------------------------------
 
@@ -325,7 +339,8 @@ CREATE TABLE `tbl_perusahaan` (
 INSERT INTO `tbl_perusahaan` (`kd_perush`, `nama_perush`, `desk_perush`, `jenisbu_perush`, `nib_perush`, `sektor_perush`, `alamatlengkap_perush`, `notel_perush`, `namapj_perush`, `password_perush`, `logo_perush`, `acc_admin`, `kd_admin`) VALUES
 ('PERUSH001', 'Pusat Laptor Nusantara', 'Perusahaan Penjualan Laptop di Purwokerto', 'PT', '8888888888', 'Penjualan', 'Jl. Pramuka No.202, Samudra, Purwokerto Kidul, Kec. Purwokerto Sel., Kabupaten Banyumas, Jawa Tengah', '088888888', 'edrfererr', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush.png', 'acc', ''),
 ('PERUSH002', 'Kei Ramen', 'Perusahaan yang bergerak dalam bidang restoran', 'CV', '8888888', 'Restauran', 'Purwokerto', '08888888', 'Sumantri', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1683328914.jpg', 'acc', ''),
-('PERUSH003', 'Mulya Pratama', 'Perusahaan perdagangan kalung berliang', 'CV', '888888', 'Perdagangan', 'Jalan Raya Krangklesem Purwokreto', '88888888888', 'Sumanjaya', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1683333693.png', 'acc', '');
+('PERUSH003', 'Mulya Pratama', 'Perusahaan perdagangan kalung berliang', 'CV', '888888', 'Perdagangan', 'Jalan Raya Krangklesem Purwokreto', '88888888888', 'Sumanjaya', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1683333693.png', 'acc', ''),
+('PERUSH004', 'Bintang Footsal Jamblang', 'aaaa', 'dfdfdf', 'dfdfdf', 'dfdf', 'adaf adfa das a fasdf', 'dfdfdf', 'dfdf', 'e10adc3949ba59abbe56e057f20f883e', 'logo_perush1686449830.png', 'acc', '');
 
 -- --------------------------------------------------------
 
