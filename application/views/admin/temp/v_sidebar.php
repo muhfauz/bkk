@@ -151,7 +151,7 @@
           <li class="treeview"> <a href="#"><i class="fa fa-shopping-basket mr-2" aria-hidden="true"></i><span> Riwayat Lamaran</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
             <ul class="treeview-menu">
               <li class="ml-4"><a href="<?php echo base_url('admin/lamaran/lamaranpelamar') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>Lamaranku </a></li>
-              <li class="ml-4"><a href="<?php echo base_url('admin/lamaran/lamaranpelamar') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>Arsip</a></li>
+
 
             </ul>
           </li>

@@ -24,8 +24,8 @@
                     <thead class="bg-aqua">
                         <tr>
                             <th class="text-center text-white" width="10px">No</th>
-                            <th class="text-center text-white">Kode Jabatan</th>
-                            <th class="text-center text-white">Nama Jabatan</th>
+                            <th class="text-center text-white">Kode sektor</th>
+                            <th class="text-center text-white">Nama sektor</th>
 
                             <!-- <th class="text-center text-white">Foto</th> -->
                             <th class="text-center text-white" width="300px"></th>
@@ -35,18 +35,18 @@
                     <tbody>
                         <?php
                         $no = 1;
-                        foreach ($jabatan as $a) :  ?>
+                        foreach ($sektor as $a) :  ?>
                             <tr>
                                 <td class="text-center font-weight-bold"><?php echo $no++; ?></td>
-                                <td><?php echo $a->kd_jabatan ?></td>
-                                <td><?php echo $a->nama_jabatan ?></td>
+                                <td><?php echo $a->kd_sektor ?></td>
+                                <td><?php echo $a->nama_sektor ?></td>
 
-                                <!-- <td><img src="<?php echo base_url('assets/toko/images/jabatan/') . $a->foto_jabatan ?>" alt=""> -->
+                                <!-- <td><img src="<?php echo base_url('assets/toko/images/sektor/') . $a->foto_sektor ?>" alt=""> -->
                                 </td>
                                 <td class="float-right">
-                                    <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_jabatan ?>"> <i class="fa fa-info mr-2"></i> Detail</a>
-                                    <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_jabatan ?>"> <i class="fa fa-edit mr-2"></i> Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_jabatan ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a>
+                                    <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_sektor ?>"> <i class="fa fa-info mr-2"></i> Detail</a>
+                                    <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_sektor ?>"> <i class="fa fa-edit mr-2"></i> Edit</a>
+                                    <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_sektor ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>
@@ -70,14 +70,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?php echo base_url('admin/master/jabatan/aksitambahjabatan') ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url('admin/master/sektor/aksitambahsektor') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="">Kode jabatan</label>
-                        <input name="kd_jabatan" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_jabatan", "tbl_jabatan", "JAB") ?>">
+                        <label for="">Kode sektor</label>
+                        <input name="kd_sektor" type="text" class="form-control" readonly value="<?php echo $this->Mglobal->kode_otomatis("kd_sektor", "tbl_sektor", "JAB") ?>">
                     </div>
                     <div class="form-group">
-                        <label for="">Nama jabatan</label>
-                        <input name="nama_jabatan" type="text" class="form-control" required>
+                        <label for="">Nama sektor</label>
+                        <input name="nama_sektor" type="text" class="form-control" required>
                     </div>
 
 
@@ -93,12 +93,12 @@
 </div>
 
 <!-- modal detail -->
-<?php foreach ($jabatan as $a) : ?>
-    <div class="modal fade" id="datadetail<?php echo $a->kd_jabatan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<?php foreach ($sektor as $a) : ?>
+    <div class="modal fade" id="datadetail<?php echo $a->kd_sektor ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-aqua">
-                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-star mr-2"></i> Detail Data jabatan</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa fa-star mr-2"></i> Detail Data sektor</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -106,16 +106,16 @@
                 <div class="modal-body">
                     <table class="table table-borderless">
                         <tr>
-                            <th>Nama jabatan</th>
-                            <td><?php echo $a->nama_jabatan ?></td>
+                            <th>Nama sektor</th>
+                            <td><?php echo $a->nama_sektor ?></td>
                         </tr>
 
 
 
                         <!-- <tr>
-                            <th>Foto jabatan</th>
+                            <th>Foto sektor</th>
                             <td>
-                                <img src="<?php echo base_url('assets/toko/images/jabatan/') . $a->foto_jabatan ?>" alt="">
+                                <img src="<?php echo base_url('assets/toko/images/sektor/') . $a->foto_sektor ?>" alt="">
                             </td>
                         </tr> -->
 
@@ -134,10 +134,10 @@
 
 <!-- akhir detail -->
 <!-- modal detail -->
-<?php foreach ($jabatan as $a) : ?>
+<?php foreach ($sektor as $a) : ?>
 
 
-    <div class="modal fade" id="hapusdata<?php echo $a->kd_jabatan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="hapusdata<?php echo $a->kd_sektor ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-danger text-white">
@@ -147,12 +147,12 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url('admin/master/jabatan/hapusjabatan') ?>" method="post">
+                    <form action="<?php echo base_url('admin/master/sektor/hapussektor') ?>" method="post">
                         <div class="form-group">
                             Apakah Anda Yakin akan menghapus data ini ?
                             <!-- <label for="">Nama</label>
-                  <input name="nama_jabatan" type="text" class="form-control" value="<?php echo $a->nama_jabatan ?>" required> -->
-                            <input name="kd_jabatan" type="hidden" class="form-control" value="<?php echo $a->kd_jabatan ?>" required>
+                  <input name="nama_sektor" type="text" class="form-control" value="<?php echo $a->nama_sektor ?>" required> -->
+                            <input name="kd_sektor" type="hidden" class="form-control" value="<?php echo $a->kd_sektor ?>" required>
                         </div>
 
 
@@ -171,10 +171,10 @@
 <!-- akhir detail -->
 
 <!-- Modal -->
-<?php foreach ($jabatan as $a) : ?>
+<?php foreach ($sektor as $a) : ?>
 
 
-    <div class="modal fade" id="editdata<?php echo $a->kd_jabatan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editdata<?php echo $a->kd_sektor ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-aqua">
@@ -184,11 +184,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url('admin/master/jabatan/aksieditjabatan') ?>" method="post">
+                    <form action="<?php echo base_url('admin/master/sektor/aksieditsektor') ?>" method="post">
                         <div class="form-group">
-                            <label for="">Nama jabatan</label>
-                            <input name="nama_jabatan" type="text" class="form-control" value="<?php echo $a->nama_jabatan ?>" required>
-                            <input name="kd_jabatan" type="hidden" class="form-control" value="<?php echo $a->kd_jabatan ?>" required>
+                            <label for="">Nama sektor</label>
+                            <input name="nama_sektor" type="text" class="form-control" value="<?php echo $a->nama_sektor ?>" required>
+                            <input name="kd_sektor" type="hidden" class="form-control" value="<?php echo $a->kd_sektor ?>" required>
                         </div>
 
 
@@ -196,9 +196,9 @@
 
 
                         <!-- <div class="form-group">
-                            <label for="">Foto jabatan</label>
-                            <img class="form-control img-fluid mb-1" src="<?php echo base_url('assets/toko/images/jabatan/') . $a->foto_jabatan ?>" alt="">
-                            <input name="foto_jabatan" type="file" class="form-control" value="<?php echo $a->foto_jabatan ?>">
+                            <label for="">Foto sektor</label>
+                            <img class="form-control img-fluid mb-1" src="<?php echo base_url('assets/toko/images/sektor/') . $a->foto_sektor ?>" alt="">
+                            <input name="foto_sektor" type="file" class="form-control" value="<?php echo $a->foto_sektor ?>">
                         </div> -->
 
 

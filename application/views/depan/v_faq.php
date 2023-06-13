@@ -27,7 +27,7 @@
 
 
                     <div class="heading">
-                        <h1>Pertanyaan Umum Tentang <span>Lowongan Kerja</span></h1>
+                        <h1>Pertanyaan Umum Tentang <span>Lowongan Kerja </span></h1>
                     </div>
 
 

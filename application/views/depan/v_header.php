@@ -122,7 +122,7 @@
 
 
                         </ul>
-                        <ul class="navbar-nav navbar-mobile right-nav ml-auto ">
+                        <!-- <ul class="navbar-nav navbar-mobile right-nav ml-auto ">
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="#"> <span class="flaticon-search head-icon"></span> </a>
                                 <ul class="navbar-nav submenu">
@@ -135,9 +135,9 @@
                                         </form>
                                     <li>
                                 </ul>
-                            </li>
+                            </li> -->
 
-                            <li class="nav-item  dropdown cart_dropdown">
+                        <!-- <li class="nav-item  dropdown cart_dropdown">
                                 <a class="nav-link" href="#"> <span class="flaticon-supermarket head-icon"></span> </a>
                                 <ul class="navbar-nav submenu">
                                     <li>
@@ -177,7 +177,7 @@
                                     </li>
                                 </ul>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
             </div>

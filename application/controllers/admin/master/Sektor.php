@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Jabatan extends CI_Controller
+class Sektor extends CI_Controller
 {
 
   public function __construct()
@@ -15,153 +15,153 @@ class Jabatan extends CI_Controller
 
   function index()
   {
-    $data['x1'] = 'Data jabatan';
+    $data['x1'] = 'Data sektor';
     $data['x2'] = 'Master';
-    $data['x3'] = 'Jabatan';
-    $data['x4'] = 'Data Jabatan ' . '| ' . $this->db->query('select nama_perush from tbl_perusahaan')->row()->nama_perush;
-    $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
+    $data['x3'] = 'Sektor';
+    $data['x4'] = 'Data Sektor ' . '| ' . $this->db->query('select nama_perush from tbl_perusahaan')->row()->nama_perush;
+    $data['sektor'] = $this->Mglobal->tampilkandata('tbl_sektor');
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
     $this->load->view('admin/temp/v_sidebar');
-    $this->load->view('admin/master/v_jabatan');
+    $this->load->view('admin/master/v_sektor');
     $this->load->view('admin/temp/v_footer');
   }
-  function tambahjabatan()
+  function tambahsektor()
   {
     $data['x1'] = 'Master';
-    $data['x2'] = 'jabatan';
-    $data['x3'] = 'Tambah jabatan Inventaris';
-    $data['x4'] = 'Menambahkan Data jabatan Inventaris Sahabat Optik';
+    $data['x2'] = 'sektor';
+    $data['x3'] = 'Tambah sektor Inventaris';
+    $data['x4'] = 'Menambahkan Data sektor Inventaris Sahabat Optik';
     $this->load->view('adm/header');
     $this->load->view('adm/sidebar');
-    $this->load->view('adm/master/jabatan/vtambahjabatan', $data);
+    $this->load->view('adm/master/sektor/vtambahsektor', $data);
     $this->load->view('adm/footer');
   }
-  function aksitambahjabatan()
+  function aksitambahsektor()
   {
 
     //Form Validasi jika kosong
-    //  $this->form_validation->set_rules('nama_jabatan', 'Nama jabatan', 'required');
-    //  $this->form_validation->set_rules('username_jabatan', 'Username jabatan', 'required');
-    // $this->form_validation->set_rules('password_jabatan', 'Password jabatan', 'required');
+    //  $this->form_validation->set_rules('nama_sektor', 'Nama sektor', 'required');
+    //  $this->form_validation->set_rules('username_sektor', 'Username sektor', 'required');
+    // $this->form_validation->set_rules('password_sektor', 'Password sektor', 'required');
     // if($this->form_validation->run()!=false)
     // {
-    // $config['upload_path'] = './assets/toko/images/jabatan/';
+    // $config['upload_path'] = './assets/toko/images/sektor/';
     // $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp';
     // $config['max_size'] = '2048';
-    // $config['file_name'] = 'foto_jabatan_' . time();
+    // $config['file_name'] = 'foto_sektor_' . time();
     // $this->load->library('upload', $config);
-    // if ($this->upload->do_upload('foto_jabatan')) {
+    // if ($this->upload->do_upload('foto_sektor')) {
     //   $image = $this->upload->data();
     $data = array(
-      'nama_jabatan' => $this->input->post('nama_jabatan'),
-      'kd_jabatan' => $this->input->post('kd_jabatan'),
+      'nama_sektor' => $this->input->post('nama_sektor'),
+      'kd_sektor' => $this->input->post('kd_sektor'),
 
 
 
-      // 'ket_jabatan' => $this->input->post('ket_jabatan'),
-      // 'foto_jabatan' => $image['file_name'],
+      // 'ket_sektor' => $this->input->post('ket_sektor'),
+      // 'foto_sektor' => $image['file_name'],
     );
-    $this->Mglobal->tambahdata($data, 'tbl_jabatan');
+    $this->Mglobal->tambahdata($data, 'tbl_sektor');
     $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Tambah Data Sukses!</strong> Data berhasil disimpan ke database.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>');
-    redirect(base_url('admin/master/jabatan/'));
+    redirect(base_url('admin/master/sektor/'));
   }
 
   // else {
   //
-  //  $this->load->view('jabatan/temp/v_header');
-  // $this->load->view('jabatan/temp/v_atas');
-  // $this->load->view('jabatan/temp/v_sidebar');
-  // $this->load->view('jabatan/master/jabatan/v_jabatan');
-  // $this->load->view('jabatan/temp/v_footer');
+  //  $this->load->view('sektor/temp/v_header');
+  // $this->load->view('sektor/temp/v_atas');
+  // $this->load->view('sektor/temp/v_sidebar');
+  // $this->load->view('sektor/master/sektor/v_sektor');
+  // $this->load->view('sektor/temp/v_footer');
   // }
   // }
-  function hapusjabatan()
+  function hapussektor()
   {
-    $where = array('kd_jabatan' => $this->input->post('kd_jabatan'));
-    $this->Mglobal->hapusdata($where, 'tbl_jabatan');
+    $where = array('kd_sektor' => $this->input->post('kd_sektor'));
+    $this->Mglobal->hapusdata($where, 'tbl_sektor');
     $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Hapus Data Sukses!</strong> Data berhasil dihapus dari database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-    redirect(base_url('admin/master/jabatan/'));
+    redirect(base_url('admin/master/sektor/'));
   }
-  function editjabatan($id)
+  function editsektor($id)
   {
     $data['x1'] = 'Master';
-    $data['x2'] = 'jabatan';
-    $data['x3'] = 'Edit jabatan Inventaris';
-    $data['x4'] = 'Mengedit Data jabatan Inventaris Sahabat Optik';
-    $where = array('kd_jabatan' => $id);
-    $data['jabatan'] = $this->Mglobal->tampilkandatasingle('tbl_jabatan', $where);
+    $data['x2'] = 'sektor';
+    $data['x3'] = 'Edit sektor Inventaris';
+    $data['x4'] = 'Mengedit Data sektor Inventaris Sahabat Optik';
+    $where = array('kd_sektor' => $id);
+    $data['sektor'] = $this->Mglobal->tampilkandatasingle('tbl_sektor', $where);
     $this->load->view('adm/header');
     $this->load->view('adm/sidebar');
-    $this->load->view('adm/master/jabatan/veditjabatan', $data);
+    $this->load->view('adm/master/sektor/veditsektor', $data);
     $this->load->view('adm/footer');
   }
-  function aksieditjabatan()
+  function aksieditsektor()
   {
 
     //Form Validasi jika kosong
-    //  $this->form_validation->set_rules('nama_jabatan', 'Nama jabatan', 'required');
-    //  $this->form_validation->set_rules('username_jabatan', 'Username jabatan', 'required');
-    //   $this->form_validation->set_rules('password_jabatan', 'Password jabatan', 'required');
+    //  $this->form_validation->set_rules('nama_sektor', 'Nama sektor', 'required');
+    //  $this->form_validation->set_rules('username_sektor', 'Username sektor', 'required');
+    //   $this->form_validation->set_rules('password_sektor', 'Password sektor', 'required');
     //  if($this->form_validation->run()!=false)
     //  {
-    // $config['upload_path'] = './assets/toko/images/jabatan/';
+    // $config['upload_path'] = './assets/toko/images/sektor/';
     // $config['allowed_types'] = 'jpg|jpeg|png|tif|bmp';
     // $config['max_size'] = '2048';
-    // $config['file_name'] = 'foto_jabatan_' . time();
+    // $config['file_name'] = 'foto_sektor_' . time();
     // $this->load->library('upload', $config);
-    // if ($this->upload->do_upload('foto_jabatan')) {
+    // if ($this->upload->do_upload('foto_sektor')) {
     // $image = $this->upload->data();
-    $where = array('kd_jabatan' => $this->input->post('kd_jabatan'));
+    $where = array('kd_sektor' => $this->input->post('kd_sektor'));
     $data = array(
-      'nama_jabatan' => $this->input->post('nama_jabatan'),
+      'nama_sektor' => $this->input->post('nama_sektor'),
 
 
-      // 'ket_jabatan' => $this->input->post('ket_jabatan'),
-      // 'foto_jabatan' => $image['file_name'],
-      //  'password_jabatan'=>md5($this->input->post('password_jabatan'))
+      // 'ket_sektor' => $this->input->post('ket_sektor'),
+      // 'foto_sektor' => $image['file_name'],
+      //  'password_sektor'=>md5($this->input->post('password_sektor'))
     );
-    $this->Mglobal->editdata('tbl_jabatan', $where, $data);
+    $this->Mglobal->editdata('tbl_sektor', $where, $data);
     $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>');
-    redirect(base_url('admin/master/jabatan/'));
+    redirect(base_url('admin/master/sektor/'));
     //  }
     //  else {
 
     //    $this->load->view('adm/header');
     //    $this->load->view('adm/sidebar');
-    //    $this->load->view('adm/master/jabatan/vtambahjabatan');
+    //    $this->load->view('adm/master/sektor/vtambahsektor');
     //    $this->load->view('adm/footer');
     //  }
     // } else {
-    //   $where = array('kd_jabatan' => $this->input->post('kd_jabatan'));
+    //   $where = array('kd_sektor' => $this->input->post('kd_sektor'));
     //   $data = array(
-    //     'nama_jabatan' => $this->input->post('nama_jabatan'),
-    //     //'foto_jabatan' => $image['file_name'],
-    //     //  'password_jabatan'=>md5($this->input->post('password_jabatan'))
+    //     'nama_sektor' => $this->input->post('nama_sektor'),
+    //     //'foto_sektor' => $image['file_name'],
+    //     //  'password_sektor'=>md5($this->input->post('password_sektor'))
     //   );
-    //   $this->Mglobal->editdata('tbl_jabatan', $where, $data);
+    //   $this->Mglobal->editdata('tbl_sektor', $where, $data);
     //   $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
     //         <strong>Edit Data Sukses!</strong> Data berhasil disimpan ke database.
     //         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     //           <span aria-hidden="true">&times;</span>
     //         </button>
     //       </div>');
-    //   redirect(base_url('admin/master/jabatan/'));
+    //   redirect(base_url('admin/master/sektor/'));
     // }
   }
 }

@@ -31,7 +31,7 @@
                      "marker-3": [40.880550, -78.393705, "<h4>Branch Office</h4><p>4/99 Pennsylvania, USA</p>"]
                      }'>
             </div> -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5595.597190454202!2d109.27694101628404!3d-7.389182736195544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655f2c76f92a49%3A0x48bd52ec019a81d0!2sSMK%20Mulya%20Husada%20Purwokerto!5e0!3m2!1sid!2sid!4v1685602646446!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5595.597190454202!2d109.27694101628404!3d-7.389182736195544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655f2c76f92a49%3A0x48bd52ec019a81d0!2sSMK%20Mulya%20Husada%20Purwokerto!5e0!3m2!1sid!2sid!4v1685602646446!5m2!1sid!2sid" width="1500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 

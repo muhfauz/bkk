@@ -62,6 +62,8 @@
                                     <?php } elseif ($a->status_lamaran == 'lolos_adm') { ?>
                                         <span class="badge badge-primary"> <i class="fa fa-check-square mr-2" aria-hidden="true"></i> Lolos Seleksi Administrasi </span>
                                         <a href="" class="badge badge-primary mb-1" data-toggle="modal" data-target="#lihatlokasi<?php echo $a->kd_lamaran ?>"> <i class="fa fa-map-marker mr-2" aria-hidden="true"></i></i> Lihat Lokasi Test</a>
+                                        <a href="<?php echo base_url('home/single/') . $a->kd_lowongan ?>" class="btn btn-secondary btn-sm mb-1"> <i class="fa fa-print mr-2"></i> Cetak Panggilan</a>
+
                                     <?php } elseif ($a->status_lamaran == 'diterima') { ?>
                                         <span class="badge badge-primary"> <i class="fa fa-check-square mr-2" aria-hidden="true"></i>Diterima </span>
                                         <a href="" class="badge badge-primary mb-1" data-toggle="modal" data-target="#lihatlamaran<?php echo $a->kd_lamaran ?>"> <i class="fa fa-file-pdf-o mr-2" aria-hidden="true"></i></i> Lihat Hasil Test</a>
@@ -73,6 +75,7 @@
                                 <td class="float-right">
                                     <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_lamaran ?>"> <i class="fa fa-info mr-2"></i> Data Perush</a>
                                     <a href="<?php echo base_url('home/single/') . $a->kd_lowongan ?>" class="btn btn-primary btn-sm mb-1"> <i class="fa fa-info mr-2"></i> Lowongan Detail</a>
+                                    <!-- <a href="<?php echo base_url('home/single/') . $a->kd_lowongan ?>" class="btn btn-secondary btn-sm mb-1"> <i class="fa fa-print mr-2"></i> Cetak Panggilan</a> -->
                                     <!-- <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Edit</a> -->
                                     <!-- <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a> -->
 

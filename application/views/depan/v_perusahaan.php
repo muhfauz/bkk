@@ -43,7 +43,7 @@
                             <p>Urgent cases are always seen immediately. Always stand out In the event of an emergency, please call us as soon as like out possible we can.</p>
                         </div>
                     </div> -->
-                    <div class="col-lg-3 col-md-6 col-sm-12">
+                    <!-- <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="appont_sec_inner">
                             <h6>WORK HOURS</h6>
                             <ul>
@@ -54,7 +54,7 @@
                                 <li> Holiday....................<span>9:00 - 11:00</span></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="appont_sec_inner">
                             <h6>BIODATA PERUSAHAAN</h6>
