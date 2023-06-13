@@ -58,10 +58,8 @@
                                     echo $this->db->query("select * from tbl_lamaran where kd_lowongan='$kd_lowongan'")->num_rows() ?> pelamar</td>
                                 <td class="float-right">
                                     <a href="" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#datadetail<?php echo $a->kd_lowongan ?>"> <i class="fa fa-info mr-2"></i> Detail</a>
-                                    <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#editdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-edit mr-2"></i> Edit</a>
-                                    <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#tetapkantest<?php echo $a->kd_lowongan ?>"> <i class="fa fa-paper-plane mr-2" aria-hidden="true"></i></i> Lokasi Seleksi</a>
                                     <a href="" class="btn btn-info btn-sm mb-1" data-toggle="modal" data-target="#lihatpelamar<?php echo $a->kd_lowongan ?>"> <i class="fa fa-address-book mr-2" aria-hidden="true"></i></i> Lihat Pelamar</a>
-                                    <a href="" class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#hapusdata<?php echo $a->kd_lowongan ?>"> <i class="fa fa-trash mr-2"></i> Hapus</a>
+
 
 
                                 </td>
@@ -369,12 +367,12 @@
 
                         <div class="form-group">
                             <label for="">Tanggal Mulai</label>
-                            <input name="tgl_mulai" type="date" class="form-control" value="<?php echo $a->tgl_mulai ?>" required>
+                            <input name="tgl_mulai" type="text" class="form-control" value="<?php echo $a->tgl_mulai ?>" required>
                         </div>
 
                         <div class="form-group">
                             <label for="">Tanggal Selesai</label>
-                            <input name="tgl_selesai" type="date" class="form-control" value="<?php echo $a->tgl_selesai ?>" required>
+                            <input name="tgl_selesai" type="text" class="form-control" value="<?php echo $a->tgl_selesai ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="">Kelompok Jabatan</label>
@@ -490,7 +488,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo base_url('admin/lamaran/lamaranhrd/putar') ?>" method="post">
+                    <form action="<?php echo base_url('admin/lamaran/lamaranhrdhistory/putar') ?>" method="post">
                         <div class="form-group">
                             Apakah Anda Yakin akan menghapus data ini ?
                             <input name="kd_lowongan" type="hidden" class="form-control" value="<?php echo $a->kd_lowongan ?>" required>

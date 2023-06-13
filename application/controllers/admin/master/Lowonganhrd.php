@@ -23,13 +23,36 @@ class Lowonganhrd extends CI_Controller
     $data['sektor'] = $this->Mglobal->tampilkandata('tbl_sektor');
     $data['pendidikan'] = $this->Mglobal->tampilkandata('tbl_pendidikan');
     $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
-    $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_sektor S, tbl_pendidikan P, tbl_jabatan J where L.kd_sektor=S.kd_sektor and L.kd_pendidikan=P.kd_pendidikan and L.kd_jabatan=J.kd_jabatan and L.kd_perush='$kd_perush' and L.acc_adminlowongan='acc'")->result();
+    $tgl = date('Y-m-d');
+    $data['tgl'] = $tgl;
+    $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_sektor S, tbl_pendidikan P, tbl_jabatan J where L.kd_sektor=S.kd_sektor and L.kd_pendidikan=P.kd_pendidikan and L.kd_jabatan=J.kd_jabatan and L.kd_perush='$kd_perush' and L.acc_adminlowongan='acc' and L.tgl_selesai > '$tgl'")->result();
     // $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
     // $data['bagian'] = $this->Mglobal->tampilkandata('tbl_bagian');
     $this->load->view('admin/temp/v_header', $data);
     $this->load->view('admin/temp/v_atas');
     $this->load->view('admin/temp/v_sidebar');
     $this->load->view('admin/master/v_lowonganhrd');
+    $this->load->view('admin/temp/v_footer');
+  }
+  function history()
+  {
+    $data['x1'] = 'Data Lowongan ';
+    $data['x2'] = 'Master';
+    $data['x3'] = 'Lowongan';
+    $data['x4'] = 'Data Lowongan ' . '| ' . $this->db->query('select nama_bkk from tbl_bkk')->row()->nama_bkk;
+    $kd_perush = $this->session->userdata('kd_perush');
+    $data['sektor'] = $this->Mglobal->tampilkandata('tbl_sektor');
+    $data['pendidikan'] = $this->Mglobal->tampilkandata('tbl_pendidikan');
+    $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
+    $tgl = date('Y-m-d');
+    $data['tgl'] = $tgl;
+    $data['lowongan'] = $this->db->query("select * from tbl_lowongan L, tbl_sektor S, tbl_pendidikan P, tbl_jabatan J where L.kd_sektor=S.kd_sektor and L.kd_pendidikan=P.kd_pendidikan and L.kd_jabatan=J.kd_jabatan and L.kd_perush='$kd_perush' and L.acc_adminlowongan='acc' and L.tgl_selesai < '$tgl'")->result();
+    // $data['jabatan'] = $this->Mglobal->tampilkandata('tbl_jabatan');
+    // $data['bagian'] = $this->Mglobal->tampilkandata('tbl_bagian');
+    $this->load->view('admin/temp/v_header', $data);
+    $this->load->view('admin/temp/v_atas');
+    $this->load->view('admin/temp/v_sidebar');
+    $this->load->view('admin/master/v_lowonganhrdhistory');
     $this->load->view('admin/temp/v_footer');
   }
 

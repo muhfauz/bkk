@@ -118,7 +118,7 @@
             <ul class="treeview-menu">
               <li class="ml-4"><a href="<?php echo base_url('admin/master/lowongan') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>Loowngan Kerja</a></li>
               <li class="ml-4"><a href="<?php echo base_url('admin/master/lowonganhrd') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>Lowongan ACC </a></li>
-              <li class="ml-4"><a href="<?php echo base_url('admin/transaksi/service') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>History Lowongan Kerja</a></li>
+              <li class="ml-4"><a href="<?php echo base_url('admin/master/lowonganhrd/history') ?>"><i class="fa fa-chevron-circle-right mr-2" aria-hidden="true"></i>History Lowongan </a></li>
 
             </ul>
           </li>

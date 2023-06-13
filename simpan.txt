@@ -1,0 +1,8 @@
+pelamar : cetak bukti test
+peruhaan
+history lamaran
+
+laporan
+data pelamar
+data perusahaan
+data lowongan
