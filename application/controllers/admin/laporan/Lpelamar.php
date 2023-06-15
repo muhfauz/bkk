@@ -28,6 +28,17 @@ class Lpelamar extends CI_Controller
     $this->load->view('admin/laporan/pelamar/v_lpelamar');
     $this->load->view('admin/temp/v_footer');
   }
+  function laporan_pdf_pelamar()
+  {
+    $this->load->library('pdf');
+
+    $data['pelamar'] = $this->db->query("select * from tbl_pelamar")->result();
+    $data['bkk'] = $this->Mglobal->tampilkandata('tbl_bkk');
+    $this->pdf->setPaper('A4', 'landscape');
+    $this->pdf->filename = "laporanpelamar.pdf";
+    $this->pdf->load_view('admin/laporan/pelamar/vlaporanpdfpelamar', $data);
+    // nama file pdf yang di hasilkan
+  }
 
   function aksitambahpelamar()
   {
