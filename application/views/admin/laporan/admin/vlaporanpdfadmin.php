@@ -37,11 +37,11 @@
 </head>
 
 <body>
-  <?php foreach ($perush as $p) : ?>
+  <?php foreach ($bkk as $p) : ?>
 
 
-    <p> <strong> <?php echo $p->nama_perush ?> </strong><br>
-      <i> <?php echo $p->alamat_perush ?> </i><br>
+    <p> <strong> <?php echo $p->nama_bkk ?> </strong><br>
+      <i> <?php echo $p->alamat_bkk ?> </i><br>
     </p>
   <?php endforeach; ?>
   <hr>

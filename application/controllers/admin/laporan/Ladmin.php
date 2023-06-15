@@ -32,7 +32,7 @@ class Ladmin extends CI_Controller
     $this->load->library('pdf');
 
     $data['admin'] = $this->Mglobal->tampilkandata('tbl_admin');
-    $data['perush'] = $this->Mglobal->tampilkandata('tbl_perusahaan');
+    $data['bkk'] = $this->Mglobal->tampilkandata('tbl_bkk');
     $this->pdf->setPaper('A4', 'landscape');
     $this->pdf->filename = "laporanadmin.pdf";
     $this->pdf->load_view('admin/laporan/admin/vlaporanpdfadmin', $data);
