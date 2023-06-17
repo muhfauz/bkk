@@ -177,4 +177,33 @@ class Lamaranpelamar extends CI_Controller
       redirect(base_url('admin/master/lowongan/'));
     }
   }
+  function cetakpanggilan($id)
+  {
+    $this->load->library('pdf');
+    $kd_pelamar = $this->session->userdata('kd_pelamar');
+    $kd_lamaran = $id;
+    $data['bkk'] = $this->Mglobal->tampilkandata('tbl_bkk');
+    $data['lamaran'] = $this->db->query("select * from tbl_lamaran L, tbl_pelamar P, tbl_lowongan Lo, tbl_perusahaan Pl where L.kd_lamaran='$id' and L.kd_pelamar=P.kd_pelamar and L.kd_lowongan=Lo.kd_lowongan and Lo.kd_perush=Pl.kd_perush and L.kd_pelamar='$kd_pelamar'")->result();
+    // $data['lamaran'] = $this->db->query("select * from tbl_lamaran where kd_lamaran='$kd_lamaran'")->result();
+
+
+
+    $data['nama_surat'] = 'SURAT PANGGILAN TEST/ WAWANCARA';
+    $data['nama_bkk'] = $this->db->query('select nama_bkk from tbl_bkk')->row()->nama_bkk;
+    // $data['nama_kepalabkk'] = $this->db->query('select nama_kepalabkk from tbl_bkk')->row()->nama_kepalabkk;
+    // $data['nama_kecamatan'] = $this->db->query('select kecamatan_bkk from tbl_bkk')->row()->kecamatan_bkk;
+    // $data['nama_kabupaten'] = $this->db->query('select kabupaten_bkk from tbl_bkk')->row()->kabupaten_bkk;
+    $data['alamat_bkk'] = $this->db->query('select alamat_bkk from tbl_bkk')->row()->alamat_bkk;
+    // $data['nama_propinsi'] = $this->db->query('select propinsi_bkk from tbl_bkk')->row()->propinsi_bkk;
+    // $data['sik'] = $this->db->query("select * from surat_ijin_keramaian S, penduduk P, rt R, rw W where S.NIK=P.NIK and P.id_RT=R.id_RT and R.id_RW=W.id_RW and S.id_surat='$id'")->result();
+
+    // $data['admin'] = $this->Mglobal->tampilkandata('tbl_admin');
+    // $data['perush'] = $this->Mglobal->tampilkandata('tbl_perusahaan');
+
+    $this->pdf->setPaper('A4', 'portrait');
+    $this->pdf->filename = "laporansik.pdf";
+    $this->pdf->load_view('admin/lamaran/v_pdfpanggilan', $data);
+
+    // nama file pdf yang di hasilkan
+  }
 }

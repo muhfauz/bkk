@@ -62,7 +62,7 @@
                                     <?php } elseif ($a->status_lamaran == 'lolos_adm') { ?>
                                         <span class="badge badge-primary"> <i class="fa fa-check-square mr-2" aria-hidden="true"></i> Lolos Seleksi Administrasi </span>
                                         <a href="" class="badge badge-primary mb-1" data-toggle="modal" data-target="#lihatlokasi<?php echo $a->kd_lamaran ?>"> <i class="fa fa-map-marker mr-2" aria-hidden="true"></i></i> Lihat Lokasi Test</a>
-                                        <a href="<?php echo base_url('home/single/') . $a->kd_lowongan ?>" class="btn btn-secondary btn-sm mb-1"> <i class="fa fa-print mr-2"></i> Cetak Panggilan</a>
+                                        <a href="<?php echo base_url('admin/lamaran/lamaranpelamar/cetakpanggilan/') . $a->kd_lamaran ?>" class="btn btn-secondary btn-sm mb-1"> <i class="fa fa-print mr-2"></i> Cetak Panggilan</a>
 
                                     <?php } elseif ($a->status_lamaran == 'diterima') { ?>
                                         <span class="badge badge-primary"> <i class="fa fa-check-square mr-2" aria-hidden="true"></i>Diterima </span>
